@@ -1,0 +1,52 @@
+@{
+    ViewData["Title"] = "Contrast Security Information";
+}
+
+<h1>Contrast Security Agent Information</h1>
+
+<div style="text-align: center; margin: 20px 0;">
+    <a href="/" class="nav-link">← Back to Home</a>
+</div>
+
+<div style="background: rgba(255, 255, 255, 0.1); padding: 20px; border-radius: 10px; margin: 20px 0;">
+    <h2>🛡️ Contrast Flex Agent Status</h2>
+    <p>The Contrast Flex Agent provides real-time application security monitoring for this .NET Core application.</p>
+    
+    <h3>Agent Capabilities:</h3>
+    <ul>
+        <li><strong>Runtime Application Self-Protection (RASP)</strong> - Real-time attack blocking</li>
+        <li><strong>Interactive Application Security Testing (IAST)</strong> - Vulnerability discovery during testing</li>
+        <li><strong>Software Composition Analysis (SCA)</strong> - Open source vulnerability detection</li>
+        <li><strong>Application Security Monitoring</strong> - Continuous security visibility</li>
+    </ul>
+</div>
+
+<div style="background: rgba(255, 255, 255, 0.1); padding: 20px; border-radius: 10px; margin: 20px 0;">
+    <h3>🔍 Security Monitoring</h3>
+    <p>This application is being monitored for the following security events:</p>
+    <ul>
+        <li>SQL Injection attempts</li>
+        <li>Cross-Site Scripting (XSS)</li>
+        <li>Path Traversal attacks</li>
+        <li>Command Injection</li>
+        <li>Insecure deserialization</li>
+        <li>Authentication bypasses</li>
+        <li>Authorization failures</li>
+    </ul>
+</div>
+
+<div style="background: rgba(255, 255, 255, 0.1); padding: 20px; border-radius: 10px; margin: 20px 0;">
+    <h3>📊 Environment Information</h3>
+    <div style="font-family: monospace; background: rgba(0, 0, 0, 0.3); padding: 15px; border-radius: 5px;">
+        <p><strong>Application:</strong> .NET Core Demo Application</p>
+        <p><strong>Framework:</strong> ASP.NET Core 8.0</p>
+        <p><strong>Runtime:</strong> .NET 8.0</p>
+        <p><strong>Port:</strong> 8181</p>
+        <p><strong>Agent Type:</strong> Contrast Flex Agent</p>
+        <p><strong>Monitoring Mode:</strong> Active</p>
+    </div>
+</div>
+
+<div style="background: rgba(255, 255, 0, 0.2); padding: 10px; border-radius: 5px; margin: 10px 0;">
+    <strong>Note:</strong> Token configuration is handled automatically through environment variables. See the Docker run command for token setup.
+</div>

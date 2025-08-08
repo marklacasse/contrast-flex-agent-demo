@@ -1,0 +1,109 @@
+{
+  "reportDate": "2025-08-08T14:17:34.563Z",
+  "hostname": "91afbd2f1e4e",
+  "contrast": {
+    "url": "https://teamserver-staging-agents.contsec.com/Contrast",
+    "proxy": {
+      "enable": false,
+      "url": null
+    },
+    "server": {
+      "name": "91afbd2f1e4e"
+    },
+    "agent": {
+      "name": "@contrast/agent",
+      "version": "5.41.0"
+    }
+  },
+  "node": {
+    "path": "/usr/bin/node",
+    "version": "v22.18.0",
+    "memory": {
+      "total": "4.05 GB",
+      "totalBytes": 4345298944,
+      "used": "26.95 MB",
+      "usedBytes": 28255376,
+      "free": "4.02 GB",
+      "freeBytes": 4317043568
+    }
+  },
+  "os": {
+    "architecture": "arm64",
+    "name": "Linux",
+    "version": "6.10.14-linuxkit",
+    "kernelVersion": "#1 SMP Sat May 17 08:28:57 UTC 2025",
+    "cpu": {
+      "type": "unknown",
+      "count": 10
+    },
+    "memory": {
+      "total": "15.60 GB",
+      "totalBytes": 16749006848
+    },
+    "linuxInfo": {
+      "file": "/etc/os-release",
+      "pretty_name": "Ubuntu 24.04.2 LTS",
+      "name": "Ubuntu",
+      "version_id": "24.04",
+      "version": "24.04.2 LTS (Noble Numbat)",
+      "version_codename": "noble",
+      "id": "ubuntu",
+      "id_like": "debian",
+      "home_url": "https://www.ubuntu.com/",
+      "support_url": "https://help.ubuntu.com/",
+      "bug_report_url": "https://bugs.launchpad.net/ubuntu/",
+      "privacy_policy_url": "https://www.ubuntu.com/legal/terms-and-policies/privacy-policy",
+      "ubuntu_codename": "noble",
+      "logo": "ubuntu-logo"
+    },
+    "macOsInfo": null
+  },
+  "host": {
+    "docker": {
+      "isDocker": true,
+      "containerId": "91afbd2f1e4ee4687ad024072ece0be1527ccaa12fb3573adbc121d0bcc146da"
+    },
+    "kubernetes": {
+      "isKubernetes": false
+    },
+    "pm2": {
+      "used": false,
+      "version": null
+    },
+    "memory": {
+      "total": "15.60 GB",
+      "totalBytes": 16749006848
+    }
+  },
+  "application": {
+    "name": "contrast-node-demo",
+    "version": "1.0.0",
+    "description": "Node.js Security Demo with Contrast Flex Agent",
+    "main": "app.js",
+    "scripts": {
+      "start": "node app.js",
+      "dev": "nodemon app.js"
+    },
+    "keywords": [
+      "security",
+      "demo",
+      "contrast",
+      "vulnerability",
+      "nodejs"
+    ],
+    "author": "Contrast Security",
+    "license": "MIT",
+    "dependencies": {
+      "express": "^4.18.2",
+      "ejs": "^3.1.9",
+      "body-parser": "^1.20.2"
+    },
+    "devDependencies": {
+      "nodemon": "^3.0.1"
+    }
+  },
+  "cloud": {
+    "provider": null,
+    "resourceId": null
+  }
+}

@@ -1,0 +1,16 @@
+# Demo Configuration File
+app_name=DotnetSecurityDemo
+version=1.0.0
+environment=development
+
+# Database Settings (DEMO ONLY)
+db_host=localhost
+db_user=demouser
+db_password=demo123!@#
+
+# API Keys (DEMO ONLY)
+api_key=sk-demo-abcdef123456
+secret_key=super-secret-demo-key
+
+# This file demonstrates sensitive information that could be exposed
+# through path traversal vulnerabilities in web applications.

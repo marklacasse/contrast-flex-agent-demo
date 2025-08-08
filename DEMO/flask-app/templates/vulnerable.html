@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vulnerable Endpoints Demo</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            color: white;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        .warning {
+            background: rgba(255, 165, 0, 0.3);
+            border: 2px solid #ffa500;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        .vulnerability-section {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 5px solid #ff6b6b;
+        }
+        .test-form {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        input, textarea, button {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 14px;
+        }
+        input::placeholder, textarea::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        button {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        button:hover {
+            transform: scale(1.02);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        .result-box {
+            background: rgba(0, 0, 0, 0.4);
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+            max-height: 300px;
+            overflow-y: auto;
+            white-space: pre-wrap;
+        }
+        .nav-link {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+        .nav-link:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.05);
+        }
+        .example-box {
+            background: rgba(255, 255, 0, 0.1);
+            border: 1px solid rgba(255, 255, 0, 0.3);
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>⚠️ Vulnerable Endpoints Demo</h1>
+        
+        <div class="warning">
+            <h3>🚨 WARNING: FOR DEMO/TESTING PURPOSES ONLY</h3>
+            <p>These endpoints contain intentional security vulnerabilities for demonstration and testing purposes. 
+            <strong>NEVER use this code in production environments!</strong></p>
+        </div>
+
+        <div class="vulnerability-section">
+            <h2>🗂️ Path Traversal Vulnerability</h2>
+            <p>This endpoint allows reading arbitrary files from the filesystem due to improper input validation.</p>
+            
+            <div class="example-box">
+                <strong>Safe examples:</strong><br>
+                • requirements.txt<br>
+                • app.py<br><br>
+                <strong>Malicious examples:</strong><br>
+                • ../../../etc/passwd<br>
+                • ../../../proc/version<br>
+                • ../../../etc/hosts
+            </div>
+
+            <div class="test-form">
+                <h4>Test Path Traversal:</h4>
+                <input type="text" id="filename" placeholder="Enter filename (try: ../../../etc/passwd)">
+                <button onclick="testPathTraversal()">🔍 Read File</button>
+                <div id="fileResult" class="result-box" style="display: none;"></div>
+            </div>
+        </div>
+
+        <div class="vulnerability-section">
+            <h2>💻 Command Injection Vulnerability</h2>
+            <p>This endpoint executes user input directly as shell commands without proper sanitization.</p>
+            
+            <div class="example-box">
+                <strong>Safe examples:</strong><br>
+                • ls -la<br>
+                • pwd<br>
+                • whoami<br><br>
+                <strong>Malicious examples:</strong><br>
+                • ls; cat /etc/passwd<br>
+                • pwd && whoami<br>
+                • echo "test" | base64
+            </div>
+
+            <div class="test-form">
+                <h4>Test Command Injection:</h4>
+                <input type="text" id="command" placeholder="Enter command (try: ls; cat /etc/passwd)">
+                <button onclick="testCommandInjection()">⚡ Execute Command</button>
+                <div id="commandResult" class="result-box" style="display: none;"></div>
+            </div>
+        </div>
+
+        <div class="vulnerability-section">
+            <h2>🌐 Command Injection via GET (Ping)</h2>
+            <p>This endpoint is vulnerable to command injection through URL parameters.</p>
+            
+            <div class="example-box">
+                <strong>Safe examples:</strong><br>
+                • google.com<br>
+                • localhost<br>
+                • 127.0.0.1<br><br>
+                <strong>Malicious examples:</strong><br>
+                • google.com; whoami<br>
+                • localhost && cat /etc/passwd<br>
+                • 127.0.0.1; ls -la /
+            </div>
+
+            <div class="test-form">
+                <h4>Test Ping Command Injection:</h4>
+                <input type="text" id="pingHost" placeholder="Enter host (try: google.com; whoami)">
+                <button onclick="testPingInjection()">🏓 Ping Host</button>
+                <div id="pingResult" class="result-box" style="display: none;"></div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 30px;">
+            <a href="/" class="nav-link">🏠 Back to Home</a>
+            <a href="/contrast-demo" class="nav-link">🛡️ Contrast Demo</a>
+            <a href="/health" class="nav-link">🏥 Health Check</a>
+        </div>
+    </div>
+
+    <script>
+        async function testPathTraversal() {
+            const filename = document.getElementById('filename').value || 'requirements.txt';
+            const resultDiv = document.getElementById('fileResult');
+            
+            try {
+                const response = await fetch(`/vulnerable/file-read?filename=${encodeURIComponent(filename)}`);
+                const data = await response.json();
+                
+                resultDiv.innerHTML = `
+<strong>Filename:</strong> ${data.filename}
+<strong>Status:</strong> ${response.status}
+<strong>Warning:</strong> ${data.warning || ''}
+
+<strong>Content:</strong>
+${data.content || data.error || 'No content'}
+                `;
+                resultDiv.style.display = 'block';
+            } catch (error) {
+                resultDiv.innerHTML = `Error: ${error.message}`;
+                resultDiv.style.display = 'block';
+            }
+        }
+
+        async function testCommandInjection() {
+            const command = document.getElementById('command').value || 'whoami';
+            const resultDiv = document.getElementById('commandResult');
+            
+            try {
+                const response = await fetch('/vulnerable/command', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ command: command })
+                });
+                const data = await response.json();
+                
+                resultDiv.innerHTML = `
+<strong>Command:</strong> ${data.command}
+<strong>Return Code:</strong> ${data.return_code || 'N/A'}
+<strong>Warning:</strong> ${data.warning || ''}
+
+<strong>Output:</strong>
+${data.stdout || '(no output)'}
+
+<strong>Errors:</strong>
+${data.stderr || '(no errors)'}
+
+${data.error ? '<strong>Error:</strong>\n' + data.error : ''}
+                `;
+                resultDiv.style.display = 'block';
+            } catch (error) {
+                resultDiv.innerHTML = `Error: ${error.message}`;
+                resultDiv.style.display = 'block';
+            }
+        }
+
+        async function testPingInjection() {
+            const host = document.getElementById('pingHost').value || 'google.com';
+            const resultDiv = document.getElementById('pingResult');
+            
+            try {
+                const response = await fetch(`/vulnerable/ping?host=${encodeURIComponent(host)}`);
+                const data = await response.json();
+                
+                resultDiv.innerHTML = `
+<strong>Host:</strong> ${data.host}
+<strong>Command:</strong> ${data.command || ''}
+<strong>Warning:</strong> ${data.warning || ''}
+
+<strong>Output:</strong>
+${data.output || '(no output)'}
+
+<strong>Errors:</strong>
+${data.error || '(no errors)'}
+                `;
+                resultDiv.style.display = 'block';
+            } catch (error) {
+                resultDiv.innerHTML = `Error: ${error.message}`;
+                resultDiv.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>

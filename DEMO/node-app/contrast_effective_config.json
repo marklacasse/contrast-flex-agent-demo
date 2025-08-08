@@ -1,0 +1,821 @@
+{
+  "report_create": "2025-08-08T14:17:34.985Z",
+  "config": {
+    "status": "Success",
+    "effective_config": [
+      {
+        "value": "true",
+        "name": "enable",
+        "canonical_name": "enable",
+        "source": "DEFAULT_VALUE"
+      },
+      {
+        "value": "true",
+        "name": "api.enable",
+        "canonical_name": "api.enable",
+        "source": "DEFAULT_VALUE"
+      },
+      {
+        "value": "https://teamserver-staging-agents.contsec.com/Contrast",
+        "name": "api.url",
+        "canonical_name": "api.url",
+        "source": "USER_CONFIGURATION_FILE"
+      },
+      {
+        "value": "contrast-redacted-api.api_key",
+        "name": "api.api_key",
+        "canonical_name": "api.api_key",
+        "source": "USER_CONFIGURATION_FILE"
+      },
+      {
+        "value": "contrast-redacted-api.service_key",
+        "name": "api.service_key",
+        "canonical_name": "api.service_key",
+        "source": "USER_CONFIGURATION_FILE"
+      },
+      {
+        "value": "agent_eb45b651-ab5f-4bbb-9cc0-961b3c6d819c_default",
+        "name": "api.user_name",
+        "canonical_name": "api.user_name",
+        "source": "USER_CONFIGURATION_FILE"
+      },
+      {
+        "value": "contrast-redacted-api.token",
+        "name": "api.token",
+        "canonical_name": "api.token",
+        "source": "USER_CONFIGURATION_FILE"
+      },
+      {
+        "value": "true",
+        "name": "api.certificate.enable",
+        "canonical_name": "api.certificate.enable",
+        "source": "DEFAULT_VALUE"
+      },
+      {
+        "value": "undefined",
+        "name": "api.certificate.ca_file",
+        "canonical_name": "api.certificate.ca_file",
+        "source": "DEFAULT_VALUE"
+      },
+      {
+        "value": "undefined",
+        "name": "api.certificate.cert_file",
+        "canonical_name": "api.certificate.cert_file",
+        "source": "DEFAULT_VALUE"
+      },
+      {
+        "value": "undefined",
+        "name": "api.certificate.key_file",
+        "canonical_name": "api.certificate.key_file",
+        "source": "DEFAULT_VALUE"
+      },
+      {
+        "value": "false",
+        "name": "api.certificate.ignore_cert_errors",
+        "canonical_name": "api.certificate.ignore_cert_errors",
+        "source": "DEFAULT_VALUE"
+      },
+      {
+        "value": "false",
+        "name": "api.proxy.enable",
+        "canonical_name": "api.proxy.enable",
+        "source": "DEFAULT_VALUE"
+      },
+      {
+        "value": "undefined",
+        "name": "api.proxy.url",
+        "canonical_name": "api.proxy.url",
+        "source": "DEFAULT_VALUE"
+      },
+      {
+        "value": "10",
+        "name": "agent.stack_trace_limit",
+        "canonical_name": "agent.stack_trace_limit",
+        "source": "DEFAULT_VALUE"
+      },
+      {
+        "value": "agent-,@contrast,node-agent",
+        "name": "agent.stack_trace_filters",
+        "canonical_name": "agent.stack_trace_filters",
+        "source": "DEFAULT_VALUE"
+      },
+      {
+        "value": "true",
+        "name": "agent.diagnostics.enable",
+        "canonical_name": "agent.diagnostics.enable",
+        "source": "DEFAULT_VALUE"
+      },
+      {
+        "value": "/demos/node-app",
+        "name": "agent.diagnostics.report_path",
+        "canonical_name": "agent.diagnostics.report_path",
+        "source": "DEFAULT_VALUE"
+      },
+      {
+        "value": "true",
+        "name": "agent.route_coverage.enable",
+        "canonical_name": "agent.route_coverage.enable",
+        "source": "DEFAULT_VALUE"
+      },
+      {
+        "value": "undefined",
+        "name": "agent.reporters.file",
+        "canonical_name": "agent.reporters.file",
+        "source": "DEFAULT_VALUE"
+      },
+      {
+        "value": "false",
+        "name": "agent.heap_dump.enable",
+        "canonical_name": "agent.heap_dump.enable",
+        "source": "DEFAULT_VALUE"
+      },
+      {
+        "value": "contrast_heap_dumps",
+        "name": "agent.heap_dump.path",
+        "canonical_name": "agent.heap_dump.path",
+        "source": "DEFAULT_VALUE"
+      },
+      {
+        "value": "10000",
+        "name": "agent.heap_dump.delay_ms",
+        "canonical_name": "agent.heap_dump.delay_ms",
+        "source": "DEFAULT_VALUE"
+      },
+      {
+        "value": "10000",
+        "name": "agent.heap_dump.window_ms",
+        "canonical_name": "agent.heap_dump.window_ms",
+        "source": "DEFAULT_VALUE"
+      },
+      {
+        "value": "5",
+        "name": "agent.heap_dump.count",
+        "canonical_name": "agent.heap_dump.count",
+        "source": "DEFAULT_VALUE"
+      },
+      {
+        "value": "5000",
+        "name": "agent.polling.app_activity_ms",
+        "canonical_name": "agent.polling.app_activity_ms",
+        "source": "DEFAULT_VALUE"
+      },
+      {
+        "value": "30000",
+        "name": "agent.polling.app_settings_ms",
+        "canonical_name": "agent.polling.app_settings_ms",
+        "source": "DEFAULT_VALUE"
+      },
+      {
+        "value": "5000",
+        "name": "agent.polling.app_update_ms",
+        "canonical_name": "agent.polling.app_update_ms",
+        "source": "DEFAULT_VALUE"
+      },
+      {
+        "value": "30000",
+        "name": "agent.polling.server_settings_ms",
+        "canonical_name": "agent.polling.server_settings_ms",
+        "source": "DEFAULT_VALUE"
+      },
+      {
+        "value": "/demos/node-app/contrast.log",
+        "name": "agent.logger.path",
+        "canonical_name": "agent.logger.path",
+        "source": "DEFAULT_VALUE"
+      },
+      {
+        "value": "error",
+        "name": "agent.logger.level",
+        "canonical_name": "agent.logger.level",
+        "source": "CONTRAST_UI"
+      },
+      {
+        "value": "true",
+        "name": "agent.logger.append",
+        "canonical_name": "agent.logger.append",
+        "source": "DEFAULT_VALUE"
+      },
+      {
+        "value": "true",
+        "name": "agent.logger.stdout",
+        "canonical_name": "agent.logger.stdout",
+        "source": "DEFAULT_VALUE"
+      },
+      {
+        "value": "/demos/node-app/security.log",
+        "name": "agent.security_logger.path",
+        "canonical_name": "agent.security_logger.path",
+        "source": "DEFAULT_VALUE"
+      },
+      {
+        "value": "error",
+        "name": "agent.security_logger.level",
+        "canonical_name": "agent.security_logger.level",
+        "source": "DEFAULT_VALUE"
+      },
+      {
+        "value": "false",
+        "name": "agent.security_logger.stdout",
+        "canonical_name": "agent.security_logger.stdout",
+        "source": "DEFAULT_VALUE"
+      },
+      {
+        "value": "false",
+        "name": "agent.security_logger.syslog.enable",
+        "canonical_name": "agent.security_logger.syslog.enable",
+        "source": "DEFAULT_VALUE"
+      },
+      {
+        "value": "127.0.0.1",
+        "name": "agent.security_logger.syslog.ip",
+        "canonical_name": "agent.security_logger.syslog.ip",
+        "source": "DEFAULT_VALUE"
+      },
+      {
+        "value": "514",
+        "name": "agent.security_logger.syslog.port",
+        "canonical_name": "agent.security_logger.syslog.port",
+        "source": "DEFAULT_VALUE"
+      },
+      {
+        "value": "19",
+        "name": "agent.security_logger.syslog.facility",
+        "canonical_name": "agent.security_logger.syslog.facility",
+        "source": "DEFAULT_VALUE"
+      },
+      {
+        "value": "alert",
+        "name": "agent.security_logger.syslog.severity_exploited",
+        "canonical_name": "agent.security_logger.syslog.severity_exploited",
+        "source": "DEFAULT_VALUE"
+      },
+      {
+        "value": "notice",
+        "name": "agent.security_logger.syslog.severity_blocked",
+        "canonical_name": "agent.security_logger.syslog.severity_blocked",
+        "source": "DEFAULT_VALUE"
+      },
+      {
+        "value": "notice",
+        "name": "agent.security_logger.syslog.severity_blocked_perimiter",
+        "canonical_name": "agent.security_logger.syslog.severity_blocked_perimiter",
+        "source": "DEFAULT_VALUE"
+      },
+      {
+        "value": "warning",
+        "name": "agent.security_logger.syslog.severity_probed",
+        "canonical_name": "agent.security_logger.syslog.severity_probed",
+        "source": "DEFAULT_VALUE"
+      },
+      {
+        "value": "warning",
+        "name": "agent.security_logger.syslog.severity_suspicious",
+        "canonical_name": "agent.security_logger.syslog.severity_suspicious",
+        "source": "DEFAULT_VALUE"
+      },
+      {
+        "value": "/demos/node-app",
+        "name": "agent.node.app_root",
+        "canonical_name": "agent.node.app_root",
+        "source": "DEFAULT_VALUE"
+      },
+      {
+        "value": "",
+        "name": "agent.node.cmd_ignore_list",
+        "canonical_name": "agent.node.cmd_ignore_list",
+        "source": "DEFAULT_VALUE"
+      },
+      {
+        "value": "undefined",
+        "name": "agent.node.exclusive_entrypoint",
+        "canonical_name": "agent.node.exclusive_entrypoint",
+        "source": "DEFAULT_VALUE"
+      },
+      {
+        "value": "true",
+        "name": "agent.node.rewrite.enable",
+        "canonical_name": "agent.node.rewrite.enable",
+        "source": "DEFAULT_VALUE"
+      },
+      {
+        "value": "true",
+        "name": "agent.node.rewrite.cache.enable",
+        "canonical_name": "agent.node.rewrite.cache.enable",
+        "source": "DEFAULT_VALUE"
+      },
+      {
+        "value": "/demos/node-app/.contrast",
+        "name": "agent.node.rewrite.cache.path",
+        "canonical_name": "agent.node.rewrite.cache.path",
+        "source": "DEFAULT_VALUE"
+      },
+      {
+        "value": "true",
+        "name": "agent.node.rewrite.minify",
+        "canonical_name": "agent.node.rewrite.minify",
+        "source": "DEFAULT_VALUE"
+      },
+      {
+        "value": "true",
+        "name": "agent.node.source_maps.enable",
+        "canonical_name": "agent.node.source_maps.enable",
+        "source": "DEFAULT_VALUE"
+      },
+      {
+        "value": "true",
+        "name": "agent.node.library_usage.reporting.enable",
+        "canonical_name": "agent.node.library_usage.reporting.enable",
+        "source": "DEFAULT_VALUE"
+      },
+      {
+        "value": "100",
+        "name": "agent.node.library_usage.reporting.interval_ms",
+        "canonical_name": "agent.node.library_usage.reporting.interval_ms",
+        "source": "DEFAULT_VALUE"
+      },
+      {
+        "value": "true",
+        "name": "agent.node.metrics.enable",
+        "canonical_name": "agent.node.metrics.enable",
+        "source": "DEFAULT_VALUE"
+      },
+      {
+        "value": "5000",
+        "name": "agent.node.metrics.warn_ms",
+        "canonical_name": "agent.node.metrics.warn_ms",
+        "source": "DEFAULT_VALUE"
+      },
+      {
+        "value": "npm",
+        "name": "agent.node.npm_path",
+        "canonical_name": "agent.node.npm_path",
+        "source": "DEFAULT_VALUE"
+      },
+      {
+        "value": "true",
+        "name": "inventory.analyze_libraries",
+        "canonical_name": "inventory.analyze_libraries",
+        "source": "DEFAULT_VALUE"
+      },
+      {
+        "value": "undefined",
+        "name": "inventory.gather_metadata_via",
+        "canonical_name": "inventory.gather_metadata_via",
+        "source": "DEFAULT_VALUE"
+      },
+      {
+        "value": "true",
+        "name": "assess.enable",
+        "canonical_name": "assess.enable",
+        "source": "CONTRAST_UI"
+      },
+      {
+        "value": "false",
+        "name": "assess.probabilistic_sampling.enable",
+        "canonical_name": "assess.probabilistic_sampling.enable",
+        "source": "CONTRAST_UI"
+      },
+      {
+        "value": "0",
+        "name": "assess.probabilistic_sampling.baseline",
+        "canonical_name": "assess.probabilistic_sampling.baseline",
+        "source": "CONTRAST_UI"
+      },
+      {
+        "value": "0.05",
+        "name": "assess.probabilistic_sampling.base_probability",
+        "canonical_name": "assess.probabilistic_sampling.base_probability",
+        "source": "DEFAULT_VALUE"
+      },
+      {
+        "value": "0",
+        "name": "assess.probabilistic_sampling.window_ms",
+        "canonical_name": "assess.probabilistic_sampling.window_ms",
+        "source": "CONTRAST_UI"
+      },
+      {
+        "value": "FULL",
+        "name": "assess.probabilistic_sampling.event_detail",
+        "canonical_name": "assess.probabilistic_sampling.event_detail",
+        "source": "DEFAULT_VALUE"
+      },
+      {
+        "value": "true",
+        "name": "assess.probabilistic_sampling.route_monitor.enable",
+        "canonical_name": "assess.probabilistic_sampling.route_monitor.enable",
+        "source": "DEFAULT_VALUE"
+      },
+      {
+        "value": "1800000",
+        "name": "assess.probabilistic_sampling.route_monitor.ttl_ms",
+        "canonical_name": "assess.probabilistic_sampling.route_monitor.ttl_ms",
+        "source": "DEFAULT_VALUE"
+      },
+      {
+        "value": "undefined",
+        "name": "assess.tags",
+        "canonical_name": "assess.tags",
+        "source": "DEFAULT_VALUE"
+      },
+      {
+        "value": "ALL",
+        "name": "assess.stacktraces",
+        "canonical_name": "assess.stacktraces",
+        "source": "CONTRAST_UI"
+      },
+      {
+        "value": "150",
+        "name": "assess.max_context_source_events",
+        "canonical_name": "assess.max_context_source_events",
+        "source": "DEFAULT_VALUE"
+      },
+      {
+        "value": "500",
+        "name": "assess.max_propagation_events",
+        "canonical_name": "assess.max_propagation_events",
+        "source": "DEFAULT_VALUE"
+      },
+      {
+        "value": "false",
+        "name": "assess.safe_positives.enable",
+        "canonical_name": "assess.safe_positives.enable",
+        "source": "DEFAULT_VALUE"
+      },
+      {
+        "value": "false",
+        "name": "assess.trust_custom_validators",
+        "canonical_name": "assess.trust_custom_validators",
+        "source": "DEFAULT_VALUE"
+      },
+      {
+        "value": "false",
+        "name": "protect.enable",
+        "canonical_name": "protect.enable",
+        "source": "CONTRAST_UI"
+      },
+      {
+        "value": "true",
+        "name": "protect.probe_analysis.enable",
+        "canonical_name": "protect.probe_analysis.enable",
+        "source": "DEFAULT_VALUE"
+      },
+      {
+        "value": "",
+        "name": "protect.rules.disabled_rules",
+        "canonical_name": "protect.rules.disabled_rules",
+        "source": "DEFAULT_VALUE"
+      },
+      {
+        "value": "monitor",
+        "name": "protect.rules.cmd-injection.mode",
+        "canonical_name": "protect.rules.cmd-injection.mode",
+        "source": "CONTRAST_UI"
+      },
+      {
+        "value": "monitor",
+        "name": "protect.rules.cmd-injection-command-backdoors.mode",
+        "canonical_name": "protect.rules.cmd-injection-command-backdoors.mode",
+        "source": "CONTRAST_UI"
+      },
+      {
+        "value": "monitor",
+        "name": "protect.rules.cmd-injection-semantic-chained-commands.mode",
+        "canonical_name": "protect.rules.cmd-injection-semantic-chained-commands.mode",
+        "source": "CONTRAST_UI"
+      },
+      {
+        "value": "monitor",
+        "name": "protect.rules.cmd-injection-semantic-dangerous-paths.mode",
+        "canonical_name": "protect.rules.cmd-injection-semantic-dangerous-paths.mode",
+        "source": "CONTRAST_UI"
+      },
+      {
+        "value": "off",
+        "name": "protect.rules.crypto-bad-mac.mode",
+        "canonical_name": "protect.rules.crypto-bad-mac.mode",
+        "source": "DEFAULT_VALUE"
+      },
+      {
+        "value": "off",
+        "name": "protect.rules.crypto-bad-ciphers.mode",
+        "canonical_name": "protect.rules.crypto-bad-ciphers.mode",
+        "source": "DEFAULT_VALUE"
+      },
+      {
+        "value": "off",
+        "name": "protect.rules.crypto-weak-randomness.mode",
+        "canonical_name": "protect.rules.crypto-weak-randomness.mode",
+        "source": "DEFAULT_VALUE"
+      },
+      {
+        "value": "monitor",
+        "name": "protect.rules.method-tampering.mode",
+        "canonical_name": "protect.rules.method-tampering.mode",
+        "source": "CONTRAST_UI"
+      },
+      {
+        "value": "off",
+        "name": "protect.rules.nosql-injection.mode",
+        "canonical_name": "protect.rules.nosql-injection.mode",
+        "source": "CONTRAST_UI"
+      },
+      {
+        "value": "off",
+        "name": "protect.rules.nosql-injection-mongo.mode",
+        "canonical_name": "protect.rules.nosql-injection-mongo.mode",
+        "source": "DEFAULT_VALUE"
+      },
+      {
+        "value": "monitor",
+        "name": "protect.rules.path-traversal.mode",
+        "canonical_name": "protect.rules.path-traversal.mode",
+        "source": "CONTRAST_UI"
+      },
+      {
+        "value": "monitor",
+        "name": "protect.rules.path-traversal-semantic-file-security-bypass.mode",
+        "canonical_name": "protect.rules.path-traversal-semantic-file-security-bypass.mode",
+        "source": "CONTRAST_UI"
+      },
+      {
+        "value": "off",
+        "name": "protect.rules.reflected-xss.mode",
+        "canonical_name": "protect.rules.reflected-xss.mode",
+        "source": "CONTRAST_UI"
+      },
+      {
+        "value": "monitor",
+        "name": "protect.rules.sql-injection.mode",
+        "canonical_name": "protect.rules.sql-injection.mode",
+        "source": "CONTRAST_UI"
+      },
+      {
+        "value": "monitor",
+        "name": "protect.rules.ssjs-injection.mode",
+        "canonical_name": "protect.rules.ssjs-injection.mode",
+        "source": "CONTRAST_UI"
+      },
+      {
+        "value": "off",
+        "name": "protect.rules.ssrf.mode",
+        "canonical_name": "protect.rules.ssrf.mode",
+        "source": "DEFAULT_VALUE"
+      },
+      {
+        "value": "off",
+        "name": "protect.rules.unsafe-code-execution.mode",
+        "canonical_name": "protect.rules.unsafe-code-execution.mode",
+        "source": "DEFAULT_VALUE"
+      },
+      {
+        "value": "off",
+        "name": "protect.rules.unsafe-file-upload.mode",
+        "canonical_name": "protect.rules.unsafe-file-upload.mode",
+        "source": "CONTRAST_UI"
+      },
+      {
+        "value": "monitor",
+        "name": "protect.rules.untrusted-deserialization.mode",
+        "canonical_name": "protect.rules.untrusted-deserialization.mode",
+        "source": "CONTRAST_UI"
+      },
+      {
+        "value": "monitor",
+        "name": "protect.rules.xxe.mode",
+        "canonical_name": "protect.rules.xxe.mode",
+        "source": "CONTRAST_UI"
+      },
+      {
+        "value": "off",
+        "name": "protect.rules.unvalidated-redirect.mode",
+        "canonical_name": "protect.rules.unvalidated-redirect.mode",
+        "source": "DEFAULT_VALUE"
+      },
+      {
+        "value": "false",
+        "name": "observe.enable",
+        "canonical_name": "observe.enable",
+        "source": "DEFAULT_VALUE"
+      },
+      {
+        "value": "60000",
+        "name": "observe.periodic_export_interval_ms",
+        "canonical_name": "observe.periodic_export_interval_ms",
+        "source": "DEFAULT_VALUE"
+      },
+      {
+        "value": "undefined",
+        "name": "application.name",
+        "canonical_name": "application.name",
+        "source": "DEFAULT_VALUE"
+      },
+      {
+        "value": "/",
+        "name": "application.path",
+        "canonical_name": "application.path",
+        "source": "DEFAULT_VALUE"
+      },
+      {
+        "value": "undefined",
+        "name": "application.group",
+        "canonical_name": "application.group",
+        "source": "DEFAULT_VALUE"
+      },
+      {
+        "value": "undefined",
+        "name": "application.code",
+        "canonical_name": "application.code",
+        "source": "DEFAULT_VALUE"
+      },
+      {
+        "value": "undefined",
+        "name": "application.version",
+        "canonical_name": "application.version",
+        "source": "DEFAULT_VALUE"
+      },
+      {
+        "value": "undefined",
+        "name": "application.tags",
+        "canonical_name": "application.tags",
+        "source": "DEFAULT_VALUE"
+      },
+      {
+        "value": "undefined",
+        "name": "application.metadata",
+        "canonical_name": "application.metadata",
+        "source": "DEFAULT_VALUE"
+      },
+      {
+        "value": "862a6e0636ca10866f37e5e80c329a6c",
+        "name": "application.session_id",
+        "canonical_name": "application.session_id",
+        "source": "CONTRAST_UI"
+      },
+      {
+        "value": "undefined",
+        "name": "application.session_metadata",
+        "canonical_name": "application.session_metadata",
+        "source": "DEFAULT_VALUE"
+      },
+      {
+        "value": "91afbd2f1e4e",
+        "name": "server.name",
+        "canonical_name": "server.name",
+        "source": "DEFAULT_VALUE"
+      },
+      {
+        "value": "Node.js v22.18.0",
+        "name": "server.type",
+        "canonical_name": "server.type",
+        "source": "DEFAULT_VALUE"
+      },
+      {
+        "value": "DEVELOPMENT",
+        "name": "server.environment",
+        "canonical_name": "server.environment",
+        "source": "CONTRAST_UI"
+      },
+      {
+        "value": "undefined",
+        "name": "server.tags",
+        "canonical_name": "server.tags",
+        "source": "DEFAULT_VALUE"
+      },
+      {
+        "value": "undefined",
+        "name": "server.version",
+        "canonical_name": "server.version",
+        "source": "DEFAULT_VALUE"
+      },
+      {
+        "value": "true",
+        "name": "server.discover_cloud_resource",
+        "canonical_name": "server.discover_cloud_resource",
+        "source": "DEFAULT_VALUE"
+      },
+      {
+        "value": "false",
+        "name": "preinstrument",
+        "canonical_name": "preinstrument",
+        "source": "DEFAULT_VALUE"
+      }
+    ],
+    "contrast_ui": [
+      {
+        "value": "error",
+        "name": "agent.logger.level",
+        "canonical_name": "agent.logger.level"
+      },
+      {
+        "value": "true",
+        "name": "assess.enable",
+        "canonical_name": "assess.enable"
+      },
+      {
+        "value": "false",
+        "name": "assess.probabilistic_sampling.enable",
+        "canonical_name": "assess.probabilistic_sampling.enable"
+      },
+      {
+        "value": "0",
+        "name": "assess.probabilistic_sampling.baseline",
+        "canonical_name": "assess.probabilistic_sampling.baseline"
+      },
+      {
+        "value": "0",
+        "name": "assess.probabilistic_sampling.window_ms",
+        "canonical_name": "assess.probabilistic_sampling.window_ms"
+      },
+      {
+        "value": "ALL",
+        "name": "assess.stacktraces",
+        "canonical_name": "assess.stacktraces"
+      },
+      {
+        "value": "false",
+        "name": "protect.enable",
+        "canonical_name": "protect.enable"
+      },
+      {
+        "value": "monitor",
+        "name": "protect.rules.cmd-injection.mode",
+        "canonical_name": "protect.rules.cmd-injection.mode"
+      },
+      {
+        "value": "monitor",
+        "name": "protect.rules.cmd-injection-command-backdoors.mode",
+        "canonical_name": "protect.rules.cmd-injection-command-backdoors.mode"
+      },
+      {
+        "value": "monitor",
+        "name": "protect.rules.cmd-injection-semantic-chained-commands.mode",
+        "canonical_name": "protect.rules.cmd-injection-semantic-chained-commands.mode"
+      },
+      {
+        "value": "monitor",
+        "name": "protect.rules.cmd-injection-semantic-dangerous-paths.mode",
+        "canonical_name": "protect.rules.cmd-injection-semantic-dangerous-paths.mode"
+      },
+      {
+        "value": "monitor",
+        "name": "protect.rules.method-tampering.mode",
+        "canonical_name": "protect.rules.method-tampering.mode"
+      },
+      {
+        "value": "off",
+        "name": "protect.rules.nosql-injection.mode",
+        "canonical_name": "protect.rules.nosql-injection.mode"
+      },
+      {
+        "value": "monitor",
+        "name": "protect.rules.path-traversal.mode",
+        "canonical_name": "protect.rules.path-traversal.mode"
+      },
+      {
+        "value": "monitor",
+        "name": "protect.rules.path-traversal-semantic-file-security-bypass.mode",
+        "canonical_name": "protect.rules.path-traversal-semantic-file-security-bypass.mode"
+      },
+      {
+        "value": "off",
+        "name": "protect.rules.reflected-xss.mode",
+        "canonical_name": "protect.rules.reflected-xss.mode"
+      },
+      {
+        "value": "monitor",
+        "name": "protect.rules.sql-injection.mode",
+        "canonical_name": "protect.rules.sql-injection.mode"
+      },
+      {
+        "value": "monitor",
+        "name": "protect.rules.ssjs-injection.mode",
+        "canonical_name": "protect.rules.ssjs-injection.mode"
+      },
+      {
+        "value": "off",
+        "name": "protect.rules.unsafe-file-upload.mode",
+        "canonical_name": "protect.rules.unsafe-file-upload.mode"
+      },
+      {
+        "value": "monitor",
+        "name": "protect.rules.untrusted-deserialization.mode",
+        "canonical_name": "protect.rules.untrusted-deserialization.mode"
+      },
+      {
+        "value": "monitor",
+        "name": "protect.rules.xxe.mode",
+        "canonical_name": "protect.rules.xxe.mode"
+      },
+      {
+        "value": "862a6e0636ca10866f37e5e80c329a6c",
+        "name": "application.session_id",
+        "canonical_name": "application.session_id"
+      },
+      {
+        "value": "DEVELOPMENT",
+        "name": "server.environment",
+        "canonical_name": "server.environment"
+      }
+    ]
+  }
+}

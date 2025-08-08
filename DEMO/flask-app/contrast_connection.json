@@ -1,0 +1,586 @@
+{
+    "report_create": "2025-08-08T14:17:34.798494Z",
+    "config": {
+        "status": "Success",
+        "effective_config": [
+            {
+                "canonical_name": "api.token",
+                "name": "api.token",
+                "source": "USER_CONFIGURATION_FILE",
+                "value": "**REDACTED**",
+                "filename": "/etc/contrast/contrast_security.yaml"
+            },
+            {
+                "canonical_name": "api.request_audit.enable",
+                "name": "api.request_audit.enable",
+                "source": "DEFAULT_VALUE",
+                "value": "False"
+            },
+            {
+                "canonical_name": "api.request_audit.path",
+                "name": "api.request_audit.path",
+                "source": "DEFAULT_VALUE",
+                "value": "/demos/flask-app"
+            },
+            {
+                "canonical_name": "api.request_audit.requests",
+                "name": "api.request_audit.requests",
+                "source": "DEFAULT_VALUE",
+                "value": "False"
+            },
+            {
+                "canonical_name": "api.request_audit.responses",
+                "name": "api.request_audit.responses",
+                "source": "DEFAULT_VALUE",
+                "value": "False"
+            },
+            {
+                "canonical_name": "api.certificate.enable",
+                "name": "api.certificate.enable",
+                "source": "DEFAULT_VALUE",
+                "value": "True"
+            },
+            {
+                "canonical_name": "api.certificate.ignore_cert_errors",
+                "name": "api.certificate.ignore_cert_errors",
+                "source": "DEFAULT_VALUE",
+                "value": "False"
+            },
+            {
+                "canonical_name": "api.proxy.enable",
+                "name": "api.proxy.enable",
+                "source": "DEFAULT_VALUE",
+                "value": "False"
+            },
+            {
+                "canonical_name": "agent.logger.level",
+                "name": "agent.logger.level",
+                "source": "CONTRAST_UI",
+                "value": "ERROR"
+            },
+            {
+                "canonical_name": "agent.logger.path",
+                "name": "agent.logger.path",
+                "source": "DEFAULT_VALUE",
+                "value": "contrast-agent.log"
+            },
+            {
+                "canonical_name": "agent.logger.stdout",
+                "name": "agent.logger.stdout",
+                "source": "DEFAULT_VALUE",
+                "value": "False"
+            },
+            {
+                "canonical_name": "agent.logger.stderr",
+                "name": "agent.logger.stderr",
+                "source": "DEFAULT_VALUE",
+                "value": "False"
+            },
+            {
+                "canonical_name": "agent.logger.backups",
+                "name": "agent.logger.backups",
+                "source": "DEFAULT_VALUE",
+                "value": "10"
+            },
+            {
+                "canonical_name": "agent.logger.roll_size",
+                "name": "agent.logger.roll_size",
+                "source": "DEFAULT_VALUE",
+                "value": "100"
+            },
+            {
+                "canonical_name": "agent.logger.progname",
+                "name": "agent.logger.progname",
+                "source": "DEFAULT_VALUE",
+                "value": "Contrast Agent"
+            },
+            {
+                "canonical_name": "agent.security_logger.path",
+                "name": "agent.security_logger.path",
+                "source": "DEFAULT_VALUE",
+                "value": "security.log"
+            },
+            {
+                "canonical_name": "agent.security_logger.level",
+                "name": "agent.security_logger.level",
+                "source": "DEFAULT_VALUE",
+                "value": "INFO"
+            },
+            {
+                "canonical_name": "agent.security_logger.syslog.enable",
+                "name": "agent.security_logger.syslog.enable",
+                "source": "DEFAULT_VALUE",
+                "value": "False"
+            },
+            {
+                "canonical_name": "agent.security_logger.syslog.protocol",
+                "name": "agent.security_logger.syslog.protocol",
+                "source": "DEFAULT_VALUE",
+                "value": "UDP"
+            },
+            {
+                "canonical_name": "agent.security_logger.syslog.facility",
+                "name": "agent.security_logger.syslog.facility",
+                "source": "DEFAULT_VALUE",
+                "value": "19"
+            },
+            {
+                "canonical_name": "agent.security_logger.syslog.severity_exploited",
+                "name": "agent.security_logger.syslog.severity_exploited",
+                "source": "DEFAULT_VALUE",
+                "value": "ALERT"
+            },
+            {
+                "canonical_name": "agent.security_logger.syslog.severity_blocked",
+                "name": "agent.security_logger.syslog.severity_blocked",
+                "source": "DEFAULT_VALUE",
+                "value": "NOTICE"
+            },
+            {
+                "canonical_name": "agent.security_logger.syslog.severity_blocked_perimeter",
+                "name": "agent.security_logger.syslog.severity_blocked_perimeter",
+                "source": "DEFAULT_VALUE",
+                "value": "NOTICE"
+            },
+            {
+                "canonical_name": "agent.security_logger.syslog.severity_probed",
+                "name": "agent.security_logger.syslog.severity_probed",
+                "source": "DEFAULT_VALUE",
+                "value": "WARNING"
+            },
+            {
+                "canonical_name": "agent.security_logger.syslog.severity_suspicious",
+                "name": "agent.security_logger.syslog.severity_suspicious",
+                "source": "DEFAULT_VALUE",
+                "value": "WARNING"
+            },
+            {
+                "canonical_name": "agent.python.pytest_rewrite",
+                "name": "agent.python.pytest_rewrite",
+                "source": "DEFAULT_VALUE",
+                "value": "False"
+            },
+            {
+                "canonical_name": "agent.python.enable_profiler",
+                "name": "agent.python.enable_profiler",
+                "source": "DEFAULT_VALUE",
+                "value": "False"
+            },
+            {
+                "canonical_name": "agent.python.profiler.enable",
+                "name": "agent.python.profiler.enable",
+                "source": "DEFAULT_VALUE",
+                "value": "False"
+            },
+            {
+                "canonical_name": "agent.python.tracer.enable",
+                "name": "agent.python.tracer.enable",
+                "source": "DEFAULT_VALUE",
+                "value": "False"
+            },
+            {
+                "canonical_name": "agent.python.tracer.min_duration_ms",
+                "name": "agent.python.tracer.min_duration_ms",
+                "source": "DEFAULT_VALUE",
+                "value": "0.01"
+            },
+            {
+                "canonical_name": "agent.polling.app_settings_ms",
+                "name": "agent.polling.app_settings_ms",
+                "source": "DEFAULT_VALUE",
+                "value": "30000"
+            },
+            {
+                "canonical_name": "agent.polling.server_settings_ms",
+                "name": "agent.polling.server_settings_ms",
+                "source": "DEFAULT_VALUE",
+                "value": "30000"
+            },
+            {
+                "canonical_name": "agent.polling.heartbeat_ms",
+                "name": "agent.polling.heartbeat_ms",
+                "source": "DEFAULT_VALUE",
+                "value": "30000"
+            },
+            {
+                "canonical_name": "agent.route_coverage.report_on_error",
+                "name": "agent.route_coverage.report_on_error",
+                "source": "DEFAULT_VALUE",
+                "value": "False"
+            },
+            {
+                "canonical_name": "application.name",
+                "name": "application.name",
+                "source": "DEFAULT_VALUE",
+                "value": "flask-app"
+            },
+            {
+                "canonical_name": "application.path",
+                "name": "application.path",
+                "source": "DEFAULT_VALUE",
+                "value": "/"
+            },
+            {
+                "canonical_name": "application.session_id",
+                "name": "application.session_id",
+                "source": "CONTRAST_UI",
+                "value": "670e625cf6e78eee420417d4c1c81112"
+            },
+            {
+                "canonical_name": "assess.enable",
+                "name": "assess.enable",
+                "source": "CONTRAST_UI",
+                "value": "True"
+            },
+            {
+                "canonical_name": "assess.enable_scan_response",
+                "name": "assess.enable_scan_response",
+                "source": "DEFAULT_VALUE",
+                "value": "True"
+            },
+            {
+                "canonical_name": "assess.sampling.enable",
+                "name": "assess.sampling.enable",
+                "source": "CONTRAST_UI",
+                "value": "False"
+            },
+            {
+                "canonical_name": "assess.sampling.baseline",
+                "name": "assess.sampling.baseline",
+                "source": "CONTRAST_UI",
+                "value": "0"
+            },
+            {
+                "canonical_name": "assess.sampling.request_frequency",
+                "name": "assess.sampling.request_frequency",
+                "source": "CONTRAST_UI",
+                "value": "0"
+            },
+            {
+                "canonical_name": "assess.sampling.window_ms",
+                "name": "assess.sampling.window_ms",
+                "source": "DEFAULT_VALUE",
+                "value": "180000"
+            },
+            {
+                "canonical_name": "assess.rules.disabled_rules",
+                "name": "assess.rules.disabled_rules",
+                "source": "CONTRAST_UI",
+                "value": "['hsts-header-missing', 'insecure-auth-protocol', 'ldap-injection', 'csp-header-insecure', 'authorization-missing-deny', 'x-powered-by-header', 'csrf', 'wcf-exception-details', 'trace-enabled', 'weak-membership-config', 'hardcoded-key', 'xxssprotection-header-disabled', 'cookie-header-missing-flags', 'header-injection', 'event-validation-disabled', 'reflection-injection', 'trace-enabled-aspx', 'wcf-metadata-enabled', 'insecure-socket-factory', 'header-checking-disabled', 'insecure-jsp-access', 'smtp-injection', 'verb-tampering', 'http-only-disabled', 'wcf-detect-replays', 'session-regenerate', 'nosql-injection-dynamodb', 'role-manager-protection', 'jndi-injection', 'request-validation-control-disabled', 'forms-auth-ssl', 'unsafe-xml-decode', 'unvalidated-forward', 'xcontenttype-header-missing', 'hql-injection', 'graphql-introspection', 'csp-header-missing', 'redos', 'forms-auth-redirect', 'crypto-weak-randomness', 'version-header-enabled', 'authorization-rules-misordered', 'overly-permissive-cross-domain-policy', 'role-manager-ssl', 'viewstate-mac-disabled', 'compilation-debug', 'viewstate-encryption-disabled', 'cache-control-disabled', 'forms-auth-protection', 'request-validation-disabled', 'unsafe-readline', 'plaintext-conn-strings', 'graphql-dos', 'log-injection', 'expression-language-injection', 'spring-unchecked-autobinding', 'cookie-flags-missing', 'graphql-field-visibility', 'custom-errors-off', 'max-request-length', 'hardcoded-password', 'rails-http-only-disabled']"
+            },
+            {
+                "canonical_name": "assess.stacktraces",
+                "name": "assess.stacktraces",
+                "source": "DEFAULT_VALUE",
+                "value": "ALL"
+            },
+            {
+                "canonical_name": "assess.max_context_source_events",
+                "name": "assess.max_context_source_events",
+                "source": "DEFAULT_VALUE",
+                "value": "100"
+            },
+            {
+                "canonical_name": "assess.max_propagation_events",
+                "name": "assess.max_propagation_events",
+                "source": "DEFAULT_VALUE",
+                "value": "2000"
+            },
+            {
+                "canonical_name": "assess.time_limit_threshold",
+                "name": "assess.time_limit_threshold",
+                "source": "DEFAULT_VALUE",
+                "value": "300000"
+            },
+            {
+                "canonical_name": "assess.max_rule_reported",
+                "name": "assess.max_rule_reported",
+                "source": "DEFAULT_VALUE",
+                "value": "100"
+            },
+            {
+                "canonical_name": "assess.event_detail",
+                "name": "assess.event_detail",
+                "source": "DEFAULT_VALUE",
+                "value": "minimal"
+            },
+            {
+                "canonical_name": "inventory.analyze_libraries",
+                "name": "inventory.analyze_libraries",
+                "source": "DEFAULT_VALUE",
+                "value": "True"
+            },
+            {
+                "canonical_name": "inventory.enable",
+                "name": "inventory.enable",
+                "source": "DEFAULT_VALUE",
+                "value": "True"
+            },
+            {
+                "canonical_name": "observe.enable",
+                "name": "observe.enable",
+                "source": "DEFAULT_VALUE",
+                "value": "False"
+            },
+            {
+                "canonical_name": "protect.enable",
+                "name": "protect.enable",
+                "source": "CONTRAST_UI",
+                "value": "False"
+            },
+            {
+                "canonical_name": "protect.probe_analysis.enable",
+                "name": "protect.probe_analysis.enable",
+                "source": "DEFAULT_VALUE",
+                "value": "True"
+            },
+            {
+                "canonical_name": "protect.samples.probed",
+                "name": "protect.samples.probed",
+                "source": "DEFAULT_VALUE",
+                "value": "50"
+            },
+            {
+                "canonical_name": "protect.samples.blocked",
+                "name": "protect.samples.blocked",
+                "source": "DEFAULT_VALUE",
+                "value": "25"
+            },
+            {
+                "canonical_name": "protect.samples.exploited",
+                "name": "protect.samples.exploited",
+                "source": "DEFAULT_VALUE",
+                "value": "100"
+            },
+            {
+                "canonical_name": "protect.samples.blocked_at_perimeter",
+                "name": "protect.samples.blocked_at_perimeter",
+                "source": "DEFAULT_VALUE",
+                "value": "25"
+            },
+            {
+                "canonical_name": "protect.rules.bot-blocker.enable",
+                "name": "protect.rules.bot-blocker.enable",
+                "source": "DEFAULT_VALUE",
+                "value": "False"
+            },
+            {
+                "canonical_name": "protect.rules.cmd-injection.mode",
+                "name": "protect.rules.cmd-injection.mode",
+                "source": "CONTRAST_UI",
+                "value": "MONITOR"
+            },
+            {
+                "canonical_name": "protect.rules.method-tampering.mode",
+                "name": "protect.rules.method-tampering.mode",
+                "source": "CONTRAST_UI",
+                "value": "MONITOR"
+            },
+            {
+                "canonical_name": "protect.rules.nosql-injection.mode",
+                "name": "protect.rules.nosql-injection.mode",
+                "source": "CONTRAST_UI",
+                "value": "OFF"
+            },
+            {
+                "canonical_name": "protect.rules.path-traversal.mode",
+                "name": "protect.rules.path-traversal.mode",
+                "source": "CONTRAST_UI",
+                "value": "MONITOR"
+            },
+            {
+                "canonical_name": "protect.rules.reflected-xss.mode",
+                "name": "protect.rules.reflected-xss.mode",
+                "source": "CONTRAST_UI",
+                "value": "OFF"
+            },
+            {
+                "canonical_name": "protect.rules.sql-injection.mode",
+                "name": "protect.rules.sql-injection.mode",
+                "source": "CONTRAST_UI",
+                "value": "MONITOR"
+            },
+            {
+                "canonical_name": "protect.rules.ssrf.mode",
+                "name": "protect.rules.ssrf.mode",
+                "source": "CONTRAST_UI",
+                "value": "OFF"
+            },
+            {
+                "canonical_name": "protect.rules.unsafe-file-upload.mode",
+                "name": "protect.rules.unsafe-file-upload.mode",
+                "source": "CONTRAST_UI",
+                "value": "OFF"
+            },
+            {
+                "canonical_name": "protect.rules.untrusted-deserialization.mode",
+                "name": "protect.rules.untrusted-deserialization.mode",
+                "source": "CONTRAST_UI",
+                "value": "MONITOR"
+            },
+            {
+                "canonical_name": "protect.rules.xxe.mode",
+                "name": "protect.rules.xxe.mode",
+                "source": "CONTRAST_UI",
+                "value": "MONITOR"
+            },
+            {
+                "canonical_name": "reporting.contrast.enable",
+                "name": "reporting.contrast.enable",
+                "source": "DEFAULT_VALUE",
+                "value": "True"
+            },
+            {
+                "canonical_name": "reporting.logging.stdout",
+                "name": "reporting.logging.stdout",
+                "source": "DEFAULT_VALUE",
+                "value": "False"
+            },
+            {
+                "canonical_name": "reporting.observe.enable",
+                "name": "reporting.observe.enable",
+                "source": "DEFAULT_VALUE",
+                "value": "False"
+            },
+            {
+                "canonical_name": "enable",
+                "name": "enable",
+                "source": "DEFAULT_VALUE",
+                "value": "True"
+            },
+            {
+                "canonical_name": "server.name",
+                "name": "server.name",
+                "source": "DEFAULT_VALUE",
+                "value": "91afbd2f1e4e"
+            },
+            {
+                "canonical_name": "server.discover_cloud_resource",
+                "name": "server.discover_cloud_resource",
+                "source": "DEFAULT_VALUE",
+                "value": "True"
+            },
+            {
+                "canonical_name": "server.path",
+                "name": "server.path",
+                "source": "DEFAULT_VALUE",
+                "value": "/"
+            },
+            {
+                "canonical_name": "server.environment",
+                "name": "server.environment",
+                "source": "CONTRAST_UI",
+                "value": "DEVELOPMENT"
+            }
+        ],
+        "user_configuration_file": [
+            {
+                "path": "/etc/contrast/contrast_security.yaml",
+                "values": [
+                    {
+                        "canonical_name": "api.token",
+                        "name": "api.token",
+                        "value": "**REDACTED**"
+                    }
+                ]
+            }
+        ],
+        "contrast_ui": [
+            {
+                "canonical_name": "agent.logger.level",
+                "name": "agent.logger.level",
+                "value": "ERROR"
+            },
+            {
+                "canonical_name": "application.session_id",
+                "name": "application.session_id",
+                "value": "670e625cf6e78eee420417d4c1c81112"
+            },
+            {
+                "canonical_name": "assess.enable",
+                "name": "assess.enable",
+                "value": "True"
+            },
+            {
+                "canonical_name": "assess.sampling.enable",
+                "name": "assess.sampling.enable",
+                "value": "False"
+            },
+            {
+                "canonical_name": "assess.sampling.baseline",
+                "name": "assess.sampling.baseline",
+                "value": "0"
+            },
+            {
+                "canonical_name": "assess.sampling.request_frequency",
+                "name": "assess.sampling.request_frequency",
+                "value": "0"
+            },
+            {
+                "canonical_name": "assess.rules.disabled_rules",
+                "name": "assess.rules.disabled_rules",
+                "value": "['hsts-header-missing', 'insecure-auth-protocol', 'ldap-injection', 'csp-header-insecure', 'authorization-missing-deny', 'x-powered-by-header', 'csrf', 'wcf-exception-details', 'trace-enabled', 'weak-membership-config', 'hardcoded-key', 'xxssprotection-header-disabled', 'cookie-header-missing-flags', 'header-injection', 'event-validation-disabled', 'reflection-injection', 'trace-enabled-aspx', 'wcf-metadata-enabled', 'insecure-socket-factory', 'header-checking-disabled', 'insecure-jsp-access', 'smtp-injection', 'verb-tampering', 'http-only-disabled', 'wcf-detect-replays', 'session-regenerate', 'nosql-injection-dynamodb', 'role-manager-protection', 'jndi-injection', 'request-validation-control-disabled', 'forms-auth-ssl', 'unsafe-xml-decode', 'unvalidated-forward', 'xcontenttype-header-missing', 'hql-injection', 'graphql-introspection', 'csp-header-missing', 'redos', 'forms-auth-redirect', 'crypto-weak-randomness', 'version-header-enabled', 'authorization-rules-misordered', 'overly-permissive-cross-domain-policy', 'role-manager-ssl', 'viewstate-mac-disabled', 'compilation-debug', 'viewstate-encryption-disabled', 'cache-control-disabled', 'forms-auth-protection', 'request-validation-disabled', 'unsafe-readline', 'plaintext-conn-strings', 'graphql-dos', 'log-injection', 'expression-language-injection', 'spring-unchecked-autobinding', 'cookie-flags-missing', 'graphql-field-visibility', 'custom-errors-off', 'max-request-length', 'hardcoded-password', 'rails-http-only-disabled']"
+            },
+            {
+                "canonical_name": "protect.enable",
+                "name": "protect.enable",
+                "value": "False"
+            },
+            {
+                "canonical_name": "protect.rules.cmd-injection.mode",
+                "name": "protect.rules.cmd-injection.mode",
+                "value": "MONITOR"
+            },
+            {
+                "canonical_name": "protect.rules.method-tampering.mode",
+                "name": "protect.rules.method-tampering.mode",
+                "value": "MONITOR"
+            },
+            {
+                "canonical_name": "protect.rules.nosql-injection.mode",
+                "name": "protect.rules.nosql-injection.mode",
+                "value": "OFF"
+            },
+            {
+                "canonical_name": "protect.rules.path-traversal.mode",
+                "name": "protect.rules.path-traversal.mode",
+                "value": "MONITOR"
+            },
+            {
+                "canonical_name": "protect.rules.reflected-xss.mode",
+                "name": "protect.rules.reflected-xss.mode",
+                "value": "OFF"
+            },
+            {
+                "canonical_name": "protect.rules.sql-injection.mode",
+                "name": "protect.rules.sql-injection.mode",
+                "value": "MONITOR"
+            },
+            {
+                "canonical_name": "protect.rules.ssrf.mode",
+                "name": "protect.rules.ssrf.mode",
+                "value": "OFF"
+            },
+            {
+                "canonical_name": "protect.rules.unsafe-file-upload.mode",
+                "name": "protect.rules.unsafe-file-upload.mode",
+                "value": "OFF"
+            },
+            {
+                "canonical_name": "protect.rules.untrusted-deserialization.mode",
+                "name": "protect.rules.untrusted-deserialization.mode",
+                "value": "MONITOR"
+            },
+            {
+                "canonical_name": "protect.rules.xxe.mode",
+                "name": "protect.rules.xxe.mode",
+                "value": "MONITOR"
+            },
+            {
+                "canonical_name": "server.environment",
+                "name": "server.environment",
+                "value": "DEVELOPMENT"
+            }
+        ]
+    }
+}

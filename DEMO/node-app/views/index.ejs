@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .nav-link {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        
+        .nav-link:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1><%= title %></h1>
+
+        <div style="text-align: center; margin: 20px 0;">
+            <a href="/api/hello" class="nav-link">Hello API</a>
+            <a href="/api/info" class="nav-link">System Info</a>
+            <a href="/health" class="nav-link">Health Check</a>
+            <a href="/contrast-info" class="nav-link">Contrast Info</a>
+        </div>
+
+        <div style="background: rgba(255, 255, 255, 0.1); padding: 20px; border-radius: 10px; margin: 20px 0;">
+            <h2>Welcome to the Node.js Demo Application</h2>
+            <p>This application demonstrates the Contrast Flex Agent running with a Node.js Express web application.</p>
+            
+            <h3>Available Features:</h3>
+            <ul>
+                <li><strong>System Information API</strong> - View server details</li>
+                <li><strong>Health Check</strong> - Application health monitoring</li>
+                <li><strong>Vulnerable Endpoints</strong> - Intentional vulnerabilities for security testing</li>
+                <li><strong>Contrast Agent</strong> - Real-time security monitoring</li>
+            </ul>
+            
+            <h3>Security Testing:</h3>
+            <p>This application contains intentional vulnerabilities to demonstrate security monitoring capabilities:</p>
+            <ul>
+                <li>Path Traversal (File Read)</li>
+                <li>Command Injection</li>
+                <li>System Command Execution</li>
+            </ul>
+            
+            <div style="background: rgba(255, 255, 0, 0.2); padding: 10px; border-radius: 5px; margin: 10px 0;">
+                <strong>⚠️ Warning:</strong> This application contains intentional security vulnerabilities for demonstration purposes only. Do not use in production environments.
+            </div>
+        </div>
+
+        <div style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.2); padding: 20px; border-radius: 10px; margin: 20px 0;">
+            <h2>Security Vulnerability Testing</h2>
+            <p style="color: #000000; margin-bottom: 20px;">The following endpoints demonstrate common security vulnerabilities for testing and educational purposes.</p>
+            
+            <div style="margin: 20px 0;">
+                <h3 style="color: #000000; margin-bottom: 10px;">Path Traversal Testing</h3>
+                <p style="color: #000000; font-size: 0.9em; margin-bottom: 10px;">Test directory traversal vulnerabilities by accessing files outside the intended directory.</p>
+                <div style="margin: 10px 0;">
+                    <a href="/vulnerable/file-read?filename=package.json" style="color: #007bff; margin: 5px 15px 5px 0; text-decoration: underline;">Read package.json</a>
+                    <a href="/vulnerable/file-read?filename=/etc/passwd" style="color: #007bff; margin: 5px 15px 5px 0; text-decoration: underline;">Read /etc/passwd</a>
+                    <a href="/vulnerable/file-read?filename=../../../etc/hosts" style="color: #007bff; margin: 5px 15px 5px 0; text-decoration: underline;">Read ../../../etc/hosts</a>
+                </div>
+            </div>
+            
+            <div style="margin: 20px 0;">
+                <h3 style="color: #000000; margin-bottom: 10px;">Command Injection Testing</h3>
+                <p style="color: #000000; font-size: 0.9em; margin-bottom: 10px;">Test command injection vulnerabilities by executing arbitrary system commands.</p>
+                <div style="margin: 10px 0;">
+                    <a href="/vulnerable/command?cmd=whoami" style="color: #007bff; margin: 5px 15px 5px 0; text-decoration: underline;">Execute: whoami</a>
+                    <a href="/vulnerable/command?cmd=ls%20-la" style="color: #007bff; margin: 5px 15px 5px 0; text-decoration: underline;">Execute: ls -la</a>
+                    <a href="/vulnerable/command?cmd=ps%20aux" style="color: #007bff; margin: 5px 15px 5px 0; text-decoration: underline;">Execute: ps aux</a>
+                    <a href="/vulnerable/command?cmd=uname%20-a" style="color: #007bff; margin: 5px 15px 5px 0; text-decoration: underline;">Execute: uname -a</a>
+                </div>
+            </div>
+            
+            <div style="margin: 20px 0;">
+                <h3 style="color: #000000; margin-bottom: 10px;">Network Command Injection Testing</h3>
+                <p style="color: #000000; font-size: 0.9em; margin-bottom: 10px;">Test command injection through network utilities like ping.</p>
+                <div style="margin: 10px 0;">
+                    <a href="/vulnerable/ping?host=localhost" style="color: #007bff; margin: 5px 15px 5px 0; text-decoration: underline;">Ping: localhost</a>
+                    <a href="/vulnerable/ping?host=localhost%3B%20whoami" style="color: #007bff; margin: 5px 15px 5px 0; text-decoration: underline;">Ping: localhost; whoami</a>
+                    <a href="/vulnerable/ping?host=localhost%20%7C%20id" style="color: #007bff; margin: 5px 15px 5px 0; text-decoration: underline;">Ping: localhost | id</a>
+                </div>
+            </div>
+            
+            <div style="background: rgba(255, 193, 7, 0.1); border: 1px solid #ffc107; padding: 15px; border-radius: 5px; margin: 20px 0;">
+                <p style="color: #ffc107; margin: 0; font-weight: bold;">Notice: These endpoints contain intentional security vulnerabilities for demonstration and testing purposes only.</p>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin: 30px 0; color: #000000;">
+            <p>Updated: <%= timestamp %></p>
+        </div>
+    </div>
+</body>
+</html>

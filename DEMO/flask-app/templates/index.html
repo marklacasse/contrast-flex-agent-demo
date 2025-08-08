@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask Demo App</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .feature-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+        .api-section {
+            margin: 30px 0;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+        }
+        .api-link {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+        .api-link:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.05);
+        }
+        .info-display {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+        }
+        button {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🐍 Flask Demo Application</h1>
+        
+        <div class="feature-grid">
+            <div class="feature-card">
+                <h3>🌐 Web Framework</h3>
+                <p>Built with Flask - Python's lightweight web framework</p>
+            </div>
+            <div class="feature-card">
+                <h3>🔧 System Info</h3>
+                <p>Real-time system and environment information</p>
+            </div>
+            <div class="feature-card">
+                <h3>📡 REST API</h3>
+                <p>JSON endpoints for integration and testing</p>
+            </div>
+            <div class="feature-card">
+                <h3>🎨 Modern UI</h3>
+                <p>Responsive design with CSS3 animations</p>
+            </div>
+        </div>
+
+        <div class="api-section">
+            <h3>🔗 Available Endpoints:</h3>
+            <a href="/health" class="api-link">Health Check</a>
+            <a href="/api/info" class="api-link">System Info API</a>
+            <a href="/api/hello/World" class="api-link">Hello API</a>
+            <a href="/contrast-demo" class="api-link">Contrast Demo</a>
+            <a href="/vulnerable/demo" class="api-link" style="background: rgba(255, 0, 0, 0.3);">⚠️ Vulnerable Endpoints</a>
+        </div>
+
+        <div class="info-display">
+            <h3>📊 Live System Information:</h3>
+            <button onclick="loadSystemInfo()">🔄 Refresh System Info</button>
+            <div id="systemInfo">Click the button to load system information...</div>
+        </div>
+
+        <div class="api-section">
+            <h3>🧪 Test the API:</h3>
+            <input type="text" id="nameInput" placeholder="Enter your name" style="padding: 10px; border-radius: 5px; border: none; margin-right: 10px;">
+            <button onclick="sayHello()">👋 Say Hello</button>
+            <div id="helloResult" style="margin-top: 10px;"></div>
+        </div>
+    </div>
+
+    <script>
+        async function loadSystemInfo() {
+            try {
+                const response = await fetch('/api/info');
+                const data = await response.json();
+                document.getElementById('systemInfo').innerHTML = `
+                    <strong>Timestamp:</strong> ${data.timestamp}<br>
+                    <strong>Platform:</strong> ${data.platform}<br>
+                    <strong>Python Version:</strong> ${data.python_version}<br>
+                    <strong>Hostname:</strong> ${data.hostname}<br>
+                    <strong>Architecture:</strong> ${data.architecture}<br>
+                    <strong>Java Home:</strong> ${data.environment_vars.JAVA_HOME}<br>
+                    <strong>Path (first 5):</strong> ${data.environment_vars.PATH.join(', ')}
+                `;
+            } catch (error) {
+                document.getElementById('systemInfo').innerHTML = 'Error loading system info: ' + error.message;
+            }
+        }
+
+        async function sayHello() {
+            const name = document.getElementById('nameInput').value || 'Anonymous';
+            try {
+                const response = await fetch(`/api/hello/${encodeURIComponent(name)}`);
+                const data = await response.json();
+                document.getElementById('helloResult').innerHTML = `
+                    <div style="background: rgba(0, 255, 0, 0.2); padding: 10px; border-radius: 5px; margin-top: 10px;">
+                        <strong>Response:</strong> ${data.message}<br>
+                        <strong>Time:</strong> ${data.timestamp}
+                    </div>
+                `;
+            } catch (error) {
+                document.getElementById('helloResult').innerHTML = `
+                    <div style="background: rgba(255, 0, 0, 0.2); padding: 10px; border-radius: 5px; margin-top: 10px;">
+                        Error: ${error.message}
+                    </div>
+                `;
+            }
+        }
+
+        // Auto-load system info on page load
+        window.onload = () => loadSystemInfo();
+    </script>
+</body>
+</html>

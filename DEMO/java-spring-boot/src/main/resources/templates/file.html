@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Operations - Contrast Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .header {
+            background: linear-gradient(135deg, #f44336 0%, #d32f2f 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .warning {
+            background: #ffebee;
+            border: 1px solid #f8bbd9;
+            color: #c62828;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            background: #f44336;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #d32f2f;
+        }
+        .file-content {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            padding: 15px;
+            border-radius: 4px;
+            white-space: pre-wrap;
+            font-family: monospace;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        .back-link {
+            display: inline-block;
+            background: #6c757d;
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+        .back-link:hover {
+            background: #5a6268;
+        }
+    </style>
+</head>
+<body>
+    <a th:href="@{/}" class="back-link">← Back to Home</a>
+
+    <div class="header">
+        <h1>📁 File Operations</h1>
+        <p>⚠️ Vulnerable File Reading Functionality</p>
+    </div>
+
+    <div class="warning">
+        <strong>Security Warning:</strong> This file reading function is intentionally vulnerable to path traversal attacks for security testing purposes. In a production environment, file access would be properly restricted.
+    </div>
+
+    <div class="card">
+        <h3>Read File Contents</h3>
+        <form th:action="@{/file}" method="get">
+            <div class="form-group">
+                <label for="filename">File Path:</label>
+                <input type="text" id="filename" name="filename" th:value="${filename}" placeholder="Enter file path (e.g., /etc/passwd, ../../../etc/hosts)">
+            </div>
+            <button type="submit">Read File</button>
+        </form>
+    </div>
+
+    <div class="card" th:if="${filename}">
+        <h3>File Contents: "<span th:text="${filename}"></span>"</h3>
+        <div class="file-content" th:text="${fileContent}">File content will appear here...</div>
+    </div>
+
+    <div class="card">
+        <h3>💡 Security Testing Examples</h3>
+        <p>Try these file paths to test path traversal detection:</p>
+        <ul>
+            <li><code>/etc/passwd</code> - System user file (Unix/Linux)</li>
+            <li><code>../../../etc/hosts</code> - Network hosts file</li>
+            <li><code>/proc/version</code> - System version information</li>
+            <li><code>application.properties</code> - Application configuration</li>
+            <li><code>pom.xml</code> - Maven project file</li>
+        </ul>
+        <p><em>Note: File access is limited to what the application has permissions to read.</em></p>
+    </div>
+</body>
+</html>
