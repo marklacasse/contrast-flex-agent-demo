@@ -9,9 +9,9 @@ IMAGE_NAME="demo-ubuntu"
 DEMO_DIR="./DEMO"
 
 # Load personal configuration if available
-if [ -f "config.local.sh" ]; then
-    echo "📝 Loading personal configuration from config.local.sh"
-    source config.local.sh
+if [ -f "config.local" ]; then
+    echo "📝 Loading personal configuration from config.local"
+    source config.local
 fi
 
 # Function to show usage
@@ -19,8 +19,8 @@ show_usage() {
     echo "Usage: $0 [AGENT_TOKEN]"
     echo ""
     echo "Setup Instructions:"
-    echo "  1. Copy config template: cp config.template.sh config.local.sh"
-    echo "  2. Edit config.local.sh with your Contrast agent token"
+    echo "  1. Copy config template: cp config.template config.local"
+    echo "  2. Edit config.local with your Contrast agent token"
     echo "  3. Run this script"
     echo ""
     echo "Options:"
@@ -30,7 +30,7 @@ show_usage() {
     echo "  CONTRAST_AGENT_TOKEN    Alternative way to provide the agent token"
     echo ""
     echo "Examples:"
-    echo "  $0                                    # Use token from config.local.sh"
+    echo "  $0                                    # Use token from config.local"
     echo "  $0 <base64-token>                     # Use provided token"
     echo "  CONTRAST_AGENT_TOKEN=<token> $0       # Use environment variable"
     echo ""
@@ -59,8 +59,8 @@ else
     echo "❌ No Contrast agent token provided!"
     echo ""
     echo "To get started:"
-    echo "  1. Copy the config template: cp config.template.sh config.local.sh"
-    echo "  2. Edit config.local.sh and add your Contrast agent token"
+    echo "  1. Copy the config template: cp config.template config.local"
+    echo "  2. Edit config.local and add your Contrast agent token"
     echo "  3. Run this script again"
     echo ""
     echo "Get your token from: Contrast TeamServer -> Organization Settings -> Agent"

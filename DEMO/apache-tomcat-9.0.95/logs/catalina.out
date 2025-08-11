@@ -1,0 +1,334 @@
+NOTE: Picked up JDK_JAVA_OPTIONS:  --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.util.concurrent=ALL-UNNAMED --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+Picked up JAVA_TOOL_OPTIONS:  -javaagent:/usr/bin/contrast-flex-agent/flex-agents/java/6.20.1/contrast.jar 
+[Contrast] Mon Aug 11 13:23:17 UTC 2025 Loading pre-packaged configuration
+[Contrast] Mon Aug 11 13:23:17 UTC 2025 Couldn't find pre-packaged configuration.
+[Contrast] Mon Aug 11 13:23:17 UTC 2025 Starting Contrast (build 6.20.1) Pat. 8,458,789 B2
+[Contrast] Mon Aug 11 13:23:17 UTC 2025 Contrast logger configuration errors will be logged to stderr
+[Contrast] Mon Aug 11 13:23:17 UTC 2025 Copyright: 2025 Contrast Security, Inc
+[Contrast] Mon Aug 11 13:23:17 UTC 2025 Contact: support@contrastsecurity.com
+[Contrast] Mon Aug 11 13:23:17 UTC 2025 License: Commercial
+[Contrast] Mon Aug 11 13:23:17 UTC 2025 NOTICE: This Software and the patented inventions embodied within may only be used as part of
+[Contrast] Mon Aug 11 13:23:17 UTC 2025 Contrast Security's commercial offerings. Even though it is made available through public
+[Contrast] Mon Aug 11 13:23:17 UTC 2025 repositories, use of this Software is subject to the applicable End User Licensing Agreement
+[Contrast] Mon Aug 11 13:23:17 UTC 2025 found at https://www.contrastsecurity.com/enduser-terms-0317a or as otherwise agreed between
+[Contrast] Mon Aug 11 13:23:17 UTC 2025 Contrast Security and the End User. The Software may not be reverse engineered, modified,
+[Contrast] Mon Aug 11 13:23:17 UTC 2025 repackaged, sold, redistributed or otherwise used in a way not consistent with the End User
+[Contrast] Mon Aug 11 13:23:17 UTC 2025 License Agreement.
+[Contrast] Mon Aug 11 13:23:17 UTC 2025 The Contrast Java agent collects usage data in order to help us improve compatibility and security coverage.
+[Contrast] Mon Aug 11 13:23:17 UTC 2025 The data is anonymous and does not contain application data. It is collected by Contrast and is never shared.
+[Contrast] Mon Aug 11 13:23:17 UTC 2025 You can opt-out of telemetry by setting the CONTRAST_AGENT_TELEMETRY_OPTOUT environment variable to 'true' or '1'
+[Contrast] Mon Aug 11 13:23:17 UTC 2025 Read more about Contrast Java agent telemetry: https://docs.contrastsecurity.com/en/java-telemetry.html
+[Contrast] Mon Aug 11 13:23:18 UTC 2025 Effective instructions: Assess=true, Protect=false, Observe=false
+[Contrast] Mon Aug 11 13:23:18 UTC 2025 Contrast logger configuration errors will be logged to stderr
+[Contrast] Mon Aug 11 13:23:33 UTC 2025 Starting JVM [16623ms]
+[Contrast] Mon Aug 11 13:23:33 UTC 2025 Contrast engine started.
+11-Aug-2025 13:23:34.275 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.95
+11-Aug-2025 13:23:34.278 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Sep 13 2024 18:07:47 UTC
+11-Aug-2025 13:23:34.279 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.95.0
+11-Aug-2025 13:23:34.279 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+11-Aug-2025 13:23:34.279 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            6.10.14-linuxkit
+11-Aug-2025 13:23:34.279 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          aarch64
+11-Aug-2025 13:23:34.280 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-11-openjdk-arm64
+11-Aug-2025 13:23:34.280 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           11.0.28+6-post-Ubuntu-1ubuntu124.04.1
+11-Aug-2025 13:23:34.280 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Ubuntu
+11-Aug-2025 13:23:34.280 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /demos/apache-tomcat-9.0.95
+11-Aug-2025 13:23:34.281 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /demos/apache-tomcat-9.0.95
+11-Aug-2025 13:23:34.281 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -javaagent:/usr/bin/contrast-flex-agent/flex-agents/java/6.20.1/contrast.jar
+11-Aug-2025 13:23:34.281 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+11-Aug-2025 13:23:34.282 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+11-Aug-2025 13:23:34.282 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+11-Aug-2025 13:23:34.282 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+11-Aug-2025 13:23:34.282 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+11-Aug-2025 13:23:34.283 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/demos/apache-tomcat-9.0.95/conf/logging.properties
+11-Aug-2025 13:23:34.283 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+11-Aug-2025 13:23:34.283 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+11-Aug-2025 13:23:34.283 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+11-Aug-2025 13:23:34.284 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+11-Aug-2025 13:23:34.284 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+11-Aug-2025 13:23:34.284 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/demos/apache-tomcat-9.0.95
+11-Aug-2025 13:23:34.284 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/demos/apache-tomcat-9.0.95
+11-Aug-2025 13:23:34.284 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/demos/apache-tomcat-9.0.95/temp
+11-Aug-2025 13:23:34.286 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib/aarch64-linux-gnu/jni:/lib/aarch64-linux-gnu:/usr/lib/aarch64-linux-gnu:/usr/lib/jni:/lib:/usr/lib]
+11-Aug-2025 13:23:34.481 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+11-Aug-2025 13:23:34.494 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [451] milliseconds
+11-Aug-2025 13:23:34.546 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+11-Aug-2025 13:23:34.547 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.95]
+11-Aug-2025 13:23:34.564 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/demos/apache-tomcat-9.0.95/webapps/contrast-demo.war]
+11-Aug-2025 13:23:37.281 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::               (v2.7.18)
+
+2025-08-11 13:23:38.036  INFO 220 --- [           main] c.contrast.demo.ContrastDemoApplication  : Starting ContrastDemoApplication v1.0.0 using Java 11.0.28 on f73444fc704e with PID 220 (/demos/apache-tomcat-9.0.95/webapps/contrast-demo/WEB-INF/classes started by root in /demos)
+2025-08-11 13:23:38.042 DEBUG 220 --- [           main] c.contrast.demo.ContrastDemoApplication  : Running with Spring Boot v2.7.18, Spring v5.3.31
+2025-08-11 13:23:38.043  INFO 220 --- [           main] c.contrast.demo.ContrastDemoApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-08-11 13:23:39.541  INFO 220 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-11 13:23:39.610  INFO 220 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 56 ms. Found 1 JPA repository interfaces.
+2025-08-11 13:23:40.010  INFO 220 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1914 ms
+2025-08-11 13:23:40.163  INFO 220 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-08-11 13:23:40.709  INFO 220 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-08-11 13:23:40.725  INFO 220 --- [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2025-08-11 13:23:40.879  INFO 220 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-11 13:23:40.986  INFO 220 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2025-08-11 13:23:41.260  INFO 220 --- [           main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-08-11 13:23:41.534  INFO 220 --- [           main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2025-08-11 13:23:42.517  INFO 220 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-08-11 13:23:42.534  INFO 220 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-11 13:23:43.112  WARN 220 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-11 13:23:43.264 DEBUG 220 --- [           main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-08-11 13:23:43.359  INFO 220 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-08-11 13:23:43.424 DEBUG 220 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : 11 mappings in 'requestMappingHandlerMapping'
+2025-08-11 13:23:43.447 DEBUG 220 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2025-08-11 13:23:43.458 DEBUG 220 --- [           main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-08-11 13:23:43.590  INFO 220 --- [           main] c.contrast.demo.ContrastDemoApplication  : Started ContrastDemoApplication in 6.091 seconds (JVM running for 26.374)
+11-Aug-2025 13:23:43.657 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/demos/apache-tomcat-9.0.95/webapps/contrast-demo.war] has finished in [9,093] ms
+11-Aug-2025 13:23:43.658 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/demos/apache-tomcat-9.0.95/webapps/ROOT]
+11-Aug-2025 13:23:43.673 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/demos/apache-tomcat-9.0.95/webapps/ROOT] has finished in [15] ms
+11-Aug-2025 13:23:43.678 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+11-Aug-2025 13:23:43.690 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [9195] milliseconds
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by com.contrastsecurity.agent.util.VMArguments (file:/usr/bin/contrast-flex-agent/flex-agents/java/6.20.1/contrast.jar) to method sun.management.ManagementFactoryHelper.getVMManagement()
+WARNING: Please consider reporting this to the maintainers of com.contrastsecurity.agent.util.VMArguments
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+2025-08-11 13:25:51.492  INFO 220 --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-08-11 13:25:51.493 DEBUG 220 --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2025-08-11 13:25:51.493 DEBUG 220 --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2025-08-11 13:25:51.493 DEBUG 220 --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2025-08-11 13:25:51.494 DEBUG 220 --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@411fe4b
+2025-08-11 13:25:51.494 DEBUG 220 --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@4c5081f0
+2025-08-11 13:25:51.494 DEBUG 220 --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2025-08-11 13:25:51.494  INFO 220 --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-08-11 13:25:51.548 DEBUG 220 --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/contrast-demo/", parameters={}
+2025-08-11 13:25:51.560 DEBUG 220 --- [nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.contrast.demo.controller.DemoController#home(Model)
+2025-08-11 13:25:51.601 DEBUG 220 --- [nio-8080-exec-2] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.7, */*;q=0.8]
+2025-08-11 13:25:52.370 DEBUG 220 --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-08-11 13:25:54.528 DEBUG 220 --- [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/contrast-demo/command", parameters={}
+2025-08-11 13:25:54.530 DEBUG 220 --- [nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.contrast.demo.controller.DemoController#commandExecution(String, Model)
+2025-08-11 13:25:54.547 DEBUG 220 --- [nio-8080-exec-3] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.7, */*;q=0.8]
+2025-08-11 13:25:54.561 DEBUG 220 --- [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-08-11 13:25:57.573 DEBUG 220 --- [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/contrast-demo/", parameters={}
+2025-08-11 13:25:57.575 DEBUG 220 --- [nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.contrast.demo.controller.DemoController#home(Model)
+2025-08-11 13:25:57.577 DEBUG 220 --- [nio-8080-exec-4] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.7, */*;q=0.8]
+2025-08-11 13:25:57.582 DEBUG 220 --- [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-08-11 13:25:58.614 DEBUG 220 --- [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/contrast-demo/users", parameters={}
+2025-08-11 13:25:58.616 DEBUG 220 --- [nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.contrast.demo.controller.DemoController#listUsers(Model)
+Hibernate: 
+    select
+        user0_.id as id1_0_,
+        user0_.comment as comment2_0_,
+        user0_.email as email3_0_,
+        user0_.name as name4_0_ 
+    from
+        users user0_
+2025-08-11 13:25:58.910 DEBUG 220 --- [nio-8080-exec-5] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.7, */*;q=0.8]
+2025-08-11 13:25:58.955 DEBUG 220 --- [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-08-11 13:26:01.681 DEBUG 220 --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/contrast-demo/search", parameters={}
+2025-08-11 13:26:01.682 DEBUG 220 --- [nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.contrast.demo.controller.DemoController#search(String, Model)
+2025-08-11 13:26:01.684 DEBUG 220 --- [nio-8080-exec-6] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.7, */*;q=0.8]
+2025-08-11 13:26:01.691 DEBUG 220 --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-08-11 13:26:04.524 DEBUG 220 --- [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/contrast-demo/search?query=test", parameters={masked}
+2025-08-11 13:26:04.526 DEBUG 220 --- [nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.contrast.demo.controller.DemoController#search(String, Model)
+Hibernate: 
+    SELECT
+        * 
+    FROM
+        users 
+    WHERE
+        name LIKE '%:query%' 
+        OR email LIKE '%:query%'
+2025-08-11 13:26:04.610 DEBUG 220 --- [nio-8080-exec-7] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.7, */*;q=0.8]
+2025-08-11 13:26:04.616 DEBUG 220 --- [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-08-11 13:26:09.353 DEBUG 220 --- [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/contrast-demo/users", parameters={}
+2025-08-11 13:26:09.355 DEBUG 220 --- [nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.contrast.demo.controller.DemoController#listUsers(Model)
+Hibernate: 
+    select
+        user0_.id as id1_0_,
+        user0_.comment as comment2_0_,
+        user0_.email as email3_0_,
+        user0_.name as name4_0_ 
+    from
+        users user0_
+2025-08-11 13:26:09.359 DEBUG 220 --- [nio-8080-exec-8] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.7, */*;q=0.8]
+2025-08-11 13:26:09.366 DEBUG 220 --- [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-08-11 13:26:28.371 DEBUG 220 --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : POST "/contrast-demo/users", parameters={masked}
+2025-08-11 13:26:28.373 DEBUG 220 --- [io-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.contrast.demo.controller.DemoController#createUser(User, BindingResult, Model)
+Hibernate: 
+    insert 
+    into
+        users
+        (id, comment, email, name) 
+    values
+        (default, ?, ?, ?)
+2025-08-11 13:26:28.802 DEBUG 220 --- [io-8080-exec-10] o.s.web.servlet.view.RedirectView        : View name 'redirect:', model {}
+2025-08-11 13:26:28.804 DEBUG 220 --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-08-11 13:26:28.813 DEBUG 220 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/contrast-demo/users", parameters={}
+2025-08-11 13:26:28.815 DEBUG 220 --- [nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.contrast.demo.controller.DemoController#listUsers(Model)
+Hibernate: 
+    select
+        user0_.id as id1_0_,
+        user0_.comment as comment2_0_,
+        user0_.email as email3_0_,
+        user0_.name as name4_0_ 
+    from
+        users user0_
+2025-08-11 13:26:28.817 DEBUG 220 --- [nio-8080-exec-1] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.7, */*;q=0.8]
+2025-08-11 13:26:28.827 DEBUG 220 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-08-11 13:26:32.412 DEBUG 220 --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/contrast-demo/", parameters={}
+2025-08-11 13:26:32.413 DEBUG 220 --- [nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.contrast.demo.controller.DemoController#home(Model)
+2025-08-11 13:26:32.414 DEBUG 220 --- [nio-8080-exec-2] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.7, */*;q=0.8]
+2025-08-11 13:26:32.417 DEBUG 220 --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-08-11 13:26:34.054 DEBUG 220 --- [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/contrast-demo/info", parameters={}
+2025-08-11 13:26:34.056 DEBUG 220 --- [nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.contrast.demo.controller.DemoController#getSystemInfo(HttpServletRequest)
+2025-08-11 13:26:34.118 DEBUG 220 --- [nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Using 'text/html', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.7, */*;q=0.8] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+2025-08-11 13:26:34.119 DEBUG 220 --- [nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Writing ["Application: Java Spring Boot Demo<EOL>Framework: Spring Boot 2.7.18<EOL>Java Version: 11.0.28<EOL>OS: Linux<EOL>Ser (truncated)..."]
+2025-08-11 13:26:34.128 DEBUG 220 --- [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-08-11 13:26:36.806 DEBUG 220 --- [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/contrast-demo/command", parameters={}
+2025-08-11 13:26:36.808 DEBUG 220 --- [nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.contrast.demo.controller.DemoController#commandExecution(String, Model)
+2025-08-11 13:26:36.809 DEBUG 220 --- [nio-8080-exec-4] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.7, */*;q=0.8]
+2025-08-11 13:26:36.813 DEBUG 220 --- [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-08-11 13:26:38.697 DEBUG 220 --- [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/contrast-demo/command?cmd=test", parameters={masked}
+2025-08-11 13:26:38.699 DEBUG 220 --- [nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.contrast.demo.controller.DemoController#commandExecution(String, Model)
+2025-08-11 13:26:38.732 DEBUG 220 --- [nio-8080-exec-5] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.7, */*;q=0.8]
+2025-08-11 13:26:38.737 DEBUG 220 --- [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-08-11 13:26:40.474 DEBUG 220 --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/contrast-demo/command?cmd=test", parameters={masked}
+2025-08-11 13:26:40.475 DEBUG 220 --- [nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.contrast.demo.controller.DemoController#commandExecution(String, Model)
+2025-08-11 13:26:40.482 DEBUG 220 --- [nio-8080-exec-6] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.7, */*;q=0.8]
+2025-08-11 13:26:40.486 DEBUG 220 --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-08-11 13:26:40.952 DEBUG 220 --- [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/contrast-demo/command?cmd=test", parameters={masked}
+2025-08-11 13:26:40.953 DEBUG 220 --- [nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.contrast.demo.controller.DemoController#commandExecution(String, Model)
+2025-08-11 13:26:40.958 DEBUG 220 --- [nio-8080-exec-7] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.7, */*;q=0.8]
+2025-08-11 13:26:40.962 DEBUG 220 --- [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-08-11 13:26:41.196 DEBUG 220 --- [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/contrast-demo/command?cmd=test", parameters={masked}
+2025-08-11 13:26:41.197 DEBUG 220 --- [nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.contrast.demo.controller.DemoController#commandExecution(String, Model)
+2025-08-11 13:26:41.204 DEBUG 220 --- [nio-8080-exec-8] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.7, */*;q=0.8]
+2025-08-11 13:26:41.207 DEBUG 220 --- [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-08-11 13:26:50.735 DEBUG 220 --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/contrast-demo/", parameters={}
+2025-08-11 13:26:50.736 DEBUG 220 --- [io-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.contrast.demo.controller.DemoController#home(Model)
+2025-08-11 13:26:50.737 DEBUG 220 --- [io-8080-exec-10] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.7, */*;q=0.8]
+2025-08-11 13:26:50.741 DEBUG 220 --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-08-11 13:26:52.119 DEBUG 220 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/contrast-demo/file", parameters={}
+2025-08-11 13:26:52.121 DEBUG 220 --- [nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.contrast.demo.controller.DemoController#fileOperations(String, Model)
+2025-08-11 13:26:52.124 DEBUG 220 --- [nio-8080-exec-1] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.7, */*;q=0.8]
+2025-08-11 13:26:52.133 DEBUG 220 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-08-11 13:26:54.523 DEBUG 220 --- [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/contrast-demo/file?filename=test", parameters={masked}
+2025-08-11 13:26:54.524 DEBUG 220 --- [nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.contrast.demo.controller.DemoController#fileOperations(String, Model)
+2025-08-11 13:26:54.532 DEBUG 220 --- [nio-8080-exec-4] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.7, */*;q=0.8]
+2025-08-11 13:26:54.538 DEBUG 220 --- [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-08-11 13:26:57.779 DEBUG 220 --- [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/contrast-demo/", parameters={}
+2025-08-11 13:26:57.780 DEBUG 220 --- [nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.contrast.demo.controller.DemoController#home(Model)
+2025-08-11 13:26:57.781 DEBUG 220 --- [nio-8080-exec-5] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.7, */*;q=0.8]
+2025-08-11 13:26:57.784 DEBUG 220 --- [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-08-11 13:26:59.838 DEBUG 220 --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/contrast-demo/", parameters={}
+2025-08-11 13:26:59.839 DEBUG 220 --- [nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.contrast.demo.controller.DemoController#home(Model)
+2025-08-11 13:26:59.841 DEBUG 220 --- [nio-8080-exec-6] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.7, */*;q=0.8]
+2025-08-11 13:26:59.845 DEBUG 220 --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+11-Aug-2025 13:27:06.854 INFO [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+11-Aug-2025 13:27:06.855 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+11-Aug-2025 13:27:06.856 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+11-Aug-2025 13:27:06.902 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+11-Aug-2025 13:27:06.916 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+NOTE: Picked up JDK_JAVA_OPTIONS:  --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.util.concurrent=ALL-UNNAMED --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+Picked up JAVA_TOOL_OPTIONS:  -javaagent:/usr/bin/contrast-flex-agent/flex-agents/java/6.20.1/contrast.jar 
+[Contrast] Mon Aug 11 14:00:16 UTC 2025 Loading pre-packaged configuration
+[Contrast] Mon Aug 11 14:00:16 UTC 2025 Couldn't find pre-packaged configuration.
+[Contrast] Mon Aug 11 14:00:16 UTC 2025 Starting Contrast (build 6.20.1) Pat. 8,458,789 B2
+[Contrast] Mon Aug 11 14:00:17 UTC 2025 Contrast logger configuration errors will be logged to stderr
+[Contrast] Mon Aug 11 14:00:17 UTC 2025 Copyright: 2025 Contrast Security, Inc
+[Contrast] Mon Aug 11 14:00:17 UTC 2025 Contact: support@contrastsecurity.com
+[Contrast] Mon Aug 11 14:00:17 UTC 2025 License: Commercial
+[Contrast] Mon Aug 11 14:00:17 UTC 2025 NOTICE: This Software and the patented inventions embodied within may only be used as part of
+[Contrast] Mon Aug 11 14:00:17 UTC 2025 Contrast Security's commercial offerings. Even though it is made available through public
+[Contrast] Mon Aug 11 14:00:17 UTC 2025 repositories, use of this Software is subject to the applicable End User Licensing Agreement
+[Contrast] Mon Aug 11 14:00:17 UTC 2025 found at https://www.contrastsecurity.com/enduser-terms-0317a or as otherwise agreed between
+[Contrast] Mon Aug 11 14:00:17 UTC 2025 Contrast Security and the End User. The Software may not be reverse engineered, modified,
+[Contrast] Mon Aug 11 14:00:17 UTC 2025 repackaged, sold, redistributed or otherwise used in a way not consistent with the End User
+[Contrast] Mon Aug 11 14:00:17 UTC 2025 License Agreement.
+[Contrast] Mon Aug 11 14:00:17 UTC 2025 The Contrast Java agent collects usage data in order to help us improve compatibility and security coverage.
+[Contrast] Mon Aug 11 14:00:17 UTC 2025 The data is anonymous and does not contain application data. It is collected by Contrast and is never shared.
+[Contrast] Mon Aug 11 14:00:17 UTC 2025 You can opt-out of telemetry by setting the CONTRAST_AGENT_TELEMETRY_OPTOUT environment variable to 'true' or '1'
+[Contrast] Mon Aug 11 14:00:17 UTC 2025 Read more about Contrast Java agent telemetry: https://docs.contrastsecurity.com/en/java-telemetry.html
+[Contrast] Mon Aug 11 14:00:17 UTC 2025 Effective instructions: Assess=true, Protect=false, Observe=false
+[Contrast] Mon Aug 11 14:00:17 UTC 2025 Contrast logger configuration errors will be logged to stderr
+[Contrast] Mon Aug 11 14:00:35 UTC 2025 Starting JVM [18511ms]
+[Contrast] Mon Aug 11 14:00:35 UTC 2025 Contrast engine started.
+11-Aug-2025 14:00:35.591 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.95
+11-Aug-2025 14:00:35.593 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Sep 13 2024 18:07:47 UTC
+11-Aug-2025 14:00:35.593 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.95.0
+11-Aug-2025 14:00:35.594 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+11-Aug-2025 14:00:35.594 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            6.10.14-linuxkit
+11-Aug-2025 14:00:35.594 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          aarch64
+11-Aug-2025 14:00:35.594 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-11-openjdk-arm64
+11-Aug-2025 14:00:35.594 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           11.0.28+6-post-Ubuntu-1ubuntu124.04.1
+11-Aug-2025 14:00:35.595 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Ubuntu
+11-Aug-2025 14:00:35.595 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /demos/apache-tomcat-9.0.95
+11-Aug-2025 14:00:35.595 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /demos/apache-tomcat-9.0.95
+11-Aug-2025 14:00:35.596 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -javaagent:/usr/bin/contrast-flex-agent/flex-agents/java/6.20.1/contrast.jar
+11-Aug-2025 14:00:35.596 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+11-Aug-2025 14:00:35.596 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+11-Aug-2025 14:00:35.596 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+11-Aug-2025 14:00:35.596 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+11-Aug-2025 14:00:35.597 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+11-Aug-2025 14:00:35.597 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/demos/apache-tomcat-9.0.95/conf/logging.properties
+11-Aug-2025 14:00:35.598 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+11-Aug-2025 14:00:35.598 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+11-Aug-2025 14:00:35.598 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+11-Aug-2025 14:00:35.598 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+11-Aug-2025 14:00:35.599 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+11-Aug-2025 14:00:35.599 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/demos/apache-tomcat-9.0.95
+11-Aug-2025 14:00:35.599 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/demos/apache-tomcat-9.0.95
+11-Aug-2025 14:00:35.599 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/demos/apache-tomcat-9.0.95/temp
+11-Aug-2025 14:00:35.602 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib/aarch64-linux-gnu/jni:/lib/aarch64-linux-gnu:/usr/lib/aarch64-linux-gnu:/usr/lib/jni:/lib:/usr/lib]
+11-Aug-2025 14:00:35.820 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+11-Aug-2025 14:00:35.841 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [468] milliseconds
+11-Aug-2025 14:00:35.903 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+11-Aug-2025 14:00:35.903 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.95]
+11-Aug-2025 14:00:35.930 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/demos/apache-tomcat-9.0.95/webapps/contrast-demo.war]
+11-Aug-2025 14:00:35.956 INFO [main] org.apache.catalina.startup.ExpandWar.expand An expanded directory [/demos/apache-tomcat-9.0.95/webapps/contrast-demo] was found with a last modified time that did not match the associated WAR. It will be deleted.
+11-Aug-2025 14:00:38.981 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::               (v2.7.18)
+
+2025-08-11 14:00:39.775  INFO 78 --- [           main] c.contrast.demo.ContrastDemoApplication  : Starting ContrastDemoApplication v1.0.0 using Java 11.0.28 on 311569aad007 with PID 78 (/demos/apache-tomcat-9.0.95/webapps/contrast-demo/WEB-INF/classes started by root in /demos)
+2025-08-11 14:00:39.777 DEBUG 78 --- [           main] c.contrast.demo.ContrastDemoApplication  : Running with Spring Boot v2.7.18, Spring v5.3.31
+2025-08-11 14:00:39.778  INFO 78 --- [           main] c.contrast.demo.ContrastDemoApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-08-11 14:00:41.410  INFO 78 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-11 14:00:41.489  INFO 78 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 64 ms. Found 1 JPA repository interfaces.
+2025-08-11 14:00:41.945  INFO 78 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2105 ms
+2025-08-11 14:00:42.102  INFO 78 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-08-11 14:00:42.665  INFO 78 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-08-11 14:00:42.684  INFO 78 --- [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2025-08-11 14:00:42.907  INFO 78 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-11 14:00:43.054  INFO 78 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2025-08-11 14:00:43.333  INFO 78 --- [           main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-08-11 14:00:43.574  INFO 78 --- [           main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2025-08-11 14:00:44.685  INFO 78 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-08-11 14:00:44.704  INFO 78 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-11 14:00:45.367  WARN 78 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-11 14:00:45.541 DEBUG 78 --- [           main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-08-11 14:00:45.619  INFO 78 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-08-11 14:00:45.706 DEBUG 78 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : 11 mappings in 'requestMappingHandlerMapping'
+2025-08-11 14:00:45.735 DEBUG 78 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2025-08-11 14:00:45.748 DEBUG 78 --- [           main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-08-11 14:00:45.897  INFO 78 --- [           main] c.contrast.demo.ContrastDemoApplication  : Started ContrastDemoApplication in 6.682 seconds (JVM running for 29.247)
+11-Aug-2025 14:00:45.968 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/demos/apache-tomcat-9.0.95/webapps/contrast-demo.war] has finished in [10,039] ms
+11-Aug-2025 14:00:45.970 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/demos/apache-tomcat-9.0.95/webapps/ROOT]
+11-Aug-2025 14:00:45.987 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/demos/apache-tomcat-9.0.95/webapps/ROOT] has finished in [18] ms
+11-Aug-2025 14:00:45.991 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+11-Aug-2025 14:00:46.015 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [10173] milliseconds
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by com.contrastsecurity.agent.util.VMArguments (file:/usr/bin/contrast-flex-agent/flex-agents/java/6.20.1/contrast.jar) to method sun.management.ManagementFactoryHelper.getVMManagement()
+WARNING: Please consider reporting this to the maintainers of com.contrastsecurity.agent.util.VMArguments
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release

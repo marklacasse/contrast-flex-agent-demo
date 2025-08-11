@@ -1,6 +1,6 @@
 {
-  "reportDate": "2025-08-08T14:17:34.563Z",
-  "hostname": "91afbd2f1e4e",
+  "reportDate": "2025-08-11T13:28:16.481Z",
+  "hostname": "f73444fc704e",
   "contrast": {
     "url": "https://teamserver-staging-agents.contsec.com/Contrast",
     "proxy": {
@@ -8,7 +8,7 @@
       "url": null
     },
     "server": {
-      "name": "91afbd2f1e4e"
+      "name": "f73444fc704e"
     },
     "agent": {
       "name": "@contrast/agent",
@@ -21,10 +21,10 @@
     "memory": {
       "total": "4.05 GB",
       "totalBytes": 4345298944,
-      "used": "26.95 MB",
-      "usedBytes": 28255376,
+      "used": "26.59 MB",
+      "usedBytes": 27880384,
       "free": "4.02 GB",
-      "freeBytes": 4317043568
+      "freeBytes": 4317418560
     }
   },
   "os": {
@@ -61,7 +61,7 @@
   "host": {
     "docker": {
       "isDocker": true,
-      "containerId": "91afbd2f1e4ee4687ad024072ece0be1527ccaa12fb3573adbc121d0bcc146da"
+      "containerId": "f73444fc704e93ee56531c67074938b7c88c07c95ee48ae8d43cca062520ee28"
     },
     "kubernetes": {
       "isKubernetes": false

@@ -24,11 +24,11 @@ cd contrast-flex-agent-demo
 2. **Configure your Contrast agent token:**
 ```bash
 # Copy the configuration template
-cp config.template.sh config.local.sh
+cp config.template config.local
 
-# Edit config.local.sh and add your token
+# Edit config.local and add your token
 # Get your token from: Contrast TeamServer -> Organization Settings -> Agent
-nano config.local.sh  # or use your preferred editor
+nano config.local  # or use your preferred editor
 ```
 
 3. **Start the demo:**
@@ -48,7 +48,7 @@ That's it! The script will:
 4. Make all scripts executable automatically
 
 ### Security Note
-- Your personal configuration (`config.local.sh`) is automatically git-ignored
+- Your personal configuration (`config.local`) is automatically git-ignored
 - Never commit your actual Contrast agent token to version control
 
 ## 📚 Demo Applications

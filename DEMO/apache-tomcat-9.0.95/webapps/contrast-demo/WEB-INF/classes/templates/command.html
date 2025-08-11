@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Command Execution - Contrast Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .header {
+            background: linear-gradient(135deg, #9c27b0 0%, #673ab7 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .warning {
+            background: #fce4ec;
+            border: 1px solid #f8bbd9;
+            color: #880e4f;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            background: #9c27b0;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #7b1fa2;
+        }
+        .command-output {
+            background: #263238;
+            color: #4caf50;
+            border: 1px solid #37474f;
+            padding: 15px;
+            border-radius: 4px;
+            white-space: pre-wrap;
+            font-family: monospace;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        .back-link {
+            display: inline-block;
+            background: #6c757d;
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+        .back-link:hover {
+            background: #5a6268;
+        }
+    </style>
+</head>
+<body>
+    <a th:href="@{/}" class="back-link">← Back to Home</a>
+
+    <div class="header">
+        <h1>⚡ Command Execution</h1>
+        <p>⚠️ Vulnerable Command Execution Functionality</p>
+    </div>
+
+    <div class="warning">
+        <strong>Security Warning:</strong> This command execution function is intentionally vulnerable to command injection attacks for security testing purposes. In a production environment, command execution would be properly sanitized and restricted.
+    </div>
+
+    <div class="card">
+        <h3>Execute System Command</h3>
+        <form th:action="@{/command}" method="get">
+            <div class="form-group">
+                <label for="cmd">Command:</label>
+                <input type="text" id="cmd" name="cmd" th:value="${command}" placeholder="Enter system command (e.g., ls, whoami, uname -a)">
+            </div>
+            <button type="submit">Execute Command</button>
+        </form>
+    </div>
+
+    <div class="card" th:if="${command}">
+        <h3>Command Output: "<span th:text="${command}"></span>"</h3>
+        <div class="command-output" th:text="${commandOutput}">Command output will appear here...</div>
+    </div>
+
+    <div class="card">
+        <h3>💡 Security Testing Examples</h3>
+        <p>Try these commands to test command injection detection:</p>
+        <ul>
+            <li><code>ls</code> - List directory contents</li>
+            <li><code>whoami</code> - Show current user</li>
+            <li><code>uname -a</code> - System information</li>
+            <li><code>ps aux</code> - Running processes</li>
+            <li><code>cat /etc/passwd</code> - Read system file</li>
+            <li><code>ls; cat /etc/hosts</code> - Command chaining</li>
+            <li><code>ls && whoami</code> - Conditional execution</li>
+            <li><code>ls | grep java</code> - Command piping</li>
+        </ul>
+        <p><em>Note: Command execution is limited to what the application has permissions to run.</em></p>
+    </div>
+</body>
+</html>

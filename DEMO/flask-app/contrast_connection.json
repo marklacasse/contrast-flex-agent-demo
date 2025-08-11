@@ -1,5 +1,5 @@
 {
-    "report_create": "2025-08-08T14:17:34.798494Z",
+    "report_create": "2025-08-11T13:27:25.596777Z",
     "config": {
         "status": "Success",
         "effective_config": [
@@ -452,7 +452,7 @@
                 "canonical_name": "server.name",
                 "name": "server.name",
                 "source": "DEFAULT_VALUE",
-                "value": "91afbd2f1e4e"
+                "value": "f73444fc704e"
             },
             {
                 "canonical_name": "server.discover_cloud_resource",
