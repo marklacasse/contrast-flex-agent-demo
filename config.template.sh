@@ -14,6 +14,3 @@ PERSONAL_AGENT_TOKEN="YOUR_BASE64_TOKEN_HERE"
 
 # Export for use by run-demo.sh
 export CONTRAST_AGENT_TOKEN="$PERSONAL_AGENT_TOKEN"
-
-# Example token format (this is just an example, not a real token):
-# PERSONAL_AGENT_TOKEN="ewogICJhcGlfa2V5IiA6ICJ5b3VyLWFwaS1rZXkiLAogICJzZXJ2aWNlX2tleSIgOiAieW91ci1zZXJ2aWNlLWtleSIsCiAgInVybCIgOiAiaHR0cHM6Ly95b3VyLXRlYW1zZXJ2ZXItdXJsIiwKICAidXNlcl9uYW1lIiA6ICJ5b3VyLXVzZXItbmFtZSIKfQ=="

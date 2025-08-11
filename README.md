@@ -342,16 +342,3 @@ For detailed troubleshooting information:
 ```bash
 DEBUG=1 ./demo-control.sh all status
 ```
-
-## 📞 Support
-
-This demo environment provides:
-- ✅ Professional, consistent UI across all applications
-- ✅ Comprehensive vulnerability testing capabilities  
-- ✅ Unified management via single control script
-- ✅ Robust process detection and management
-- ✅ Cross-platform compatibility (Mac/Linux/Windows)
-- ✅ Automatic script permissions handling
-- ✅ Debug and troubleshooting features
-
-Perfect for Contrast Security demonstrations, training, and proof-of-concept scenarios! 🚀

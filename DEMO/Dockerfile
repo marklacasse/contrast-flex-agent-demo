@@ -92,8 +92,8 @@ WORKDIR /demos
 # Set execute permissions on scripts when copied to container
 # This ensures scripts work regardless of host OS permissions
 RUN echo '#!/bin/bash' > /usr/local/bin/fix-permissions.sh && \
-    echo 'chmod +x /demos/*.sh 2>/dev/null || true' >> /usr/local/bin/fix-permissions.sh && \
-    echo 'chmod +x /demos/demo-control.sh 2>/dev/null || true' >> /usr/local/bin/fix-permissions.sh && \
+    echo 'chmod +x /DEMO/*.sh 2>/dev/null || true' >> /usr/local/bin/fix-permissions.sh && \
+    echo 'chmod +x /DEMO/demo-control.sh 2>/dev/null || true' >> /usr/local/bin/fix-permissions.sh && \
     chmod +x /usr/local/bin/fix-permissions.sh
 
 # Keep container running
