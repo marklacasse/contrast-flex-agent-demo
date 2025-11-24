@@ -1,0 +1,29 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DEMO", "DEMO", "{A39C23D2-F2C0-258D-165A-CF1E7FEE6E7B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotnetDemo", "DEMO\dotnet-app\DotnetDemo.csproj", "{49E0FC09-ACD5-37C8-8D8E-F8FD74E49141}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{49E0FC09-ACD5-37C8-8D8E-F8FD74E49141}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49E0FC09-ACD5-37C8-8D8E-F8FD74E49141}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49E0FC09-ACD5-37C8-8D8E-F8FD74E49141}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49E0FC09-ACD5-37C8-8D8E-F8FD74E49141}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{49E0FC09-ACD5-37C8-8D8E-F8FD74E49141} = {A39C23D2-F2C0-258D-165A-CF1E7FEE6E7B}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {776C9504-2132-452C-827F-6495C98FF14A}
+	EndGlobalSection
+EndGlobal

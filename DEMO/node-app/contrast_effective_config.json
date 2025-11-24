@@ -1,5 +1,5 @@
 {
-  "report_create": "2025-08-11T13:28:16.842Z",
+  "report_create": "2025-10-01T20:49:44.607Z",
   "config": {
     "status": "Success",
     "effective_config": [
@@ -34,7 +34,7 @@
         "source": "USER_CONFIGURATION_FILE"
       },
       {
-        "value": "agent_eb45b651-ab5f-4bbb-9cc0-961b3c6d819c_default",
+        "value": "agent_eb45b651-ab5f-4bbb-9cc0-961b3c6d819c_DEMO",
         "name": "api.user_name",
         "canonical_name": "api.user_name",
         "source": "USER_CONFIGURATION_FILE"
@@ -658,7 +658,7 @@
         "source": "DEFAULT_VALUE"
       },
       {
-        "value": "f73444fc704e",
+        "value": "3e8c47e6a65f",
         "name": "server.name",
         "canonical_name": "server.name",
         "source": "DEFAULT_VALUE"

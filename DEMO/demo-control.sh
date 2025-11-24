@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Unified Demo Application Control Script
-# Manages all demo applications: Python Flask, .NET Core, Node.js Express, and Java Tomcat
+# Manages all demo applications: Python Flask, .NET Core, Node.js Express, Java Tomcat, and PHP Drupal
 
 set -e
 
@@ -11,6 +11,7 @@ APPS[python]="python-flask:9090:/demos/flask-app:python3 app.py"
 APPS[node]="node-express:3030:/demos/node-app:npm start"
 APPS[netcore]="dotnet-core:8181:/demos/dotnet-app:dotnet run"
 APPS[tomcat]="tomcat-java:8080:.:./apache-tomcat-9.0.95/bin/startup.sh"
+APPS[drupal]="drupal-php:7070:/demos/drupal-app:bash /demos/drupal-app/start.sh"
 
 # Colors for output
 RED='\033[0;31m'
@@ -126,6 +127,11 @@ start_app() {
             sleep 2
             nohup ./apache-tomcat-9.0.95/bin/startup.sh > "$log_file" 2>&1 &
             ;;
+        drupal)
+            print_status $GREEN "🐘 Starting Drupal with Apache..."
+            cd "$directory"
+            bash /demos/drupal-app/start.sh > "$log_file" 2>&1
+            ;;
     esac
     
     # For non-node apps, capture the PID normally
@@ -137,7 +143,7 @@ start_app() {
     # Wait a moment and verify startup
     sleep 3
     
-    # Special verification for Tomcat since startup.sh exits after launching
+    # Special verification for Tomcat and Drupal since they have different startup patterns
     if [ "$app" = "tomcat" ]; then
         # For Tomcat, check if Tomcat process is running and port is active
         local tomcat_running=false
@@ -159,6 +165,28 @@ start_app() {
         else
             print_status $RED "❌ Failed to start $app_name"
             rm -f "$pid_file"
+            return 1
+        fi
+    elif [ "$app" = "drupal" ]; then
+        # For Drupal, check if Apache is running on the port
+        local drupal_running=false
+        local attempts=0
+        while [ $attempts -lt 10 ]; do
+            local apache_pids=$(pgrep -f "apache2" 2>/dev/null || true)
+            local port_pids=$(lsof -ti:$port 2>/dev/null || true)
+            if [ ! -z "$apache_pids" ] || [ ! -z "$port_pids" ]; then
+                drupal_running=true
+                break
+            fi
+            sleep 1
+            attempts=$((attempts + 1))
+        done
+        
+        if [ "$drupal_running" = true ]; then
+            print_status $GREEN "✅ $app_name started successfully"
+            print_status $BLUE "🌐 Access at: http://localhost:$port"
+        else
+            print_status $RED "❌ Failed to start $app_name"
             return 1
         fi
     else
@@ -230,6 +258,17 @@ stop_app() {
             local port_pids=$(lsof -ti:$port 2>/dev/null || true)
             if [ ! -z "$port_pids" ]; then
                 print_status $YELLOW "🔍 Force killing Tomcat processes on port $port"
+                echo "$port_pids" | xargs kill -9 2>/dev/null || true
+            fi
+            ;;
+        drupal)
+            # Special handling for Drupal/Apache
+            bash /demos/drupal-app/stop.sh > /dev/null 2>&1 || true
+            sleep 2
+            # Also kill by port if stop script didn't work
+            local port_pids=$(lsof -ti:$port 2>/dev/null || true)
+            if [ ! -z "$port_pids" ]; then
+                print_status $YELLOW "🔍 Force killing Apache processes on port $port"
                 echo "$port_pids" | xargs kill -9 2>/dev/null || true
             fi
             ;;
@@ -516,6 +555,7 @@ show_usage() {
     echo "  node     - Node.js Express application (port 3030)"
     echo "  netcore  - .NET Core application (port 8181)"
     echo "  tomcat   - Apache Tomcat application (port 8080)"
+    echo "  drupal   - PHP Drupal 11 application (port 7070)"
     echo "  all      - All applications"
     echo ""
     echo "Commands:"
@@ -530,6 +570,7 @@ show_usage() {
     echo "  $0 python stop          # Stop Python application"
     echo "  $0 netcore restart      # Restart .NET Core application"
     echo "  $0 tomcat status        # Show Tomcat application status"
+    echo "  $0 drupal start         # Start Drupal application"
     echo "  $0 node logs            # Show Node.js application logs"
     echo "  $0 all start            # Start all applications"
     echo "  $0 all status           # Show status of all applications"
@@ -539,6 +580,7 @@ show_usage() {
     echo "  Node.js:  http://localhost:3030"
     echo "  .NET:     http://localhost:8181"
     echo "  Tomcat:   http://localhost:8080/contrast-demo"
+    echo "  Drupal:   http://localhost:7070/contrast-demo"
 }
 
 # Main script logic
@@ -551,7 +593,7 @@ APP=$1
 COMMAND=$2
 
 case "$APP" in
-    python|node|netcore|tomcat)
+    python|node|netcore|tomcat|drupal)
         case "$COMMAND" in
             start)
                 start_app $APP

@@ -1,0 +1,27 @@
+# Drupal dependencies
+/vendor/
+/web/
+
+# Composer files
+composer.lock
+
+# SQLite database
+*.sqlite
+
+# Drupal files and directories
+/config/sync/
+files/
+sites/*/files/
+sites/*/private/
+
+# Settings files with sensitive data
+sites/*/settings.local.php
+sites/*/services*.yml
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.cache
+.DS_Store

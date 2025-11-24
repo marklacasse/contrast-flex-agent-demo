@@ -1,5 +1,5 @@
 {
-    "report_create": "2025-11-24T19:10:21.839163Z",
+    "report_create": "2025-10-02T17:02:49.858816Z",
     "config": {
         "status": "Success",
         "effective_config": [
@@ -20,7 +20,7 @@
                 "canonical_name": "api.request_audit.path",
                 "name": "api.request_audit.path",
                 "source": "DEFAULT_VALUE",
-                "value": "/demos/flask-app"
+                "value": "/demos"
             },
             {
                 "canonical_name": "api.request_audit.requests",
@@ -89,6 +89,12 @@
                 "value": "100"
             },
             {
+                "canonical_name": "agent.logger.progname",
+                "name": "agent.logger.progname",
+                "source": "DEFAULT_VALUE",
+                "value": "Contrast Agent"
+            },
+            {
                 "canonical_name": "agent.security_logger.path",
                 "name": "agent.security_logger.path",
                 "source": "DEFAULT_VALUE",
@@ -149,6 +155,12 @@
                 "value": "WARNING"
             },
             {
+                "canonical_name": "agent.python.pytest_rewrite",
+                "name": "agent.python.pytest_rewrite",
+                "source": "DEFAULT_VALUE",
+                "value": "False"
+            },
+            {
                 "canonical_name": "agent.python.enable_profiler",
                 "name": "agent.python.enable_profiler",
                 "source": "DEFAULT_VALUE",
@@ -200,7 +212,7 @@
                 "canonical_name": "application.name",
                 "name": "application.name",
                 "source": "DEFAULT_VALUE",
-                "value": "flask-app"
+                "value": "demos"
             },
             {
                 "canonical_name": "application.path",
@@ -212,7 +224,7 @@
                 "canonical_name": "application.session_id",
                 "name": "application.session_id",
                 "source": "CONTRAST_UI",
-                "value": "aec1ebd1e46b41cb9da8659d7b12ff44"
+                "value": "db559ffb2224ad6f5aa58a42ca8e1960"
             },
             {
                 "canonical_name": "assess.enable",
@@ -434,7 +446,7 @@
                 "canonical_name": "server.name",
                 "name": "server.name",
                 "source": "DEFAULT_VALUE",
-                "value": "94040c4c498b"
+                "value": "6e27f16d3ad8"
             },
             {
                 "canonical_name": "server.discover_cloud_resource",
@@ -476,7 +488,7 @@
             {
                 "canonical_name": "application.session_id",
                 "name": "application.session_id",
-                "value": "aec1ebd1e46b41cb9da8659d7b12ff44"
+                "value": "db559ffb2224ad6f5aa58a42ca8e1960"
             },
             {
                 "canonical_name": "assess.enable",

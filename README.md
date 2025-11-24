@@ -68,13 +68,18 @@ That's it! The script will:
 - **Features**: Professional UI, integrated vulnerability testing, Contrast info page
 - **URL**: http://localhost:8181
 
-### 4. Apache Tomcat (Java) Application
-
+### ☕ Apache Tomcat (Java) Application (Port 8080)
 - **Framework**: Apache Tomcat 9.0.95 with Spring Boot
 - **Application**: Custom Spring Boot Demo Application
 - **Port**: 8080
 - **URL**: http://localhost:8080/contrast-demo/
 - **Description**: Custom Spring Boot application with intentionally vulnerable endpoints for security testing
+
+### 🐘 PHP Drupal 11 Application (Port 7070)
+- **Framework**: Drupal 11 with PHP 8.4 and Apache 2.4
+- **Features**: SQL injection, XSS, command injection, path traversal, file upload vulnerabilities
+- **URL**: http://localhost:7070/contrast-demo
+- **Description**: Modern Drupal CMS with custom vulnerable module for comprehensive security testing
 
 ## 🛠 Demo Control Script
 
@@ -98,30 +103,35 @@ The `demo-control.sh` script provides unified management for all applications:
 ./demo-control.sh node start       # Start Node.js Express  
 ./demo-control.sh netcore start    # Start .NET Core
 ./demo-control.sh tomcat start     # Start Apache Tomcat
+./demo-control.sh drupal start     # Start PHP Drupal
 
 # Stop applications
 ./demo-control.sh python stop      # Stop Python Flask
 ./demo-control.sh node stop        # Stop Node.js Express
 ./demo-control.sh netcore stop     # Stop .NET Core
 ./demo-control.sh tomcat stop      # Stop Apache Tomcat
+./demo-control.sh drupal stop      # Stop PHP Drupal
 
 # Restart applications
 ./demo-control.sh python restart   # Restart Python Flask
 ./demo-control.sh node restart     # Restart Node.js Express
 ./demo-control.sh netcore restart  # Restart .NET Core
 ./demo-control.sh tomcat restart   # Restart Apache Tomcat
+./demo-control.sh drupal restart   # Restart PHP Drupal
 
 # Check application status
 ./demo-control.sh python status    # Show Python Flask status
 ./demo-control.sh node status      # Show Node.js Express status
 ./demo-control.sh netcore status   # Show .NET Core status  
 ./demo-control.sh tomcat status    # Show Apache Tomcat status
+./demo-control.sh drupal status    # Show PHP Drupal status
 
 # View application logs
 ./demo-control.sh python logs      # Show Python Flask logs
 ./demo-control.sh node logs        # Show Node.js Express logs
 ./demo-control.sh netcore logs     # Show .NET Core logs
 ./demo-control.sh tomcat logs      # Show Apache Tomcat logs
+./demo-control.sh drupal logs      # Show PHP Drupal logs
 ```
 
 ### Bulk Operations

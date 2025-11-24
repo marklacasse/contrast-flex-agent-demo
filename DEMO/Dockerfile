@@ -69,6 +69,39 @@ RUN curl -fsSL https://deb.nodesource.com/setup_22.x -o nodesource_setup.sh && \
     apt-get install -y nodejs && \
     rm nodesource_setup.sh
 
+# Install PHP 8.4 and Apache
+RUN DEBIAN_FRONTEND=noninteractive && \
+    apt-get update && \
+    add-apt-repository ppa:ondrej/php -y && \
+    apt-get update && \
+    apt-get install -y \
+        apache2 \
+        php8.4 \
+        php8.4-cli \
+        php8.4-common \
+        php8.4-mysql \
+        php8.4-xml \
+        php8.4-curl \
+        php8.4-gd \
+        php8.4-mbstring \
+        php8.4-zip \
+        php8.4-bcmath \
+        php8.4-intl \
+        php8.4-sqlite3 \
+        php8.4-opcache \
+        libapache2-mod-php8.4 \
+        sqlite3 \
+    && rm -rf /var/lib/apt/lists/* && \
+    php --version
+
+# Configure Apache
+RUN a2enmod rewrite && \
+    a2enmod php8.4 && \
+    echo "ServerName localhost" >> /etc/apache2/apache2.conf
+
+# Install Composer for PHP package management
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer && \
+    composer --version
 
 # Install Contrast Flex Agent (configurable)
 ARG AGENT_TOKEN
