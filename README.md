@@ -2,6 +2,9 @@
 
 This repository contains a comprehensive demonstration environment for the Contrast Flex Agent, featuring multiple vulnerable applications for security testing and analysis.
 
+> **⚠️ BETA STATUS - PHP Applications**  
+> The PHP applications (Drupal and Laravel) are currently in **beta** and not fully functional with the Contrast Flex Agent. These applications may experience issues with agent integration and are provided for testing purposes only. For production-ready demonstrations, please use the Python, Node.js, .NET, or Java applications.
+
 ## Repository Information
 
 **Repository URL:** https://github.com/marklacasse/contrast-flex-agent-demo.git
@@ -75,17 +78,22 @@ That's it! The script will:
 - **URL**: http://localhost:8080/contrast-demo/
 - **Description**: Custom Spring Boot application with intentionally vulnerable endpoints for security testing
 
-### 🐘 PHP Drupal 10 Application (Port 7070)
+### 🐘 PHP Drupal 10 Application (Port 7070) **[BETA]**
+
+> **⚠️ Beta Status**: This application is not fully functional with the Contrast Flex Agent. Agent integration may not work properly. Use for testing only.
+
 - **Framework**: Drupal 10 with PHP 8.4 and Apache 2.4
 - **Features**: SQL injection, XSS, command injection, path traversal, file upload vulnerabilities
 - **URL**: http://localhost:7070/contrast-demo
 - **Description**: Modern Drupal CMS with custom vulnerable module for comprehensive security testing
 
-### 🔴 Laravel PHP Application (Port 5050)
+### 🔴 Laravel PHP Application (Port 5050) **[BETA]**
+
+> **⚠️ Beta Status**: This application is not fully functional with the Contrast Flex Agent. Agent integration may not work properly. Use for testing only.
 
 - **Framework**: Laravel 10 with PHP 8.4, PHP-FPM, and Apache 2.4
 - **Features**: SQL injection, XSS, command injection, path traversal, file upload vulnerabilities
-- **URL**: <http://localhost:5050>
+- **URL**: http://localhost:5050
 - **Description**: Laravel framework with intentionally vulnerable endpoints featuring professional UI, persistent navigation, and one-click exploit links
 
 ## 🛠 Demo Control Script
