@@ -94,16 +94,25 @@ RUN DEBIAN_FRONTEND=noninteractive && \
     && rm -rf /var/lib/apt/lists/* && \
     php --version
 
-# Configure Apache
+# Configure Apache and PHP extensions
+# Note: Contrast agent overrides PHP scan directory, so extensions must be added to php.ini directly
 RUN a2enmod rewrite && \
     a2enmod php8.4 && \
     phpenmod pdo pdo_sqlite && \
     echo "extension=pdo.so" >> /etc/php/8.4/cli/php.ini && \
     echo "extension=pdo_sqlite.so" >> /etc/php/8.4/cli/php.ini && \
     echo "extension=dom.so" >> /etc/php/8.4/cli/php.ini && \
+    echo "extension=tokenizer.so" >> /etc/php/8.4/cli/php.ini && \
+    echo "extension=gd.so" >> /etc/php/8.4/cli/php.ini && \
+    echo "extension=simplexml.so" >> /etc/php/8.4/cli/php.ini && \
+    echo "extension=xml.so" >> /etc/php/8.4/cli/php.ini && \
     echo "extension=pdo.so" >> /etc/php/8.4/apache2/php.ini && \
     echo "extension=pdo_sqlite.so" >> /etc/php/8.4/apache2/php.ini && \
     echo "extension=dom.so" >> /etc/php/8.4/apache2/php.ini && \
+    echo "extension=tokenizer.so" >> /etc/php/8.4/apache2/php.ini && \
+    echo "extension=gd.so" >> /etc/php/8.4/apache2/php.ini && \
+    echo "extension=simplexml.so" >> /etc/php/8.4/apache2/php.ini && \
+    echo "extension=xml.so" >> /etc/php/8.4/apache2/php.ini && \
     echo "ServerName localhost" >> /etc/apache2/apache2.conf
 
 # Install Composer for PHP package management
@@ -117,7 +126,7 @@ RUN curl https://pkg.contrastsecurity.com/api/gpg/key/public | gpg -o /usr/share
     echo "deb [signed-by=/usr/share/keyrings/contrast-keyring.pgp] https://pkg.contrastsecurity.com/debian-public/ all contrast" | tee -a /etc/apt/sources.list.d/contrast.list && \
     apt-get update && \
     if [ -n "$AGENT_TOKEN" ]; then \
-        echo "Installing Contrast Flex Agent version 1.6.0 with provided token..."; \
+        echo "Installing Contrast Flex Agent with provided token..."; \
         AGENT_TOKEN="$AGENT_TOKEN" apt-get install -y contrast-flex-agent=1.6.0; \
     else \
         echo "No AGENT_TOKEN provided, skipping Contrast Flex Agent installation"; \

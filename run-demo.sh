@@ -93,6 +93,7 @@ docker run -d \
     -p 9090:9090 \
     -p 3030:3030 \
     -p 7070:7070 \
+    -p 5050:5050 \
     "$IMAGE_NAME"
 
 echo "✅ Container started successfully!"
@@ -103,6 +104,7 @@ echo "   - http://localhost:8181 -> container:8181 (.NET Core)"
 echo "   - http://localhost:9090 -> container:9090 (Python Flask)"
 echo "   - http://localhost:3030 -> container:3030 (Node.js Express)"
 echo "   - http://localhost:7070 -> container:7070 (PHP Drupal)"
+echo "   - http://localhost:5050 -> container:5050 (Laravel PHP)"
 echo "🔗 Connecting to container shell..."
 
 # Shell into the container

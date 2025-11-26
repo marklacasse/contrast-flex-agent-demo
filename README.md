@@ -75,11 +75,18 @@ That's it! The script will:
 - **URL**: http://localhost:8080/contrast-demo/
 - **Description**: Custom Spring Boot application with intentionally vulnerable endpoints for security testing
 
-### 🐘 PHP Drupal 11 Application (Port 7070)
-- **Framework**: Drupal 11 with PHP 8.4 and Apache 2.4
+### 🐘 PHP Drupal 10 Application (Port 7070)
+- **Framework**: Drupal 10 with PHP 8.4 and Apache 2.4
 - **Features**: SQL injection, XSS, command injection, path traversal, file upload vulnerabilities
 - **URL**: http://localhost:7070/contrast-demo
 - **Description**: Modern Drupal CMS with custom vulnerable module for comprehensive security testing
+
+### 🔴 Laravel PHP Application (Port 5050)
+
+- **Framework**: Laravel 10 with PHP 8.4, PHP-FPM, and Apache 2.4
+- **Features**: SQL injection, XSS, command injection, path traversal, file upload vulnerabilities
+- **URL**: <http://localhost:5050>
+- **Description**: Laravel framework with intentionally vulnerable endpoints featuring professional UI, persistent navigation, and one-click exploit links
 
 ## 🛠 Demo Control Script
 
@@ -91,7 +98,7 @@ The `demo-control.sh` script provides unified management for all applications:
 # Individual Application Control
 ./demo-control.sh <app> <command>
 
-# Available applications: python, node, netcore, tomcat
+# Available applications: python, node, netcore, tomcat, drupal, laravel
 # Available commands: start, stop, restart, status, logs
 ```
 
@@ -104,6 +111,7 @@ The `demo-control.sh` script provides unified management for all applications:
 ./demo-control.sh netcore start    # Start .NET Core
 ./demo-control.sh tomcat start     # Start Apache Tomcat
 ./demo-control.sh drupal start     # Start PHP Drupal
+./demo-control.sh laravel start    # Start Laravel PHP
 
 # Stop applications
 ./demo-control.sh python stop      # Stop Python Flask
@@ -111,6 +119,7 @@ The `demo-control.sh` script provides unified management for all applications:
 ./demo-control.sh netcore stop     # Stop .NET Core
 ./demo-control.sh tomcat stop      # Stop Apache Tomcat
 ./demo-control.sh drupal stop      # Stop PHP Drupal
+./demo-control.sh laravel stop     # Stop Laravel PHP
 
 # Restart applications
 ./demo-control.sh python restart   # Restart Python Flask
@@ -118,6 +127,7 @@ The `demo-control.sh` script provides unified management for all applications:
 ./demo-control.sh netcore restart  # Restart .NET Core
 ./demo-control.sh tomcat restart   # Restart Apache Tomcat
 ./demo-control.sh drupal restart   # Restart PHP Drupal
+./demo-control.sh laravel restart  # Restart Laravel PHP
 
 # Check application status
 ./demo-control.sh python status    # Show Python Flask status

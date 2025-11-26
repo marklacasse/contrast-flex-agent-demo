@@ -12,6 +12,7 @@ APPS[node]="node-express:3030:/demos/node-app:npm start"
 APPS[netcore]="dotnet-core:8181:/demos/dotnet-app:dotnet run"
 APPS[tomcat]="tomcat-java:8080:.:./apache-tomcat-9.0.95/bin/startup.sh"
 APPS[drupal]="drupal-php:7070:/demos/drupal-app:bash /demos/drupal-app/start.sh"
+APPS[laravel]="laravel-php:5050:/demos/laravel-app:/bin/true"
 
 # Colors for output
 RED='\033[0;31m'
@@ -71,7 +72,7 @@ start_app() {
     
     print_status $BLUE "🚀 Starting $app_name..."
     
-    # Check if already running
+    # Check if already running (for apps using PID files)
     if [ -f "$pid_file" ]; then
         local pid=$(cat "$pid_file")
         if ps -p $pid > /dev/null 2>&1; then
@@ -80,6 +81,17 @@ start_app() {
         else
             print_status $YELLOW "🧹 Removing stale PID file"
             rm -f "$pid_file"
+        fi
+    fi
+    
+    # Check if Laravel is already running (Apache on port 5050)
+    if [ "$app" = "laravel" ]; then
+        local port_check=$(netstat -tlpn 2>/dev/null | grep ":$port " | awk '{print $7}' | cut -d'/' -f1 || true)
+        if [ ! -z "$port_check" ]; then
+            print_status $YELLOW "⚠️ $app_name is already running on port $port"
+            print_status $GREEN "✅ $app_name verified running"
+            print_status $BLUE "🌐 Access at: http://localhost:$port"
+            return 0
         fi
     fi
     
@@ -132,6 +144,26 @@ start_app() {
             cd "$directory"
             bash /demos/drupal-app/start.sh > "$log_file" 2>&1
             ;;
+        laravel)
+            print_status $GREEN "🔴 Starting Laravel with Apache..."
+            # Run setup script if needed
+            if [ -f "$directory/setup.sh" ]; then
+                bash "$directory/setup.sh" >> "$log_file" 2>&1
+            fi
+            # Ensure Listen 5050 is enabled in ports.conf
+            if ! grep -q '^Listen 5050' /etc/apache2/ports.conf; then
+                # Uncomment if commented, or add if missing
+                sed -i '/^#Listen 5050$/s/^#//' /etc/apache2/ports.conf 2>/dev/null || echo 'Listen 5050' >> /etc/apache2/ports.conf
+            fi
+            # Enable the Laravel site
+            a2ensite laravel.conf > /dev/null 2>&1 || true
+            # Gracefully reload Apache (faster and safer than restart)
+            if service apache2 status >/dev/null 2>&1; then
+                service apache2 reload >> "$log_file" 2>&1 || service apache2 restart >> "$log_file" 2>&1
+            else
+                service apache2 start >> "$log_file" 2>&1
+            fi
+            ;;
     esac
     
     # For non-node apps, capture the PID normally
@@ -183,6 +215,32 @@ start_app() {
         done
         
         if [ "$drupal_running" = true ]; then
+            print_status $GREEN "✅ $app_name started successfully"
+            print_status $BLUE "🌐 Access at: http://localhost:$port"
+        else
+            print_status $RED "❌ Failed to start $app_name"
+            return 1
+        fi
+    elif [ "$app" = "laravel" ]; then
+        # For Laravel, check if Apache is running on port 5050
+        # Wait longer for Apache restart
+        local laravel_running=false
+        local attempts=0
+        while [ $attempts -lt 20 ]; do
+            local apache_pids=$(pgrep -f "apache2" 2>/dev/null || true)
+            local port_pids_lsof=$(lsof -ti:$port 2>/dev/null || true)
+            local port_pids_netstat=$(netstat -tlpn 2>/dev/null | grep ":$port " | awk '{print $7}' | cut -d'/' -f1 || true)
+            local port_pids="${port_pids_lsof}${port_pids_netstat}"
+            
+            if [ ! -z "$apache_pids" ] && [ ! -z "$port_pids" ]; then
+                laravel_running=true
+                break
+            fi
+            sleep 1
+            attempts=$((attempts + 1))
+        done
+        
+        if [ "$laravel_running" = true ]; then
             print_status $GREEN "✅ $app_name started successfully"
             print_status $BLUE "🌐 Access at: http://localhost:$port"
         else
@@ -270,6 +328,30 @@ stop_app() {
             if [ ! -z "$port_pids" ]; then
                 print_status $YELLOW "🔍 Force killing Apache processes on port $port"
                 echo "$port_pids" | xargs kill -9 2>/dev/null || true
+            fi
+            ;;
+        laravel)
+            # For Laravel, stop Apache from listening on port 5050
+            local port_pids=$(netstat -tlpn 2>/dev/null | grep ":$port " | awk '{print $7}' | cut -d'/' -f1 || true)
+            if [ ! -z "$port_pids" ]; then
+                print_status $YELLOW "🔍 Stopping Apache on port $port (PIDs: $port_pids)"
+                # Disable the Laravel site
+                a2dissite laravel.conf > /dev/null 2>&1 || true
+                # Comment out Listen 5050 in ports.conf
+                sed -i '/^Listen 5050$/s/^/#/' /etc/apache2/ports.conf 2>/dev/null || true
+                # Use graceful reload instead of restart (keeps Drupal on 7070 running)
+                service apache2 reload > /dev/null 2>&1
+                sleep 3
+                # Verify port is no longer listening
+                local check_pids=$(netstat -tlpn 2>/dev/null | grep ":$port " | awk '{print $7}' | cut -d'/' -f1 || true)
+                if [ -z "$check_pids" ]; then
+                    print_status $GREEN "✅ Laravel stopped successfully (port $port freed)"
+                else
+                    print_status $YELLOW "⚠️ Port $port may still be in use"
+                fi
+            else
+                print_status $YELLOW "⚠️ $app_name was not running"
+                print_status $GREEN "✅ $app_name stopped successfully"
             fi
             ;;
         *)
@@ -440,6 +522,29 @@ status_app() {
                 actual_pids="Tomcat: ${java_pids:-none}, Port: ${port_pids:-none}"
             fi
             ;;
+        laravel)
+            # Check for Apache service and port 5050
+            local apache_running=false
+            
+            if service apache2 status >/dev/null 2>&1; then
+                apache_running=true
+            fi
+            
+            # Try to detect port usage
+            local port_pids_lsof=$(lsof -ti:$port 2>/dev/null | tr '\n' ' ' | sed 's/[[:space:]]*$//')
+            local port_pids_netstat=$(netstat -tlpn 2>/dev/null | grep ":$port " | awk '{print $7}' | cut -d'/' -f1 | tr '\n' ' ' | sed 's/[[:space:]]*$//')
+            local port_pids="${port_pids_lsof}${port_pids_netstat}"
+            
+            if [ "$debug_mode" = "1" ]; then
+                echo "DEBUG: apache_running='$apache_running'"
+                echo "DEBUG: port_pids='$port_pids'"
+            fi
+            
+            if [ "$apache_running" = true ] && [ -n "$port_pids" ]; then
+                is_running=true
+                actual_pids="Apache: active, Port $port: ${port_pids:-none}"
+            fi
+            ;;
     esac
     
     # Check PID file status
@@ -518,52 +623,26 @@ show_logs() {
     fi
 }
 
-# Function to show status of all applications
-status_all() {
-    print_status $BLUE "📊 All Demo Applications Status:"
-    echo "======================================="
-    for app in python node netcore tomcat; do
-        status_app $app
-        echo "---------------------------------------"
-    done
-}
 
-# Function to start all applications
-start_all() {
-    print_status $BLUE "🚀 Starting all demo applications..."
-    for app in python node netcore tomcat; do
-        start_app $app
-        echo "---------------------------------------"
-    done
-}
-
-# Function to stop all applications
-stop_all() {
-    print_status $BLUE "🛑 Stopping all demo applications..."
-    for app in python node netcore tomcat; do
-        stop_app $app
-    done
-}
 
 # Function to show usage
 show_usage() {
     echo "Usage: $0 <application> <command>"
-    echo "       $0 all <command>"
     echo ""
     echo "Applications:"
     echo "  python   - Python Flask application (port 9090)"
     echo "  node     - Node.js Express application (port 3030)"
     echo "  netcore  - .NET Core application (port 8181)"
     echo "  tomcat   - Apache Tomcat application (port 8080)"
-    echo "  drupal   - PHP Drupal 11 application (port 7070)"
-    echo "  all      - All applications"
+    echo "  drupal   - PHP Drupal 10 application (port 7070)"
+    echo "  laravel  - Laravel PHP application (port 5050)"
     echo ""
     echo "Commands:"
-    echo "  start    - Start the application(s)"
-    echo "  stop     - Stop the application(s)"
-    echo "  restart  - Restart the application(s)"
+    echo "  start    - Start the application"
+    echo "  stop     - Stop the application"
+    echo "  restart  - Restart the application"
     echo "  status   - Show application status"
-    echo "  logs     - Show application logs (not available for 'all')"
+    echo "  logs     - Show application logs"
     echo ""
     echo "Examples:"
     echo "  $0 node start           # Start Node.js application"
@@ -571,9 +650,8 @@ show_usage() {
     echo "  $0 netcore restart      # Restart .NET Core application"
     echo "  $0 tomcat status        # Show Tomcat application status"
     echo "  $0 drupal start         # Start Drupal application"
+    echo "  $0 laravel start        # Start Laravel application"
     echo "  $0 node logs            # Show Node.js application logs"
-    echo "  $0 all start            # Start all applications"
-    echo "  $0 all status           # Show status of all applications"
     echo ""
     echo "Application URLs:"
     echo "  Python:   http://localhost:9090"
@@ -581,6 +659,7 @@ show_usage() {
     echo "  .NET:     http://localhost:8181"
     echo "  Tomcat:   http://localhost:8080/contrast-demo"
     echo "  Drupal:   http://localhost:7070/contrast-demo"
+    echo "  Laravel:  http://localhost:5050"
 }
 
 # Main script logic
@@ -593,7 +672,7 @@ APP=$1
 COMMAND=$2
 
 case "$APP" in
-    python|node|netcore|tomcat|drupal)
+    python|node|netcore|tomcat|drupal|laravel)
         case "$COMMAND" in
             start)
                 start_app $APP
@@ -609,33 +688,6 @@ case "$APP" in
                 ;;
             logs)
                 show_logs $APP
-                ;;
-            *)
-                print_status $RED "❌ Unknown command: $COMMAND"
-                show_usage
-                exit 1
-                ;;
-        esac
-        ;;
-    all)
-        case "$COMMAND" in
-            start)
-                start_all
-                ;;
-            stop)
-                stop_all
-                ;;
-            restart)
-                stop_all
-                sleep 2
-                start_all
-                ;;
-            status)
-                status_all
-                ;;
-            logs)
-                print_status $RED "❌ 'logs' command not available for 'all'. Use individual app names."
-                exit 1
                 ;;
             *)
                 print_status $RED "❌ Unknown command: $COMMAND"
