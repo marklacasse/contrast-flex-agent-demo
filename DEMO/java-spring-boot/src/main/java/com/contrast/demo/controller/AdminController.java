@@ -2,7 +2,6 @@ package com.contrast.demo.controller;
 
 import com.contrast.demo.model.AdminUser;
 import com.contrast.demo.repository.AdminUserRepository;
-import com.contrast.demo.service.AdminAuthService;
 import com.contrast.demo.service.SqlExecutionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,15 +15,11 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Admin Controller - INTENTIONALLY VULNERABLE
- * Demonstrates multiple security vulnerabilities
+ * Admin Controller - Simple session-based authentication
  */
 @Controller
 @RequestMapping("/admin")
 public class AdminController {
-    
-    @Autowired
-    private AdminAuthService adminAuthService;
     
     @Autowired
     private AdminUserRepository adminUserRepository;
@@ -36,38 +31,38 @@ public class AdminController {
      * Admin login page
      */
     @GetMapping("/login")
-    public String loginPage() {
+    public String loginPage(@RequestParam(required = false) String error, Model model) {
+        if (error != null) {
+            model.addAttribute("error", "Invalid username or password");
+        }
         return "admin-login";
     }
     
     /**
-     * Handle admin login - VULNERABILITY: Custom header authentication
+     * Handle admin login
      */
     @PostMapping("/login")
     public String login(@RequestParam String username, 
                        @RequestParam String password,
-                       HttpServletRequest request,
-                       Model model) {
+                       HttpSession session) {
         
-        String encodedPassword = adminAuthService.encodePassword(password);
-        AdminUser user = adminAuthService.authenticate(username, encodedPassword);
+        // Simple authentication - check username and password
+        AdminUser user = adminUserRepository.findByUsername(username).orElse(null);
         
-        if (user != null) {
-            HttpSession session = request.getSession(true);
+        if (user != null && user.getPassword().equals(password) && user.isActive()) {
             session.setAttribute("adminUser", user);
             return "redirect:/admin/dashboard";
-        } else {
-            model.addAttribute("error", "Invalid credentials");
-            return "admin-login";
         }
+        
+        return "redirect:/admin/login?error=true";
     }
     
     /**
      * Admin dashboard
      */
     @GetMapping("/dashboard")
-    public String dashboard(HttpServletRequest request, Model model) {
-        AdminUser user = (AdminUser) request.getAttribute("adminUser");
+    public String dashboard(HttpSession session, Model model) {
+        AdminUser user = (AdminUser) session.getAttribute("adminUser");
         model.addAttribute("username", user.getUsername());
         
         // Get all users for display
@@ -75,6 +70,15 @@ public class AdminController {
         model.addAttribute("users", allUsers);
         
         return "admin-dashboard";
+    }
+    
+    /**
+     * Logout
+     */
+    @GetMapping("/logout")
+    public String logout(HttpSession session) {
+        session.invalidate();
+        return "redirect:/admin/login";
     }
     
     /**
@@ -134,14 +138,5 @@ public class AdminController {
         debugInfo.put("uri", request.getRequestURI());
         
         return debugInfo;
-    }
-    
-    /**
-     * Logout
-     */
-    @GetMapping("/logout")
-    public String logout(HttpSession session) {
-        session.invalidate();
-        return "redirect:/admin/login";
     }
 }

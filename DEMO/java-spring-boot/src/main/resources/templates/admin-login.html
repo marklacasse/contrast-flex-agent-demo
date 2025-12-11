@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Admin Login - Contrast Security Demo</title>
+    <title>Admin Login</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -14,18 +13,17 @@
             height: 100vh;
             margin: 0;
         }
-        .login-container {
+        .login-box {
             background: white;
             padding: 40px;
             border-radius: 10px;
             box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-            width: 100%;
-            max-width: 400px;
+            width: 350px;
         }
-        h1 {
-            text-align: center;
+        h2 {
+            margin-top: 0;
             color: #333;
-            margin-bottom: 30px;
+            text-align: center;
         }
         .form-group {
             margin-bottom: 20px;
@@ -33,7 +31,7 @@
         label {
             display: block;
             margin-bottom: 5px;
-            color: #555;
+            color: #666;
             font-weight: bold;
         }
         input[type="text"],
@@ -42,7 +40,6 @@
             padding: 10px;
             border: 1px solid #ddd;
             border-radius: 5px;
-            font-size: 16px;
             box-sizing: border-box;
         }
         button {
@@ -53,9 +50,7 @@
             border: none;
             border-radius: 5px;
             font-size: 16px;
-            font-weight: bold;
             cursor: pointer;
-            transition: background 0.3s;
         }
         button:hover {
             background: #5568d3;
@@ -70,46 +65,24 @@
         }
         .hint {
             text-align: center;
-            margin-top: 20px;
+            margin-top: 15px;
             font-size: 12px;
             color: #888;
-        }
-        .warning {
-            background: #fff3cd;
-            color: #856404;
-            padding: 15px;
-            border-radius: 5px;
-            margin-bottom: 20px;
-            border-left: 4px solid #ffc107;
-        }
-        .warning strong {
-            display: block;
-            margin-bottom: 5px;
         }
     </style>
 </head>
 <body>
-    <div class="login-container">
-        <h1>🔐 Admin Login</h1>
+    <div class="login-box">
+        <h2>🔐 Admin Login</h2>
         
-        <div class="warning">
-            <strong>⚠️ Security Warning</strong>
-            This admin panel uses intentionally weak authentication for demonstration purposes. 
-            Authentication requires custom HTTP headers on EVERY request (no session persistence):
-            <br><br>
-            <code>X-Admin-Username: admin</code><br>
-            <code>X-Admin-Auth: YWRtaW4xMjM=</code> (Password Base64 encoded - NOT encrypted!)
-            <br><br>
-            Base64 is encoding, NOT encryption. Anyone can decode it instantly.
-            The form below is for convenience only. Real access requires these headers.
+        <div th:if="${error}" class="error">
+            <span th:text="${error}">Invalid credentials</span>
         </div>
         
-        <div th:if="${error}" class="error" th:text="${error}"></div>
-        
-        <form id="loginForm">
+        <form th:action="@{/admin/login}" method="post">
             <div class="form-group">
                 <label for="username">Username:</label>
-                <input type="text" id="username" name="username" required autofocus value="admin">
+                <input type="text" id="username" name="username" required value="admin">
             </div>
             
             <div class="form-group">
@@ -117,77 +90,12 @@
                 <input type="password" id="password" name="password" required value="admin123">
             </div>
             
-            <button type="submit">Login (via Headers)</button>
+            <button type="submit">Login</button>
         </form>
         
-        <div id="result" style="display: none; margin-top: 20px; padding: 15px; border-radius: 5px;"></div>
-        
         <div class="hint">
-            💡 Default credentials: admin / admin123<br><br>
-            <strong>Form uses fetch() with custom headers. Or use curl:</strong><br>
-            <code style="display: block; background: #f5f5f5; padding: 10px; margin-top: 5px; border-radius: 3px;">
-            curl -H "X-Admin-Username: admin" -H "X-Admin-Auth: YWRtaW4xMjM=" http://localhost:8080/contrast-demo/admin/dashboard
-            </code>
+            Default: admin / admin123
         </div>
     </div>
-    
-    <script th:inline="javascript">
-        /*<![CDATA[*/
-        const contextPath = /*[[${#request.contextPath}]]*/ '';
-        
-        document.getElementById('loginForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
-            const resultDiv = document.getElementById('result');
-            
-            // Encode password to Base64 (VULNERABILITY: visible in browser console)
-            const encodedPassword = btoa(password);
-            
-            resultDiv.style.display = 'block';
-            resultDiv.style.background = '#e3f2fd';
-            resultDiv.style.color = '#1976d2';
-            resultDiv.innerHTML = 'Authenticating with headers...<br>' +
-                                   '<code>X-Admin-Username: ' + username + '</code><br>' +
-                                   '<code>X-Admin-Auth: ' + encodedPassword + '</code>';
-            
-            // Fetch dashboard with custom headers
-            fetch(contextPath + '/admin/dashboard', {
-                method: 'GET',
-                headers: {
-                    'X-Admin-Username': username,
-                    'X-Admin-Auth': encodedPassword
-                }
-            })
-            .then(response => {
-                if (response.ok) {
-                    // Success - navigate to dashboard maintaining headers
-                    resultDiv.style.background = '#c8e6c9';
-                    resultDiv.style.color = '#388e3c';
-                    resultDiv.innerHTML = '✅ Authentication successful! Redirecting...<br>' +
-                                          'Note: You need to use curl or add headers manually for subsequent requests.';
-                    
-                    setTimeout(() => {
-                        window.location.href = contextPath + '/admin/login?message=Use curl with headers to access admin pages';
-                    }, 2000);
-                } else if (response.status === 302) {
-                    resultDiv.style.background = '#ffebee';
-                    resultDiv.style.color = '#c62828';
-                    resultDiv.innerHTML = '❌ Authentication failed! Invalid credentials.';
-                } else {
-                    resultDiv.style.background = '#ffebee';
-                    resultDiv.style.color = '#c62828';
-                    resultDiv.innerHTML = '❌ Error: ' + response.status;
-                }
-            })
-            .catch(error => {
-                resultDiv.style.background = '#ffebee';
-                resultDiv.style.color = '#c62828';
-                resultDiv.innerHTML = '❌ Request failed: ' + error.message;
-            });
-        });
-        /*]]>*/
-    </script>
 </body>
 </html>
