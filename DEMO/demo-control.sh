@@ -119,6 +119,18 @@ start_app() {
             nohup $command --urls "http://0.0.0.0:$port" > "$log_file" 2>&1 &
             ;;
         tomcat)
+            print_status $GREEN "☕ Building Java Spring Boot application..."
+            cd java-spring-boot
+            mvn clean package -DskipTests > /dev/null 2>&1
+            if [ ! -f "target/contrast-demo-1.0.0.war" ]; then
+                print_status $RED "❌ Maven build failed! WAR file not created."
+                exit 1
+            fi
+            print_status $GREEN "✅ WAR file built successfully"
+            
+            # Copy WAR to Tomcat webapps
+            cp target/contrast-demo-1.0.0.war ../apache-tomcat-9.0.95/webapps/contrast-demo.war
+            
             print_status $GREEN "☕ Starting Tomcat..."
             cd "$directory"
             # Stop first if running
