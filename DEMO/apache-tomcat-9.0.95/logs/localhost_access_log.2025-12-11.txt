@@ -61,3 +61,6 @@
 192.168.65.1 - - [11/Dec/2025:17:03:54 +0000] "GET /contrast-demo/command?cmd=ps+aux+%7C+grep+java HTTP/1.1" 200 4633
 192.168.65.1 - - [11/Dec/2025:17:04:08 +0000] "GET /contrast-demo/command?cmd=ps HTTP/1.1" 200 4592
 192.168.65.1 - - [11/Dec/2025:17:04:14 +0000] "GET /contrast-demo/command?cmd=ps+aux HTTP/1.1" 200 5812
+192.168.65.1 - - [11/Dec/2025:17:04:20 +0000] "GET /contrast-demo/ HTTP/1.1" 200 3769
+192.168.65.1 - - [11/Dec/2025:17:05:49 +0000] "GET /contrast-demo/ HTTP/1.1" 200 3769
+192.168.65.1 - - [11/Dec/2025:17:05:57 +0000] "GET /contrast-demo/admin/dashboard HTTP/1.1" 500 141

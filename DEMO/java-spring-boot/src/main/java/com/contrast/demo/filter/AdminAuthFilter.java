@@ -39,6 +39,14 @@ public class AdminAuthFilter implements Filter {
         // Only filter admin endpoints (except login page)
         if (path.startsWith("/admin") && !path.equals("/admin/login")) {
             
+            // Check if service was properly injected
+            if (adminAuthService == null) {
+                System.err.println("ERROR: AdminAuthService is null in AdminAuthFilter!");
+                httpResponse.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, 
+                    "Authentication service not initialized");
+                return;
+            }
+            
             // VULNERABILITY: Authentication via custom headers (can be easily spoofed)
             String username = httpRequest.getHeader("X-Admin-Username");
             String encodedAuth = httpRequest.getHeader("X-Admin-Auth");
