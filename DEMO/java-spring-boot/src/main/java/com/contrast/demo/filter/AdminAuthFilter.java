@@ -17,8 +17,11 @@ import java.io.IOException;
  */
 public class AdminAuthFilter implements Filter {
     
-    @Autowired
     private AdminAuthService adminAuthService;
+    
+    public void setAdminAuthService(AdminAuthService adminAuthService) {
+        this.adminAuthService = adminAuthService;
+    }
     
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
