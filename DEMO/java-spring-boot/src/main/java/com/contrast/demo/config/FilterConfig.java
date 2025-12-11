@@ -12,9 +12,9 @@ import org.springframework.context.annotation.Configuration;
 public class FilterConfig {
     
     @Bean
-    public FilterRegistrationBean<AdminAuthFilter> adminAuthFilter(AdminAuthFilter filter) {
+    public FilterRegistrationBean<AdminAuthFilter> adminAuthFilter() {
         FilterRegistrationBean<AdminAuthFilter> registrationBean = new FilterRegistrationBean<>();
-        registrationBean.setFilter(filter);
+        registrationBean.setFilter(new AdminAuthFilter());
         registrationBean.addUrlPatterns("/admin/*");
         registrationBean.setOrder(1);
         return registrationBean;
