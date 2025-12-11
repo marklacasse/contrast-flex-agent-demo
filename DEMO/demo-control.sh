@@ -132,7 +132,7 @@ start_app() {
             cp target/contrast-demo.war ../apache-tomcat-9.0.95/webapps/contrast-demo.war
             
             print_status $GREEN "☕ Starting Tomcat..."
-            cd "$directory"
+            cd ..
             
             # Stop first if running
             ./apache-tomcat-9.0.95/bin/shutdown.sh > /dev/null 2>&1 || true
