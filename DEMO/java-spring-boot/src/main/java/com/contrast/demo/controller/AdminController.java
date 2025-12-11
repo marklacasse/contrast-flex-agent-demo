@@ -66,8 +66,8 @@ public class AdminController {
      * Admin dashboard
      */
     @GetMapping("/dashboard")
-    public String dashboard(HttpSession session, Model model) {
-        AdminUser user = (AdminUser) session.getAttribute("adminUser");
+    public String dashboard(HttpServletRequest request, Model model) {
+        AdminUser user = (AdminUser) request.getAttribute("adminUser");
         model.addAttribute("username", user.getUsername());
         
         // Get all users for display

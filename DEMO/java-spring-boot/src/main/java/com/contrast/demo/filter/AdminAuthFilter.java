@@ -50,33 +50,29 @@ public class AdminAuthFilter implements Filter {
         }
         
         // VULNERABILITY: Authentication via custom headers (can be easily spoofed)
+        // Headers must be provided on EVERY request - no session persistence
         String username = httpRequest.getHeader("X-Admin-Username");
         String encodedAuth = httpRequest.getHeader("X-Admin-Auth");
         
-        HttpSession session = httpRequest.getSession(false);
-        AdminUser authenticatedUser = null;
-        
-        // Check session first
-        if (session != null) {
-            authenticatedUser = (AdminUser) session.getAttribute("adminUser");
+        // Require headers on every request
+        if (username == null || encodedAuth == null) {
+            String loginUrl = httpRequest.getContextPath() + "/admin/login";
+            httpResponse.sendRedirect(httpResponse.encodeRedirectURL(loginUrl));
+            return;
         }
         
-        // If not in session, try header authentication
-        if (authenticatedUser == null && username != null && encodedAuth != null) {
-            authenticatedUser = adminAuthService.authenticate(username, encodedAuth);
-            if (authenticatedUser != null) {
-                // Store in session
-                HttpSession newSession = httpRequest.getSession(true);
-                newSession.setAttribute("adminUser", authenticatedUser);
-            }
-        }
+        // Authenticate using headers
+        AdminUser authenticatedUser = adminAuthService.authenticate(username, encodedAuth);
         
-        // If still not authenticated, redirect to login
+        // If authentication failed, redirect to login
         if (authenticatedUser == null) {
             String loginUrl = httpRequest.getContextPath() + "/admin/login";
             httpResponse.sendRedirect(httpResponse.encodeRedirectURL(loginUrl));
             return;
         }
+        
+        // Store user in request attribute (not session) for this request only
+        httpRequest.setAttribute("adminUser", authenticatedUser);
         
         chain.doFilter(request, response);
     }
