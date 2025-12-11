@@ -95,7 +95,12 @@
         <div class="warning">
             <strong>⚠️ Security Warning</strong>
             This admin panel uses intentionally weak authentication for demonstration purposes. 
-            Credentials are "encrypted" using Base64 encoding (not real encryption!).
+            Authentication requires custom HTTP headers on EVERY request (no session persistence):
+            <br><br>
+            <code>X-Admin-Username: admin</code><br>
+            <code>X-Admin-Auth: YWRtaW4xMjM=</code> (Base64 encoded password)
+            <br><br>
+            The form below is for convenience only. Real access requires these headers.
         </div>
         
         <div th:if="${error}" class="error" th:text="${error}"></div>
@@ -115,7 +120,11 @@
         </form>
         
         <div class="hint">
-            💡 Default credentials: admin / admin123
+            💡 Default credentials: admin / admin123<br><br>
+            <strong>To access admin pages, use curl with headers:</strong><br>
+            <code style="display: block; background: #f5f5f5; padding: 10px; margin-top: 5px; border-radius: 3px;">
+            curl -H "X-Admin-Username: admin" -H "X-Admin-Auth: YWRtaW4xMjM=" http://localhost:8080/contrast-demo/admin/dashboard
+            </code>
         </div>
     </div>
 </body>
