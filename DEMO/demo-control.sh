@@ -134,7 +134,8 @@ start_app() {
             print_status $GREEN "☕ Starting Tomcat..."
             cd "$directory"
             
-            # Clear old catalina.out to get fresh startup logs
+            # Create logs directory if it doesn't exist and clear old catalina.out
+            mkdir -p ./apache-tomcat-9.0.95/logs
             > ./apache-tomcat-9.0.95/logs/catalina.out
             
             # Stop first if running
