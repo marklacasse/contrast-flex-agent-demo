@@ -133,6 +133,10 @@ start_app() {
             
             print_status $GREEN "☕ Starting Tomcat..."
             cd "$directory"
+            
+            # Clear old catalina.out to get fresh startup logs
+            > ./apache-tomcat-9.0.95/logs/catalina.out
+            
             # Stop first if running
             ./apache-tomcat-9.0.95/bin/shutdown.sh > /dev/null 2>&1 || true
             sleep 2
