@@ -51,7 +51,7 @@ public class AdminController {
         if (user != null) {
             HttpSession session = request.getSession(true);
             session.setAttribute("adminUser", user);
-            return "redirect:/admin/dashboard";
+            return "redirect:" + request.getContextPath() + "/admin/dashboard";
         } else {
             model.addAttribute("error", "Invalid credentials");
             return "admin-login";
