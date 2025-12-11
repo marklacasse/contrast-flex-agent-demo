@@ -151,13 +151,14 @@ start_app() {
     
     # Special verification for Tomcat since startup.sh exits after launching
     if [ "$app" = "tomcat" ]; then
-        # For Tomcat, check if Tomcat process is running and port is active
+        # For Tomcat, check if catalina.out shows successful startup
         local tomcat_running=false
         local attempts=0
-        while [ $attempts -lt 10 ]; do
-            local java_pids=$(pgrep -f "java.*tomcat" 2>/dev/null || true)
-            local port_pids=$(lsof -ti:$port 2>/dev/null || true)
-            if [ ! -z "$java_pids" ] || [ ! -z "$port_pids" ]; then
+        local catalina_log="./apache-tomcat-9.0.95/logs/catalina.out"
+        
+        print_status $BLUE "⏳ Waiting for Tomcat to start..."
+        while [ $attempts -lt 20 ]; do
+            if [ -f "$catalina_log" ] && grep -q "Server startup in" "$catalina_log" 2>/dev/null; then
                 tomcat_running=true
                 break
             fi
@@ -169,7 +170,11 @@ start_app() {
             print_status $GREEN "✅ $app_name started successfully"
             print_status $BLUE "🌐 Access at: http://localhost:$port/contrast-demo"
         else
-            print_status $RED "❌ Failed to start $app_name"
+            print_status $RED "❌ Failed to start $app_name - check logs at $catalina_log"
+            if [ -f "$catalina_log" ]; then
+                print_status $YELLOW "Last 20 lines of catalina.out:"
+                tail -20 "$catalina_log"
+            fi
             rm -f "$pid_file"
             return 1
         fi
