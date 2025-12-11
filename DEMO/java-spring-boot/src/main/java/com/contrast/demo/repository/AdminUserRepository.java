@@ -23,8 +23,4 @@ public interface AdminUserRepository extends JpaRepository<AdminUser, Long> {
                    ":username' AND password = ':password'", nativeQuery = true)
     AdminUser findByUsernameAndPasswordUnsafe(@Param("username") String username, 
                                                @Param("password") String password);
-    
-    // VULNERABILITY: Allows execution of arbitrary SQL for admin features
-    @Query(value = "?1", nativeQuery = true)
-    Object executeRawQuery(String query);
 }

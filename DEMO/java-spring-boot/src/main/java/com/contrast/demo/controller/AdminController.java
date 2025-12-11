@@ -3,6 +3,7 @@ package com.contrast.demo.controller;
 import com.contrast.demo.model.AdminUser;
 import com.contrast.demo.repository.AdminUserRepository;
 import com.contrast.demo.service.AdminAuthService;
+import com.contrast.demo.service.SqlExecutionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -27,6 +28,9 @@ public class AdminController {
     
     @Autowired
     private AdminUserRepository adminUserRepository;
+    
+    @Autowired
+    private SqlExecutionService sqlExecutionService;
     
     /**
      * Admin login page
@@ -90,7 +94,7 @@ public class AdminController {
         Map<String, Object> response = new HashMap<>();
         try {
             // VULNERABILITY: Direct SQL execution without sanitization
-            Object result = adminUserRepository.executeRawQuery(query);
+            Object result = sqlExecutionService.executeRawSql(query);
             response.put("success", true);
             response.put("result", result);
         } catch (Exception e) {
