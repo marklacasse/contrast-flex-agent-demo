@@ -2537,3 +2537,227 @@ WARNING: Illegal reflective access by com.contrastsecurity.agent.util.VMArgument
 WARNING: Please consider reporting this to the maintainers of com.contrastsecurity.agent.util.VMArguments
 WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
 WARNING: All illegal access operations will be denied in a future release
+11-Dec-2025 17:41:32.189 INFO [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+11-Dec-2025 17:41:32.191 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+11-Dec-2025 17:41:32.192 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+11-Dec-2025 17:41:32.237 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+11-Dec-2025 17:41:32.249 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+NOTE: Picked up JDK_JAVA_OPTIONS:  --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.util.concurrent=ALL-UNNAMED --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+Picked up JAVA_TOOL_OPTIONS:  -javaagent:/usr/bin/contrast-flex-agent/flex-agents/java/6.23.0/contrast.jar 
+[Contrast] Thu Dec 11 17:41:43 UTC 2025 Loading pre-packaged configuration
+[Contrast] Thu Dec 11 17:41:43 UTC 2025 Couldn't find pre-packaged configuration.
+[Contrast] Thu Dec 11 17:41:43 UTC 2025 Starting Contrast (build 6.23.0) Pat. 8,458,789 B2
+[Contrast] Thu Dec 11 17:41:43 UTC 2025 Contrast logger configuration errors will be logged to stderr
+[Contrast] Thu Dec 11 17:41:43 UTC 2025 Copyright: 2025 Contrast Security, Inc
+[Contrast] Thu Dec 11 17:41:43 UTC 2025 Contact: support@contrastsecurity.com
+[Contrast] Thu Dec 11 17:41:43 UTC 2025 License: Commercial
+[Contrast] Thu Dec 11 17:41:43 UTC 2025 NOTICE: This Software and the patented inventions embodied within may only be used as part of
+[Contrast] Thu Dec 11 17:41:43 UTC 2025 Contrast Security's commercial offerings. Even though it is made available through public
+[Contrast] Thu Dec 11 17:41:43 UTC 2025 repositories, use of this Software is subject to the applicable End User Licensing Agreement
+[Contrast] Thu Dec 11 17:41:43 UTC 2025 found at https://www.contrastsecurity.com/enduser-terms-0317a or as otherwise agreed between
+[Contrast] Thu Dec 11 17:41:43 UTC 2025 Contrast Security and the End User. The Software may not be reverse engineered, modified,
+[Contrast] Thu Dec 11 17:41:43 UTC 2025 repackaged, sold, redistributed or otherwise used in a way not consistent with the End User
+[Contrast] Thu Dec 11 17:41:43 UTC 2025 License Agreement.
+[Contrast] Thu Dec 11 17:41:43 UTC 2025 The Contrast Java agent collects usage data in order to help us improve compatibility and security coverage.
+[Contrast] Thu Dec 11 17:41:43 UTC 2025 The data is anonymous and does not contain application data. It is collected by Contrast and is never shared.
+[Contrast] Thu Dec 11 17:41:43 UTC 2025 You can opt-out of telemetry by setting the CONTRAST_AGENT_TELEMETRY_OPTOUT environment variable to 'true' or '1'
+[Contrast] Thu Dec 11 17:41:43 UTC 2025 Read more about Contrast Java agent telemetry: https://docs.contrastsecurity.com/en/java-telemetry.html
+[Contrast] Thu Dec 11 17:41:43 UTC 2025 Effective instructions: Assess=true, Protect=false, Observe=false
+[Contrast] Thu Dec 11 17:41:43 UTC 2025 Contrast logger configuration errors will be logged to stderr
+[Contrast] Thu Dec 11 17:41:48 UTC 2025 Starting JVM [5371ms]
+[Contrast] Thu Dec 11 17:41:48 UTC 2025 Contrast engine started.
+11-Dec-2025 17:41:48.788 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.95
+11-Dec-2025 17:41:48.792 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Sep 13 2024 18:07:47 UTC
+11-Dec-2025 17:41:48.792 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.95.0
+11-Dec-2025 17:41:48.793 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+11-Dec-2025 17:41:48.793 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            6.12.54-linuxkit
+11-Dec-2025 17:41:48.793 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          aarch64
+11-Dec-2025 17:41:48.793 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-11-openjdk-arm64
+11-Dec-2025 17:41:48.793 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           11.0.29+7-post-Ubuntu-1ubuntu124.04
+11-Dec-2025 17:41:48.794 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Ubuntu
+11-Dec-2025 17:41:48.794 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /demos/apache-tomcat-9.0.95
+11-Dec-2025 17:41:48.794 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /demos/apache-tomcat-9.0.95
+11-Dec-2025 17:41:48.794 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -javaagent:/usr/bin/contrast-flex-agent/flex-agents/java/6.23.0/contrast.jar
+11-Dec-2025 17:41:48.794 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+11-Dec-2025 17:41:48.795 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+11-Dec-2025 17:41:48.795 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+11-Dec-2025 17:41:48.795 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+11-Dec-2025 17:41:48.795 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+11-Dec-2025 17:41:48.795 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/demos/apache-tomcat-9.0.95/conf/logging.properties
+11-Dec-2025 17:41:48.796 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+11-Dec-2025 17:41:48.796 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+11-Dec-2025 17:41:48.796 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+11-Dec-2025 17:41:48.796 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+11-Dec-2025 17:41:48.797 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+11-Dec-2025 17:41:48.797 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/demos/apache-tomcat-9.0.95
+11-Dec-2025 17:41:48.797 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/demos/apache-tomcat-9.0.95
+11-Dec-2025 17:41:48.797 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/demos/apache-tomcat-9.0.95/temp
+11-Dec-2025 17:41:48.799 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib/aarch64-linux-gnu/jni:/lib/aarch64-linux-gnu:/usr/lib/aarch64-linux-gnu:/usr/lib/jni:/lib:/usr/lib]
+11-Dec-2025 17:41:48.985 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+11-Dec-2025 17:41:49.000 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [469] milliseconds
+11-Dec-2025 17:41:49.051 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+11-Dec-2025 17:41:49.051 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.95]
+11-Dec-2025 17:41:49.067 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/demos/apache-tomcat-9.0.95/webapps/contrast-demo.war]
+11-Dec-2025 17:41:49.091 INFO [main] org.apache.catalina.startup.ExpandWar.expand An expanded directory [/demos/apache-tomcat-9.0.95/webapps/contrast-demo] was found with a last modified time that did not match the associated WAR. It will be deleted.
+11-Dec-2025 17:41:51.837 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::               (v2.7.18)
+
+2025-12-11 17:41:52.763  INFO 3854 --- [           main] c.contrast.demo.ContrastDemoApplication  : Starting ContrastDemoApplication v1.0.0 using Java 11.0.29 on 18f10eb36e20 with PID 3854 (/demos/apache-tomcat-9.0.95/webapps/contrast-demo/WEB-INF/classes started by root in /demos)
+2025-12-11 17:41:52.769 DEBUG 3854 --- [           main] c.contrast.demo.ContrastDemoApplication  : Running with Spring Boot v2.7.18, Spring v5.3.31
+2025-12-11 17:41:52.770  INFO 3854 --- [           main] c.contrast.demo.ContrastDemoApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-12-11 17:41:54.154  INFO 3854 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-11 17:41:54.226  INFO 3854 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 60 ms. Found 2 JPA repository interfaces.
+2025-12-11 17:41:54.638  INFO 3854 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1808 ms
+2025-12-11 17:41:54.737  INFO 3854 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-12-11 17:41:55.192  INFO 3854 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-12-11 17:41:55.322  INFO 3854 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-12-11 17:41:55.426  INFO 3854 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2025-12-11 17:41:55.703  INFO 3854 --- [           main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-12-11 17:41:55.926  INFO 3854 --- [           main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2025-12-11 17:41:56.892  INFO 3854 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-12-11 17:41:56.909  INFO 3854 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-11 17:41:57.417  INFO 3854 --- [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2025-12-11 17:41:57.542  WARN 3854 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-11 17:41:57.701 DEBUG 3854 --- [           main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-12-11 17:41:57.772  INFO 3854 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-12-11 17:41:57.841 DEBUG 3854 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : 18 mappings in 'requestMappingHandlerMapping'
+2025-12-11 17:41:57.865 DEBUG 3854 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2025-12-11 17:41:57.876 DEBUG 3854 --- [           main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-12-11 17:41:58.026  INFO 3854 --- [           main] c.contrast.demo.ContrastDemoApplication  : Started ContrastDemoApplication in 5.959 seconds (JVM running for 15.124)
+11-Dec-2025 17:41:58.136 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/demos/apache-tomcat-9.0.95/webapps/contrast-demo.war] has finished in [9,068] ms
+11-Dec-2025 17:41:58.137 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/demos/apache-tomcat-9.0.95/webapps/ROOT]
+11-Dec-2025 17:41:58.157 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/demos/apache-tomcat-9.0.95/webapps/ROOT] has finished in [20] ms
+11-Dec-2025 17:41:58.162 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+11-Dec-2025 17:41:58.175 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [9174] milliseconds
+2025-12-11 17:43:42.026  INFO 3854 --- [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-12-11 17:43:42.027 DEBUG 3854 --- [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2025-12-11 17:43:42.027 DEBUG 3854 --- [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2025-12-11 17:43:42.027 DEBUG 3854 --- [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2025-12-11 17:43:42.028 DEBUG 3854 --- [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@4fe4db5
+2025-12-11 17:43:42.029 DEBUG 3854 --- [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@3441d14d
+2025-12-11 17:43:42.029 DEBUG 3854 --- [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2025-12-11 17:43:42.029  INFO 3854 --- [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-12-11 17:43:42.091 DEBUG 3854 --- [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/contrast-demo/admin/login", parameters={}
+2025-12-11 17:43:42.109 DEBUG 3854 --- [nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.contrast.demo.controller.AdminController#loginPage()
+2025-12-11 17:43:42.143 DEBUG 3854 --- [nio-8080-exec-5] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.7, */*;q=0.8]
+2025-12-11 17:43:42.837 DEBUG 3854 --- [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by com.contrastsecurity.agent.util.VMArguments (file:/usr/bin/contrast-flex-agent/flex-agents/java/6.23.0/contrast.jar) to method sun.management.ManagementFactoryHelper.getVMManagement()
+WARNING: Please consider reporting this to the maintainers of com.contrastsecurity.agent.util.VMArguments
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+2025-12-11 17:43:49.357 DEBUG 3854 --- [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/contrast-demo/", parameters={}
+2025-12-11 17:43:49.358 DEBUG 3854 --- [nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.contrast.demo.controller.DemoController#home(Model)
+2025-12-11 17:43:49.381 DEBUG 3854 --- [nio-8080-exec-8] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.7, */*;q=0.8]
+2025-12-11 17:43:49.396 DEBUG 3854 --- [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-12-11 17:43:51.950 DEBUG 3854 --- [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/contrast-demo/info", parameters={}
+2025-12-11 17:43:51.952 DEBUG 3854 --- [nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.contrast.demo.controller.DemoController#getSystemInfo(HttpServletRequest)
+2025-12-11 17:43:52.011 DEBUG 3854 --- [nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Using 'text/html', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.7, */*;q=0.8] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+2025-12-11 17:43:52.012 DEBUG 3854 --- [nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Writing ["Application: Java Spring Boot Demo<EOL>Framework: Spring Boot 2.7.18<EOL>Java Version: 11.0.29<EOL>OS: Linux<EOL>Ser (truncated)..."]
+2025-12-11 17:43:52.021 DEBUG 3854 --- [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-12-11 17:43:54.817 DEBUG 3854 --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/contrast-demo/users", parameters={}
+2025-12-11 17:43:54.819 DEBUG 3854 --- [io-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.contrast.demo.controller.DemoController#listUsers(Model)
+Hibernate: 
+    select
+        user0_.id as id1_1_,
+        user0_.comment as comment2_1_,
+        user0_.email as email3_1_,
+        user0_.name as name4_1_ 
+    from
+        users user0_
+2025-12-11 17:43:55.094 DEBUG 3854 --- [io-8080-exec-10] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.7, */*;q=0.8]
+2025-12-11 17:43:55.140 DEBUG 3854 --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-12-11 17:43:57.834 DEBUG 3854 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/contrast-demo/search", parameters={}
+2025-12-11 17:43:57.835 DEBUG 3854 --- [nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.contrast.demo.controller.DemoController#search(String, Model)
+2025-12-11 17:43:57.841 DEBUG 3854 --- [nio-8080-exec-1] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.7, */*;q=0.8]
+2025-12-11 17:43:57.847 DEBUG 3854 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-12-11 17:44:00.171 DEBUG 3854 --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/contrast-demo/file", parameters={}
+2025-12-11 17:44:00.173 DEBUG 3854 --- [nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.contrast.demo.controller.DemoController#fileOperations(String, Model)
+2025-12-11 17:44:00.175 DEBUG 3854 --- [nio-8080-exec-2] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.7, */*;q=0.8]
+2025-12-11 17:44:00.182 DEBUG 3854 --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-12-11 17:44:02.495 DEBUG 3854 --- [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/contrast-demo/command", parameters={}
+2025-12-11 17:44:02.497 DEBUG 3854 --- [nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.contrast.demo.controller.DemoController#commandExecution(String, Model)
+2025-12-11 17:44:02.500 DEBUG 3854 --- [nio-8080-exec-3] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.7, */*;q=0.8]
+2025-12-11 17:44:02.509 DEBUG 3854 --- [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-12-11 17:44:05.761 DEBUG 3854 --- [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/contrast-demo/admin/login", parameters={}
+2025-12-11 17:44:05.763 DEBUG 3854 --- [nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.contrast.demo.controller.AdminController#loginPage()
+2025-12-11 17:44:05.764 DEBUG 3854 --- [nio-8080-exec-4] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.7, */*;q=0.8]
+2025-12-11 17:44:05.767 DEBUG 3854 --- [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-12-11 17:44:18.815 DEBUG 3854 --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : POST "/contrast-demo/admin/login", parameters={masked}
+2025-12-11 17:44:18.818 DEBUG 3854 --- [nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.contrast.demo.controller.AdminController#login(String, String, HttpServletRequest, Model)
+Hibernate: 
+    select
+        adminuser0_.id as id1_0_,
+        adminuser0_.active as active2_0_,
+        adminuser0_.password as password3_0_,
+        adminuser0_.role as role4_0_,
+        adminuser0_.username as username5_0_ 
+    from
+        admin_users adminuser0_ 
+    where
+        adminuser0_.username=?
+2025-12-11 17:44:18.887 DEBUG 3854 --- [nio-8080-exec-6] o.s.web.servlet.view.RedirectView        : View name 'redirect:', model {}
+2025-12-11 17:44:18.888 DEBUG 3854 --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-12-11 17:44:18.894 DEBUG 3854 --- [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/contrast-demo/admin/dashboard", parameters={}
+2025-12-11 17:44:18.895 DEBUG 3854 --- [nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.contrast.demo.controller.AdminController#dashboard(HttpSession, Model)
+Hibernate: 
+    select
+        adminuser0_.id as id1_0_,
+        adminuser0_.active as active2_0_,
+        adminuser0_.password as password3_0_,
+        adminuser0_.role as role4_0_,
+        adminuser0_.username as username5_0_ 
+    from
+        admin_users adminuser0_
+2025-12-11 17:44:18.899 DEBUG 3854 --- [nio-8080-exec-7] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.7, */*;q=0.8]
+2025-12-11 17:44:18.904 DEBUG 3854 --- [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-12-11 17:44:25.900 DEBUG 3854 --- [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/contrast-demo/admin/sql", parameters={}
+2025-12-11 17:44:25.901 DEBUG 3854 --- [nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.contrast.demo.controller.AdminController#sqlPage()
+2025-12-11 17:44:25.903 DEBUG 3854 --- [nio-8080-exec-8] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.7, */*;q=0.8]
+2025-12-11 17:44:25.907 DEBUG 3854 --- [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-12-11 17:44:43.494 DEBUG 3854 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/contrast-demo/admin/debug", parameters={}
+2025-12-11 17:44:43.497 DEBUG 3854 --- [nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.contrast.demo.controller.AdminController#debug(HttpServletRequest)
+2025-12-11 17:44:43.550 DEBUG 3854 --- [nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json;q=0.8', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.7, */*;q=0.8] and supported [application/json, application/*+json, application/json, application/*+json]
+2025-12-11 17:44:43.557 DEBUG 3854 --- [nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [{headers={sec-fetch-mode=navigate, referer=http://localhost:8080/contrast-demo/admin/dashboard, sec- (truncated)...]
+2025-12-11 17:44:43.575 DEBUG 3854 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-12-11 17:44:47.961 DEBUG 3854 --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/contrast-demo/admin/debug", parameters={}
+2025-12-11 17:44:47.963 DEBUG 3854 --- [nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.contrast.demo.controller.AdminController#debug(HttpServletRequest)
+2025-12-11 17:44:47.977 DEBUG 3854 --- [nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json;q=0.8', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.7, */*;q=0.8] and supported [application/json, application/*+json, application/json, application/*+json]
+2025-12-11 17:44:47.980 DEBUG 3854 --- [nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Writing [{headers={sec-fetch-mode=navigate, referer=http://localhost:8080/contrast-demo/admin/dashboard, sec- (truncated)...]
+2025-12-11 17:44:47.982 DEBUG 3854 --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-12-11 17:44:51.060 DEBUG 3854 --- [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/contrast-demo/admin/sql", parameters={}
+2025-12-11 17:44:51.061 DEBUG 3854 --- [nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.contrast.demo.controller.AdminController#sqlPage()
+2025-12-11 17:44:51.063 DEBUG 3854 --- [nio-8080-exec-3] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.7, */*;q=0.8]
+2025-12-11 17:44:51.065 DEBUG 3854 --- [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-12-11 17:45:34.390 DEBUG 3854 --- [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : POST "/contrast-demo/admin/login", parameters={masked}
+2025-12-11 17:45:34.392 DEBUG 3854 --- [nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.contrast.demo.controller.AdminController#login(String, String, HttpServletRequest, Model)
+Hibernate: 
+    select
+        adminuser0_.id as id1_0_,
+        adminuser0_.active as active2_0_,
+        adminuser0_.password as password3_0_,
+        adminuser0_.role as role4_0_,
+        adminuser0_.username as username5_0_ 
+    from
+        admin_users adminuser0_ 
+    where
+        adminuser0_.username=?
+2025-12-11 17:45:34.398 DEBUG 3854 --- [nio-8080-exec-9] o.s.web.servlet.view.RedirectView        : View name 'redirect:', model {}
+2025-12-11 17:45:34.399 DEBUG 3854 --- [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-12-11 17:45:34.424 DEBUG 3854 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : POST "/contrast-demo/admin/sql/execute", parameters={}
+2025-12-11 17:45:34.425 DEBUG 3854 --- [nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.contrast.demo.controller.AdminController#executeSql(String)
+2025-12-11 17:45:34.427 DEBUG 3854 --- [nio-8080-exec-1] o.s.web.method.HandlerMethod             : Could not resolve parameter [0] in public java.util.Map<java.lang.String, java.lang.Object> com.contrast.demo.controller.AdminController.executeSql(java.lang.String): Required request parameter 'query' for method parameter type String is not present
+2025-12-11 17:45:34.452  WARN 3854 --- [nio-8080-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'query' for method parameter type String is not present]
+2025-12-11 17:45:34.452 DEBUG 3854 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 400 BAD_REQUEST
+2025-12-11 17:45:34.460 DEBUG 3854 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : "FORWARD" dispatch for POST "/contrast-demo/error", parameters={}
+2025-12-11 17:45:34.462 DEBUG 3854 --- [nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2025-12-11 17:45:34.466 DEBUG 3854 --- [nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2025-12-11 17:45:34.467 DEBUG 3854 --- [nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Thu Dec 11 17:45:34 UTC 2025, status=400, error=Bad Request, path=/contrast-demo/admin/sq (truncated)...]
+2025-12-11 17:45:34.499 DEBUG 3854 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Exiting from "FORWARD" dispatch, status 400
