@@ -134,22 +134,12 @@ start_app() {
             print_status $GREEN "☕ Starting Tomcat..."
             cd "$directory"
             
-            # Create logs directory if it doesn't exist
-            mkdir -p ./apache-tomcat-9.0.95/logs
-            
             # Stop first if running
             ./apache-tomcat-9.0.95/bin/shutdown.sh > /dev/null 2>&1 || true
             sleep 2
             
-            # Start Tomcat and capture output
-            ./apache-tomcat-9.0.95/bin/startup.sh > "$log_file" 2>&1
-            startup_result=$?
-            
-            if [ $startup_result -ne 0 ]; then
-                print_status $RED "❌ Tomcat startup.sh failed with exit code $startup_result"
-                cat "$log_file"
-                return 1
-            fi
+            # Start Tomcat in background
+            ./apache-tomcat-9.0.95/bin/startup.sh
             ;;
     esac
     
@@ -164,38 +154,16 @@ start_app() {
     
     # Special verification for Tomcat since startup.sh exits after launching
     if [ "$app" = "tomcat" ]; then
-        # For Tomcat, check if catalina.out shows successful startup
-        local tomcat_running=false
-        local attempts=0
-        local catalina_log="./apache-tomcat-9.0.95/logs/catalina.out"
-        
         print_status $BLUE "⏳ Waiting for Tomcat to start..."
-        while [ $attempts -lt 20 ]; do
-            # Check if Java process is running
-            if pgrep -f "catalina" > /dev/null 2>&1; then
-                # Check if log shows successful startup
-                if [ -f "$catalina_log" ] && grep -q "Server startup in" "$catalina_log" 2>/dev/null; then
-                    tomcat_running=true
-                    break
-                fi
-            fi
-            sleep 1
-            attempts=$((attempts + 1))
-        done
+        sleep 5
         
-        if [ "$tomcat_running" = true ]; then
+        # Check if catalina process is running
+        if pgrep -f "org.apache.catalina.startup.Bootstrap" > /dev/null 2>&1; then
             print_status $GREEN "✅ $app_name started successfully"
             print_status $BLUE "🌐 Access at: http://localhost:$port/contrast-demo"
         else
-            print_status $RED "❌ Failed to start $app_name - check logs at $catalina_log"
-            if [ -f "$catalina_log" ]; then
-                print_status $YELLOW "Last 20 lines of catalina.out:"
-                tail -20 "$catalina_log"
-            else
-                print_status $YELLOW "Catalina.out not found. Checking for Java/Catalina processes..."
-                pgrep -af "java.*catalina" || print_status $YELLOW "No Catalina process found"
-            fi
-            rm -f "$pid_file"
+            print_status $RED "❌ Failed to start $app_name"
+            print_status $YELLOW "Check logs at: ./apache-tomcat-9.0.95/logs/catalina.out"
             return 1
         fi
     else
