@@ -60,7 +60,8 @@ public class AdminAuthFilter implements Filter {
             
             // If still not authenticated, redirect to login
             if (authenticatedUser == null) {
-                httpResponse.sendRedirect(httpRequest.getContextPath() + "/admin/login");
+                String loginUrl = httpRequest.getContextPath() + "/admin/login";
+                httpResponse.sendRedirect(httpResponse.encodeRedirectURL(loginUrl));
                 return;
             }
         }

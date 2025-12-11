@@ -31,3 +31,16 @@
 192.168.65.1 - - [11/Dec/2025:16:52:28 +0000] "GET /contrast-demo/admin/login HTTP/1.1" 200 3453
 192.168.65.1 - - [11/Dec/2025:16:52:30 +0000] "POST /admin/login HTTP/1.1" 404 766
 192.168.65.1 - - [11/Dec/2025:16:52:39 +0000] "GET /contrast-demo/admin/dashboard HTTP/1.1" 500 287
+192.168.65.1 - - [11/Dec/2025:16:54:36 +0000] "POST /contrast-demo/admin/login HTTP/1.1" 302 -
+192.168.65.1 - - [11/Dec/2025:16:54:36 +0000] "POST /contrast-demo/admin/dashboard;jsessionid=FD4F5F5F683D1B27C6FD85ABDFA9F165 HTTP/1.1" 405 182
+192.168.65.1 - - [11/Dec/2025:16:56:16 +0000] "POST /contrast-demo/admin/login HTTP/1.1" 302 -
+192.168.65.1 - - [11/Dec/2025:16:56:17 +0000] "GET /contrast-demo/admin/dashboard HTTP/1.1" 200 5005
+192.168.65.1 - - [11/Dec/2025:16:56:40 +0000] "POST /contrast-demo/admin/login HTTP/1.1" 302 -
+192.168.65.1 - - [11/Dec/2025:16:56:46 +0000] "GET /contrast-demo/admin/dashboard HTTP/1.1" 200 5005
+192.168.65.1 - - [11/Dec/2025:16:57:20 +0000] "GET / HTTP/1.1" 200 11230
+192.168.65.1 - - [11/Dec/2025:16:57:36 +0000] "GET /contrast-demo HTTP/1.1" 302 -
+192.168.65.1 - - [11/Dec/2025:16:57:36 +0000] "GET /contrast-demo/ HTTP/1.1" 200 3769
+192.168.65.1 - - [11/Dec/2025:16:57:38 +0000] "GET /contrast-demo/admin/login HTTP/1.1" 200 3453
+192.168.65.1 - - [11/Dec/2025:16:57:44 +0000] "POST /admin/login HTTP/1.1" 404 766
+192.168.65.1 - - [11/Dec/2025:16:58:21 +0000] "GET /contrast-demo/admin/login HTTP/1.1" 200 3453
+192.168.65.1 - - [11/Dec/2025:16:58:32 +0000] "POST /admin/login HTTP/1.1" 404 766
