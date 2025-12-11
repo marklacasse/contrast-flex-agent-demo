@@ -3,7 +3,6 @@ package com.contrast.demo.filter;
 import com.contrast.demo.model.AdminUser;
 import com.contrast.demo.service.AdminAuthService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
@@ -16,7 +15,6 @@ import java.io.IOException;
  * Checks for authentication headers on admin endpoints
  * Demonstrates insecure authentication via custom headers
  */
-@Component
 public class AdminAuthFilter implements Filter {
     
     @Autowired

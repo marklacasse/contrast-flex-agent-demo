@@ -332,3 +332,165 @@ WARNING: Illegal reflective access by com.contrastsecurity.agent.util.VMArgument
 WARNING: Please consider reporting this to the maintainers of com.contrastsecurity.agent.util.VMArguments
 WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
 WARNING: All illegal access operations will be denied in a future release
+NOTE: Picked up JDK_JAVA_OPTIONS:  --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.util.concurrent=ALL-UNNAMED --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+Picked up JAVA_TOOL_OPTIONS:  -javaagent:/usr/bin/contrast-flex-agent/flex-agents/java/6.23.0/contrast.jar 
+[Contrast] Thu Dec 11 16:30:29 UTC 2025 Loading pre-packaged configuration
+[Contrast] Thu Dec 11 16:30:29 UTC 2025 Couldn't find pre-packaged configuration.
+[Contrast] Thu Dec 11 16:30:30 UTC 2025 Starting Contrast (build 6.23.0) Pat. 8,458,789 B2
+[Contrast] Thu Dec 11 16:30:30 UTC 2025 Contrast logger configuration errors will be logged to stderr
+[Contrast] Thu Dec 11 16:30:30 UTC 2025 Copyright: 2025 Contrast Security, Inc
+[Contrast] Thu Dec 11 16:30:30 UTC 2025 Contact: support@contrastsecurity.com
+[Contrast] Thu Dec 11 16:30:30 UTC 2025 License: Commercial
+[Contrast] Thu Dec 11 16:30:30 UTC 2025 NOTICE: This Software and the patented inventions embodied within may only be used as part of
+[Contrast] Thu Dec 11 16:30:30 UTC 2025 Contrast Security's commercial offerings. Even though it is made available through public
+[Contrast] Thu Dec 11 16:30:30 UTC 2025 repositories, use of this Software is subject to the applicable End User Licensing Agreement
+[Contrast] Thu Dec 11 16:30:30 UTC 2025 found at https://www.contrastsecurity.com/enduser-terms-0317a or as otherwise agreed between
+[Contrast] Thu Dec 11 16:30:30 UTC 2025 Contrast Security and the End User. The Software may not be reverse engineered, modified,
+[Contrast] Thu Dec 11 16:30:30 UTC 2025 repackaged, sold, redistributed or otherwise used in a way not consistent with the End User
+[Contrast] Thu Dec 11 16:30:30 UTC 2025 License Agreement.
+[Contrast] Thu Dec 11 16:30:30 UTC 2025 The Contrast Java agent collects usage data in order to help us improve compatibility and security coverage.
+[Contrast] Thu Dec 11 16:30:30 UTC 2025 The data is anonymous and does not contain application data. It is collected by Contrast and is never shared.
+[Contrast] Thu Dec 11 16:30:30 UTC 2025 You can opt-out of telemetry by setting the CONTRAST_AGENT_TELEMETRY_OPTOUT environment variable to 'true' or '1'
+[Contrast] Thu Dec 11 16:30:30 UTC 2025 Read more about Contrast Java agent telemetry: https://docs.contrastsecurity.com/en/java-telemetry.html
+[Contrast] Thu Dec 11 16:30:30 UTC 2025 Effective instructions: Assess=true, Protect=false, Observe=false
+[Contrast] Thu Dec 11 16:30:30 UTC 2025 Contrast logger configuration errors will be logged to stderr
+[Contrast] Thu Dec 11 16:30:35 UTC 2025 Starting JVM [5243ms]
+[Contrast] Thu Dec 11 16:30:35 UTC 2025 Contrast engine started.
+11-Dec-2025 16:30:35.486 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.95
+11-Dec-2025 16:30:35.488 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Sep 13 2024 18:07:47 UTC
+11-Dec-2025 16:30:35.489 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.95.0
+11-Dec-2025 16:30:35.490 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+11-Dec-2025 16:30:35.490 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            6.12.54-linuxkit
+11-Dec-2025 16:30:35.490 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          aarch64
+11-Dec-2025 16:30:35.490 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-11-openjdk-arm64
+11-Dec-2025 16:30:35.490 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           11.0.29+7-post-Ubuntu-1ubuntu124.04
+11-Dec-2025 16:30:35.490 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Ubuntu
+11-Dec-2025 16:30:35.491 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /demos/apache-tomcat-9.0.95
+11-Dec-2025 16:30:35.491 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /demos/apache-tomcat-9.0.95
+11-Dec-2025 16:30:35.491 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -javaagent:/usr/bin/contrast-flex-agent/flex-agents/java/6.23.0/contrast.jar
+11-Dec-2025 16:30:35.492 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+11-Dec-2025 16:30:35.492 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+11-Dec-2025 16:30:35.492 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+11-Dec-2025 16:30:35.492 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+11-Dec-2025 16:30:35.492 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+11-Dec-2025 16:30:35.492 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/demos/apache-tomcat-9.0.95/conf/logging.properties
+11-Dec-2025 16:30:35.493 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+11-Dec-2025 16:30:35.493 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+11-Dec-2025 16:30:35.493 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+11-Dec-2025 16:30:35.493 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+11-Dec-2025 16:30:35.494 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+11-Dec-2025 16:30:35.494 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/demos/apache-tomcat-9.0.95
+11-Dec-2025 16:30:35.494 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/demos/apache-tomcat-9.0.95
+11-Dec-2025 16:30:35.494 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/demos/apache-tomcat-9.0.95/temp
+11-Dec-2025 16:30:35.496 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib/aarch64-linux-gnu/jni:/lib/aarch64-linux-gnu:/usr/lib/aarch64-linux-gnu:/usr/lib/jni:/lib:/usr/lib]
+11-Dec-2025 16:30:35.653 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+11-Dec-2025 16:30:35.666 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [406] milliseconds
+11-Dec-2025 16:30:35.716 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+11-Dec-2025 16:30:35.716 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.95]
+11-Dec-2025 16:30:35.733 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/demos/apache-tomcat-9.0.95/webapps/contrast-demo.war]
+11-Dec-2025 16:30:35.755 INFO [main] org.apache.catalina.startup.ExpandWar.expand An expanded directory [/demos/apache-tomcat-9.0.95/webapps/contrast-demo] was found with a last modified time that did not match the associated WAR. It will be deleted.
+11-Dec-2025 16:30:38.500 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::               (v2.7.18)
+
+2025-12-11 16:30:39.340  INFO 883 --- [           main] c.contrast.demo.ContrastDemoApplication  : Starting ContrastDemoApplication v1.0.0 using Java 11.0.29 on 18f10eb36e20 with PID 883 (/demos/apache-tomcat-9.0.95/webapps/contrast-demo/WEB-INF/classes started by root in /demos)
+2025-12-11 16:30:39.346 DEBUG 883 --- [           main] c.contrast.demo.ContrastDemoApplication  : Running with Spring Boot v2.7.18, Spring v5.3.31
+2025-12-11 16:30:39.347  INFO 883 --- [           main] c.contrast.demo.ContrastDemoApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-12-11 16:30:40.425  WARN 883 --- [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.support.BeanDefinitionOverrideException: Invalid bean definition with name 'adminAuthFilter' defined in class path resource [com/contrast/demo/config/FilterConfig.class]: Cannot register bean definition [Root bean: class [null]; scope=; abstract=false; lazyInit=null; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=filterConfig; factoryMethodName=adminAuthFilter; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [com/contrast/demo/config/FilterConfig.class]] for bean 'adminAuthFilter': There is already [Generic bean: class [com.contrast.demo.filter.AdminAuthFilter]; scope=singleton; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [/demos/apache-tomcat-9.0.95/webapps/contrast-demo/WEB-INF/classes/com/contrast/demo/filter/AdminAuthFilter.class]] bound.
+2025-12-11 16:30:40.590  INFO 883 --- [           main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2025-12-11 16:30:40.625 ERROR 883 --- [           main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The bean 'adminAuthFilter', defined in class path resource [com/contrast/demo/config/FilterConfig.class], could not be registered. A bean with that name has already been defined in file [/demos/apache-tomcat-9.0.95/webapps/contrast-demo/WEB-INF/classes/com/contrast/demo/filter/AdminAuthFilter.class] and overriding is disabled.
+
+Action:
+
+Consider renaming one of the beans or enabling overriding by setting spring.main.allow-bean-definition-overriding=true
+
+11-Dec-2025 16:30:40.627 SEVERE [main] org.apache.catalina.startup.HostConfig.deployWAR Error deploying web application archive [/demos/apache-tomcat-9.0.95/webapps/contrast-demo.war]
+	java.lang.IllegalStateException: Error starting child
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:602)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:571)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:603)
+		at org.apache.catalina.startup.HostConfig.deployWAR(HostConfig.java:1014)
+		at org.apache.catalina.startup.HostConfig$DeployWar.run(HostConfig.java:1866)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+		at java.base/java.lang.ContrastRunnableWrapper.run(ContrastRunnableWrapper.java:55)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:118)
+		at org.apache.catalina.startup.HostConfig.deployWARs(HostConfig.java:816)
+		at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:468)
+		at org.apache.catalina.startup.HostConfig.start(HostConfig.java:1584)
+		at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:312)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:109)
+		at org.apache.catalina.util.LifecycleBase.setStateInternal(LifecycleBase.java:385)
+		at org.apache.catalina.util.LifecycleBase.setState(LifecycleBase.java:332)
+		at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:776)
+		at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:721)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+		at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1203)
+		at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1193)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+		at java.base/java.lang.ContrastRunnableWrapper.run(ContrastRunnableWrapper.java:55)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:140)
+		at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:749)
+		at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:211)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+		at org.apache.catalina.core.StandardService.startInternal(StandardService.java:415)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+		at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:874)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+		at org.apache.catalina.startup.Catalina.start(Catalina.java:735)
+		at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+		at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+		at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+		at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+		at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:345)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:473)
+	Caused by: org.apache.catalina.LifecycleException: Failed to start component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/contrast-demo]]
+		at org.apache.catalina.util.LifecycleBase.handleSubClassException(LifecycleBase.java:402)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:179)
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:599)
+		... 39 more
+	Caused by: org.springframework.beans.factory.support.BeanDefinitionOverrideException: Invalid bean definition with name 'adminAuthFilter' defined in class path resource [com/contrast/demo/config/FilterConfig.class]: Cannot register bean definition [Root bean: class [null]; scope=; abstract=false; lazyInit=null; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=filterConfig; factoryMethodName=adminAuthFilter; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [com/contrast/demo/config/FilterConfig.class]] for bean 'adminAuthFilter': There is already [Generic bean: class [com.contrast.demo.filter.AdminAuthFilter]; scope=singleton; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [/demos/apache-tomcat-9.0.95/webapps/contrast-demo/WEB-INF/classes/com/contrast/demo/filter/AdminAuthFilter.class]] bound.
+		at org.springframework.beans.factory.support.DefaultListableBeanFactory.registerBeanDefinition(DefaultListableBeanFactory.java:1006)
+		at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForBeanMethod(ConfigurationClassBeanDefinitionReader.java:295)
+		at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:153)
+		at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:129)
+		at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:343)
+		at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:247)
+		at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:311)
+		at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:112)
+		at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:756)
+		at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:572)
+		at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+		at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:732)
+		at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:409)
+		at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
+		at org.springframework.boot.web.servlet.support.SpringBootServletInitializer.run(SpringBootServletInitializer.java:175)
+		at org.springframework.boot.web.servlet.support.SpringBootServletInitializer.createRootApplicationContext(SpringBootServletInitializer.java:155)
+		at org.springframework.boot.web.servlet.support.SpringBootServletInitializer.onStartup(SpringBootServletInitializer.java:97)
+		at org.springframework.web.SpringServletContainerInitializer.onStartup(SpringServletContainerInitializer.java:174)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4436)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+		... 40 more
+11-Dec-2025 16:30:40.631 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/demos/apache-tomcat-9.0.95/webapps/contrast-demo.war] has finished in [4,897] ms
+11-Dec-2025 16:30:40.633 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/demos/apache-tomcat-9.0.95/webapps/ROOT]
+11-Dec-2025 16:30:40.691 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/demos/apache-tomcat-9.0.95/webapps/ROOT] has finished in [57] ms
+11-Dec-2025 16:30:40.695 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+11-Dec-2025 16:30:40.707 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [5040] milliseconds

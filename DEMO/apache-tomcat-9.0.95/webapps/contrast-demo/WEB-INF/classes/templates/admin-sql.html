@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>SQL Query Tool - Admin</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f5f5f5;
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .header h1 {
+            margin: 0;
+            display: inline-block;
+        }
+        .header a {
+            color: white;
+            text-decoration: none;
+            margin-left: 15px;
+            padding: 8px 15px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 5px;
+            float: right;
+            transition: background 0.3s;
+        }
+        .header a:hover {
+            background: rgba(255,255,255,0.3);
+        }
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+        .card {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .danger-box {
+            background: #f8d7da;
+            color: #721c24;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            border-left: 4px solid #dc3545;
+        }
+        textarea {
+            width: 100%;
+            min-height: 150px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            box-sizing: border-box;
+            resize: vertical;
+        }
+        button {
+            padding: 12px 25px;
+            background: #dc3545;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: #c82333;
+        }
+        #result {
+            margin-top: 20px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            display: none;
+            font-family: 'Courier New', monospace;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        #result.success {
+            background: #d4edda;
+            color: #155724;
+            border-color: #c3e6cb;
+        }
+        #result.error {
+            background: #f8d7da;
+            color: #721c24;
+            border-color: #f5c6cb;
+        }
+        .examples {
+            background: #e7f3ff;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+            border-left: 4px solid #2196F3;
+        }
+        .examples h3 {
+            margin-top: 0;
+            color: #1976D2;
+        }
+        .examples code {
+            display: block;
+            background: white;
+            padding: 8px;
+            margin: 5px 0;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        .examples code:hover {
+            background: #f0f8ff;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>💉 SQL Query Tool</h1>
+        <a href="/admin/dashboard">← Back to Dashboard</a>
+        <div style="clear: both;"></div>
+    </div>
+    
+    <div class="container">
+        <div class="danger-box">
+            <strong>🚨 EXTREME VULNERABILITY WARNING</strong><br>
+            This tool executes raw SQL queries directly against the database with NO sanitization.
+            This is an intentional SQL injection vulnerability for demonstration purposes.
+        </div>
+        
+        <div class="card">
+            <h2>Execute SQL Query</h2>
+            <textarea id="sqlQuery" placeholder="Enter SQL query here...">SELECT * FROM users LIMIT 5;</textarea>
+            <button onclick="executeQuery()">Execute Query</button>
+            
+            <div id="result"></div>
+        </div>
+        
+        <div class="examples">
+            <h3>Example Queries (Click to use):</h3>
+            <code onclick="setQuery(this.textContent)">SELECT * FROM users LIMIT 10;</code>
+            <code onclick="setQuery(this.textContent)">SELECT * FROM admin_users;</code>
+            <code onclick="setQuery(this.textContent)">SELECT username, password FROM users WHERE id = 1;</code>
+            <code onclick="setQuery(this.textContent)">SELECT COUNT(*) as total_users FROM users;</code>
+        </div>
+    </div>
+    
+    <script>
+        function setQuery(query) {
+            document.getElementById('sqlQuery').value = query;
+        }
+        
+        function executeQuery() {
+            const query = document.getElementById('sqlQuery').value.trim();
+            const resultDiv = document.getElementById('result');
+            
+            if (!query) {
+                resultDiv.textContent = 'Please enter a SQL query';
+                resultDiv.className = 'error';
+                resultDiv.style.display = 'block';
+                return;
+            }
+            
+            resultDiv.textContent = 'Executing query...';
+            resultDiv.className = '';
+            resultDiv.style.display = 'block';
+            
+            fetch('/admin/sql/execute', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: 'query=' + encodeURIComponent(query)
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    resultDiv.textContent = 'Query executed successfully!\n\nResult:\n' + 
+                                           JSON.stringify(data.result, null, 2);
+                    resultDiv.className = 'success';
+                } else {
+                    resultDiv.textContent = 'Query failed!\n\nError:\n' + data.error;
+                    resultDiv.className = 'error';
+                }
+                resultDiv.style.display = 'block';
+            })
+            .catch(error => {
+                resultDiv.textContent = 'Request failed!\n\nError:\n' + error.message;
+                resultDiv.className = 'error';
+                resultDiv.style.display = 'block';
+            });
+        }
+    </script>
+</body>
+</html>
