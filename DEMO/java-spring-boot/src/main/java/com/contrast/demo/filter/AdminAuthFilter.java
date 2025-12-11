@@ -36,24 +36,18 @@ public class AdminAuthFilter implements Filter {
         HttpServletResponse httpResponse = (HttpServletResponse) response;
         String path = httpRequest.getServletPath();
         
-        System.out.println("AdminAuthFilter: Processing path: " + path + " (URI: " + httpRequest.getRequestURI() + ")");
-        
         // Allow login page
         if (path.endsWith("/admin/login")) {
-            System.out.println("AdminAuthFilter: Allowing login page");
             chain.doFilter(request, response);
             return;
         }
         
         // Check if service was properly injected
         if (adminAuthService == null) {
-            System.err.println("ERROR: AdminAuthService is null in AdminAuthFilter!");
             httpResponse.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, 
                 "Authentication service not initialized");
             return;
         }
-        
-        System.out.println("AdminAuthFilter: Checking authentication");
         
         // VULNERABILITY: Authentication via custom headers (can be easily spoofed)
         String username = httpRequest.getHeader("X-Admin-Username");
@@ -65,30 +59,25 @@ public class AdminAuthFilter implements Filter {
         // Check session first
         if (session != null) {
             authenticatedUser = (AdminUser) session.getAttribute("adminUser");
-            System.out.println("AdminAuthFilter: Session auth user: " + (authenticatedUser != null ? authenticatedUser.getUsername() : "null"));
         }
         
         // If not in session, try header authentication
         if (authenticatedUser == null && username != null && encodedAuth != null) {
-            System.out.println("AdminAuthFilter: Trying header auth for user: " + username);
             authenticatedUser = adminAuthService.authenticate(username, encodedAuth);
             if (authenticatedUser != null) {
                 // Store in session
                 HttpSession newSession = httpRequest.getSession(true);
                 newSession.setAttribute("adminUser", authenticatedUser);
-                System.out.println("AdminAuthFilter: Header auth successful, stored in session");
             }
         }
         
         // If still not authenticated, redirect to login
         if (authenticatedUser == null) {
-            System.out.println("AdminAuthFilter: Not authenticated, redirecting to login");
             String loginUrl = httpRequest.getContextPath() + "/admin/login";
             httpResponse.sendRedirect(httpResponse.encodeRedirectURL(loginUrl));
             return;
         }
         
-        System.out.println("AdminAuthFilter: Authentication successful, proceeding");
         chain.doFilter(request, response);
     }
     
